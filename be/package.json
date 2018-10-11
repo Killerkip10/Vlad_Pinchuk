@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "node build/app.js"
+    "start": "node build/index.js"
   },
   "dependencies": {
     "@types/body-parser": "1.17.0",
