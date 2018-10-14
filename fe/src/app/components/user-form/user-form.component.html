@@ -1,0 +1,41 @@
+<section>
+  <form [formGroup]="userForm">
+    <div>
+      <label>
+        <span>Name:</span>
+        <input type="text" formControlName="name">
+      </label>
+      <p *ngIf="name.errors?.name && name.touched">Required</p>
+    </div>
+
+    <div>
+      <label>
+        <span>Age:</span>
+        <input type="text">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <span>Birthday:</span>
+        <input type="text">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <span>Date of login:</span>
+        <input type="text">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <span>Date of notification:</span>
+        <input type="text">
+      </label>
+    </div>
+
+    <input type="submit" value="Send">
+  </form>
+</section>

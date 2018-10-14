@@ -1,0 +1,12 @@
+form{
+  label{
+    display: flex;
+    justify-content: space-between;
+    input{
+      width: 100%;
+    }
+    span{
+      flex: 1 0 140px;
+    }
+  }
+}
