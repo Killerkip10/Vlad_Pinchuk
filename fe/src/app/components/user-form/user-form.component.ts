@@ -2,25 +2,29 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 
 import {
-  countWordValidator,
+  NameAsyncValidatorService,
   loggerValidation
 } from './validators';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss']
+  styleUrls: ['./user-form.component.scss'],
+  providers: [NameAsyncValidatorService]
 })
 export class UserFormComponent implements OnInit {
   public userForm = this.fs.group({
-    name: ['', [Validators.required, countWordValidator]],
+    name: ['', [Validators.required], [this.nameAsyncValidatorService.nameValidator]],
     age: [''],
     birthday: [''],
     dateOfLogin: [''],
     dateOfNextNot: ['']
   }, {validator: [loggerValidation]});
 
-  constructor(private fs: FormBuilder) { }
+  constructor(
+    private fs: FormBuilder,
+    private nameAsyncValidatorService: NameAsyncValidatorService
+  ) { }
 
   public get name(){
     return this.userForm.get('name');
@@ -37,6 +41,7 @@ export class UserFormComponent implements OnInit {
   public get dateOfNextNot(){
     return this.userForm.get('dateOfNextNot');
   }
+
 
   ngOnInit() {
   }

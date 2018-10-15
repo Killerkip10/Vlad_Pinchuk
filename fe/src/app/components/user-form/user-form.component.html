@@ -5,7 +5,7 @@
         <span>Name:</span>
         <input type="text" formControlName="name">
       </label>
-      <p *ngIf="name.errors?.name && name.touched">Required</p>
+      <p *ngIf="name.errors?.name && name.touched">{{name.errors?.name}}</p>
     </div>
 
     <div>
