@@ -4,10 +4,10 @@ import {User} from '../../../models';
 
 @Component({
   selector: 'app-user-info-page',
-  templateUrl: './user-info.component.html',
-  styleUrls: ['./user-info.component.scss']
+  templateUrl: './user-profile-page.component.html',
+  styleUrls: ['./user-profile-page.component.scss']
 })
-export class UserInfoComponent{
+export class UserProfileComponent{
   public users: User[] = [];
 
   constructor() { }

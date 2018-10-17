@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {UserInfoComponent} from './pages/user-info.component';
-import {UserInfoRouting} from './user-info.routing';
+import {UserProfileComponent} from './pages/user-profile-page.component';
+import {UserProfileRouting} from './user-profile-page.routing';
 import {
   UserFormModule,
   UserInfoCardModule,
@@ -15,13 +15,13 @@ import {
     UserFormModule,
     UserInfoCardModule,
 
-    UserInfoRouting,
+    UserProfileRouting,
   ],
   declarations: [
-    UserInfoComponent
+    UserProfileComponent
   ],
   exports:[
-    UserInfoComponent
+    UserProfileComponent
   ]
 })
-export class UserInfoModule { }
+export class UserProfileModule { }

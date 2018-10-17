@@ -5,7 +5,11 @@ import {HttpClientModule} from "@angular/common/http";
 
 import {AppRouting} from './app.routing';
 import {AppComponent} from './app.component';
-import {UserInfoModule} from './pages';
+import {AuthGuard} from './guards';
+import {
+  LoginPageModule,
+  UserProfileModule
+} from './pages';
 import {
   RestApiService,
   UserService
@@ -17,7 +21,9 @@ import {
     RouterModule,
     HttpClientModule,
 
-    UserInfoModule,
+    LoginPageModule,
+    UserProfileModule,
+
     AppRouting //last!!!
   ],
   declarations: [
@@ -25,7 +31,8 @@ import {
   ],
   providers: [
     RestApiService,
-    UserService
+    UserService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
