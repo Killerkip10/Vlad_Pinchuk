@@ -10,4 +10,4 @@
 1. GO to the folder 'fe'
 2. Install yarn packages using command "yarn install"
 3. Build bundle of app using command "yarn build"
-4. Open in browser "localhost:3030/"
+### Open in browser "localhost:3030/"
