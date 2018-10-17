@@ -12,6 +12,8 @@ app.use(bodyParser.json());
 app.use(morgan('combined'));
 app.use(cors());
 
+app.use(express.static(__dirname + '/../../../fe/dist/fe'));
+
 app.use(router);
 
 app.use((error: any, req: Request, res: Response, next: NextFunction)=>{

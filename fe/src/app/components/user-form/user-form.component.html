@@ -1,41 +1,70 @@
 <section>
-  <form [formGroup]="userForm">
+  <mat-toolbar>Create User</mat-toolbar>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div>
-      <label>
-        <span>Name:</span>
-        <input type="text" formControlName="name">
-      </label>
-      <p *ngIf="name.errors?.name && name.touched">{{name.errors?.name}}</p>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="name"
+          placeholder="Name Surname">
+      </mat-form-field>
+      <p *ngIf="name.errors?.name">{{name.errors?.name.message}}</p>
     </div>
 
     <div>
-      <label>
-        <span>Age:</span>
-        <input type="text">
-      </label>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="age"
+          placeholder="Age">
+      </mat-form-field>
+      <p *ngIf="age.errors?.age">{{age.errors?.age.message}}</p>
     </div>
 
     <div>
-      <label>
-        <span>Birthday:</span>
-        <input type="text">
-      </label>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="dateOfBirth"
+          placeholder="Birthday"
+        >
+      </mat-form-field>
+      <p *ngIf="dateOfBirth.errors?.date">{{dateOfBirth.errors?.date.message}}</p>
     </div>
 
     <div>
-      <label>
-        <span>Date of login:</span>
-        <input type="text">
-      </label>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="dateOfFirstLogin"
+          placeholder="Date of first login"
+        >
+      </mat-form-field>
+      <p *ngIf="dateOfFirstLogin.errors?.date">{{dateOfFirstLogin.errors?.date.message}}</p>
     </div>
 
     <div>
-      <label>
-        <span>Date of notification:</span>
-        <input type="text">
-      </label>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="dateOfNextNot"
+          placeholder="Date of next notification"
+        >
+      </mat-form-field>
+      <p *ngIf="dateOfNextNot.errors?.date">{{dateOfNextNot.errors?.date.message}}</p>
     </div>
 
-    <input type="submit" value="Send">
+    <div class="legend">
+      <div>Date formats: </div>
+      <div>YYYY/MM/DD | DD MMMM YYYY | DD-MMM-YY</div>
+    </div>
+
+    <button mat-flat-button color="primary" type="submit" [disabled]="!userForm.valid">Send</button>
+    <button mat-flat-button color="warn" type="reset">Reset</button>
   </form>
 </section>

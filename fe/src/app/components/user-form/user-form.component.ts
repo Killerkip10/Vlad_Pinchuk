@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
+import {Component, Output, EventEmitter, OnInit} from '@angular/core';
+import {Validators, FormBuilder} from "@angular/forms";
 
+import {User} from '../../models';
 import {
   NameAsyncValidatorService,
-  loggerValidation
+  ageValidator,
+  dateValidator,
 } from './validators';
 
 @Component({
@@ -12,18 +14,14 @@ import {
   styleUrls: ['./user-form.component.scss'],
   providers: [NameAsyncValidatorService]
 })
-export class UserFormComponent implements OnInit {
-  public userForm = this.fs.group({
-    name: ['', [Validators.required], [this.nameAsyncValidatorService.nameValidator]],
-    age: [''],
-    birthday: [''],
-    dateOfLogin: [''],
-    dateOfNextNot: ['']
-  }, {validator: [loggerValidation]});
+export class UserFormComponent implements OnInit{
+  public userForm;
+
+  @Output() onAdd = new EventEmitter<User>();
 
   constructor(
-    private fs: FormBuilder,
-    private nameAsyncValidatorService: NameAsyncValidatorService
+    private nameAsyncValidService: NameAsyncValidatorService,
+    private fb: FormBuilder
   ) { }
 
   public get name(){
@@ -32,17 +30,26 @@ export class UserFormComponent implements OnInit {
   public get age(){
     return this.userForm.get('age');
   }
-  public get birthday(){
-    return this.userForm.get('birthday');
+  public get dateOfBirth(){
+    return this.userForm.get('dateOfBirth');
   }
-  public get dateOfLogin(){
-    return this.userForm.get('dateOfLogin');
+  public get dateOfFirstLogin(){
+    return this.userForm.get('dateOfFirstLogin');
   }
   public get dateOfNextNot(){
     return this.userForm.get('dateOfNextNot');
   }
 
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.userForm = this.fb.group({
+      name: ['', [Validators.required], [this.nameAsyncValidService.nameAsyncValidator()]],
+      age: ['', [Validators.required, ageValidator]],
+      dateOfBirth: ['', [Validators.required, dateValidator]],
+      dateOfFirstLogin: ['', [Validators.required, dateValidator]],
+      dateOfNextNot: ['', [Validators.required, dateValidator]]
+    });
+  }
+  public onSubmit(): void{
+    this.onAdd.emit(this.userForm.value);
   }
 }

@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+
+import {User} from '../../../models';
 
 @Component({
   selector: 'app-user-info-page',
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.scss']
 })
-export class UserInfoComponent implements OnInit {
+export class UserInfoComponent{
+  public users: User[] = [];
 
   constructor() { }
 
-  ngOnInit() {
+  public addUser(user: User): void{
+    this.users.push(user);
   }
-
 }

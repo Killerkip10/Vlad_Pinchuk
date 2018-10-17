@@ -1,7 +1,12 @@
-app-user-form{
-  display: block;
-  width: 400px;
-  background-color: #e9e9e9;
-  border-radius: 10px;
-  padding: 10px;
+section {
+  .form {
+    app-user-form {
+      display: block;
+      max-width: 450px;
+      min-width: 300px;
+    }
+  }
+  .cards{
+    margin-top: 10px;
+  }
 }

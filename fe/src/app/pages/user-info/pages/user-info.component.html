@@ -1,4 +1,13 @@
-<p>
-  pages works!
-</p>
-<app-user-form></app-user-form>
+<section>
+  <div class="form">
+    <app-user-form (onAdd)="addUser($event)"></app-user-form>
+  </div>
+
+  <div class="cards">
+    <app-user-info-card
+      *ngFor="let value of users"
+      [userInfo]="value">
+    </app-user-info-card>
+  </div>
+</section>
+
