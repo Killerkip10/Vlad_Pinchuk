@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 import {Login} from '../../models';
+import {AuthService} from '../../services';
 
 @Component({
   selector: 'app-login-form',
@@ -8,10 +10,18 @@ import {Login} from '../../models';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent {
+  public errorMessage: string = '';
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
-  public onSubmit(value: Login){
-    console.log(value);
+  public submit(loginObj: Login){
+    this.authService.login(loginObj)
+      .subscribe(
+        () => this.router.navigate(['/']),
+        errMessage => this.errorMessage = errMessage
+      )
   }
 }

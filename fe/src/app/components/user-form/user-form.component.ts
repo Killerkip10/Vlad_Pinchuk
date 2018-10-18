@@ -17,7 +17,7 @@ import {
 export class UserFormComponent implements OnInit{
   public userForm;
 
-  @Output() onAdd = new EventEmitter<User>();
+  @Output() onSubmit = new EventEmitter<User>();
 
   constructor(
     private nameAsyncValidService: NameAsyncValidatorService,
@@ -49,7 +49,7 @@ export class UserFormComponent implements OnInit{
       dateOfNextNot: ['', [Validators.required, dateValidator]]
     });
   }
-  public onSubmit(): void{
-    this.onAdd.emit(this.userForm.value);
+  public submit(): void{
+    this.onSubmit.emit(this.userForm.value);
   }
 }

@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {ValidationErrors, AbstractControl, ValidatorFn,} from "@angular/forms";
 import {Observable} from "rxjs/index";
-import {delay, switchMap} from "rxjs/internal/operators";
+import {delay, map, switchMap} from "rxjs/internal/operators";
 import {of} from 'rxjs';
 
 import {UserService} from '../../../services';
@@ -17,12 +17,13 @@ export class NameAsyncValidatorService{
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
       return of(control.value)
         .pipe(
-          delay(2000),
+          delay(1000),
           switchMap(value => this.nameValidator(value)),
           switchMap(value => this.nameHttpValidator(value))
         )
     }
   }
+
   private nameValidator(value: string): Observable<ValidationErrors>{
     return new Observable(obs=>{
       const name = this.findWords(value);
@@ -47,21 +48,16 @@ export class NameAsyncValidatorService{
       return of(value);
     }
 
-    return new Observable(obs => {
-      this.userService.getAll()
-        .subscribe(
-          users => {
-            let result = null;
-
-            if(this.checkFindName(users, value.name.value)){
-              result = {name: {message: 'This name already exists'}};
-            }
-
-            obs.next(result);
-            obs.complete();
+    return this.userService.getAll()
+      .pipe(
+        map(users => {
+          if(this.checkFindName(users, value.name.value)){
+            return {name: {message: 'This name already exists'}};
           }
-        );
-    });
+
+          return null;
+        })
+      );
   }
 
   private findWords(value: string): string[]{

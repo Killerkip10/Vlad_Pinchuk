@@ -4,18 +4,18 @@ import {Routes, RouterModule} from "@angular/router";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/create-user',
+    redirectTo: '/user-profile',
     pathMatch:'full'
   },
   {
     path: '**',
-    redirectTo: '/create-user'
+    redirectTo: '/user-profile'
   }
 ];
 
 @NgModule({
   imports:[
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {useHash:true})
   ]
 })
 export class AppRouting{}

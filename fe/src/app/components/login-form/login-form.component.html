@@ -1,5 +1,5 @@
 <section>
-  <form #loginForm="ngForm" (submit)="onSubmit(loginForm.value)">
+  <form #loginForm="ngForm" (submit)="submit(loginForm.value)">
     <div>
       <mat-form-field>
         <input
@@ -24,6 +24,7 @@
       </mat-form-field>
     </div>
 
+    <p class="errMessage" *ngIf="errorMessage">{{errorMessage}}</p>
     <button mat-flat-button color="primary" type="submit" [disabled]="!loginForm.valid">Send</button>
   </form>
 </section>

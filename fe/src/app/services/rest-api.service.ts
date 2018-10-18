@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 import {urlConfig} from '../config';
+import {TokenService} from './token.service'
 
 @Injectable()
 export class RestApiService{
@@ -18,7 +19,7 @@ export class RestApiService{
   public post(route: string, body: object, headersObj?: {[name: string]: string}){
     return this.http.post(urlConfig.url + route, body, {
       headers: this.createHeaders(headersObj),
-      observe: 'response'
+      observe: 'response',
     });
   }
   public put(){
@@ -28,9 +29,10 @@ export class RestApiService{
 
   }
   private createHeaders(headersObj: {[name: string]: string}): HttpHeaders{
-    const headers = new HttpHeaders(headersObj);
+    let headers = new HttpHeaders(headersObj);
 
-    headers.set('content-type', 'application/json');
+    headers = headers.set('content-type', 'application/json');
+    headers = headers.set('token', TokenService.getToken());
 
     return headers;
   }
