@@ -35,7 +35,7 @@ export class RestApiService{
     let headers = new HttpHeaders(headersObj);
 
     headers = headers.set('content-type', 'application/json');
-    headers = headers.set('token', TokenService.getToken());
+    headers = headers.set('token', TokenService.getToken() || '');
 
     return headers;
   }

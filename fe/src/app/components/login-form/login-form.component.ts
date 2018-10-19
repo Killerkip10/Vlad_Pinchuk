@@ -1,5 +1,4 @@
 import { Component} from '@angular/core';
-import {Router} from "@angular/router";
 
 import {Login} from '../../models';
 import {AuthService} from '../../services';
@@ -12,15 +11,12 @@ import {AuthService} from '../../services';
 export class LoginFormComponent {
   public errorMessage: string = '';
 
-  constructor(
-    private router: Router,
-    private authService: AuthService
-  ) { }
+  constructor(private authService: AuthService) { }
 
   public submit(loginObj: Login){
     this.authService.login(loginObj)
       .subscribe(
-        () => this.router.navigate(['/']),
+        () => {},
         errMessage => this.errorMessage = errMessage
       )
   }

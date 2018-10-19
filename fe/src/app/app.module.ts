@@ -7,6 +7,10 @@ import {AppRouting} from './app.routing';
 import {AppComponent} from './app.component';
 import {AuthGuard} from './guards';
 import {
+  HeaderModule,
+  FooterModule
+} from './components';
+import {
   LoginPageModule,
   UserProfileModule,
   ForgotPasswordPageModule
@@ -21,6 +25,9 @@ import {
     BrowserModule,
     RouterModule,
     HttpClientModule,
+
+    HeaderModule,
+    FooterModule,
 
     LoginPageModule,
     UserProfileModule,

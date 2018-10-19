@@ -7,7 +7,7 @@ export class TokenService{
     localStorage.setItem('token', token);
   }
   static getToken(): string{
-    return localStorage.getItem('token') || '';
+    return localStorage.getItem('token');
   }
   static decodeToken(){
     return (new JwtHelperService()).decodeToken(this.getToken());

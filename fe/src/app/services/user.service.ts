@@ -20,10 +20,14 @@ export class UserService{
   }
 
   public updateUser(): void{
-    this.restApi.get(urlConfig.getUser + TokenService.decodeToken().id)
-      .subscribe(
-        resp => this.user.next(<User>resp.body)
-      );
+    const userToken = TokenService.decodeToken();
+
+    if(userToken) {
+      this.restApi.get(urlConfig.getUser + userToken.id)
+        .subscribe(
+          resp => this.user.next(<User>resp.body)
+        );
+    }
   }
   public editUser(user: User){
     return this.restApi.put(urlConfig.updateUser + TokenService.decodeToken().id, user)
