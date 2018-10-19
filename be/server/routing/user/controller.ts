@@ -13,8 +13,7 @@ export function remove(req: Request, res: Response, next: NextFunction): void{
   res.status(204).send();
 }
 export function update(req: Request, res: Response, next: NextFunction): void{
-  facade.update(req.body, req.params.id);
-  res.status(204).send();
+  res.status(200).send(facade.update(req.body, req.params.id));
 }
 export function add(req: Request, res: Response, next: NextFunction): void{
   res.status(201).send(facade.add(req.body));

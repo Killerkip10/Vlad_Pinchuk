@@ -1,3 +1,3 @@
-export * from './user-form/user-form.module';
-export * from './user-info-card/user-info-card.module';
+export * from './user-edit-form/user-edit-form.module';
+export * from './user-info/user-info.module';
 export * from './login-form/login-form.module';

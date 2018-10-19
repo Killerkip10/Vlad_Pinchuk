@@ -1,12 +1,6 @@
-section {
-  .form {
-    app-user-form {
-      display: block;
-      max-width: 450px;
-      min-width: 300px;
-    }
-  }
-  .cards{
-    margin-top: 10px;
-  }
+app-user-edit-form {
+  display: block;
+  max-width: 450px;
+  min-width: 300px;
 }
+

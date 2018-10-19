@@ -8,7 +8,6 @@ import {TokenService} from './token.service';
 import {urlConfig} from '../config';
 import {Login} from '../models';
 
-
 @Injectable()
 export class AuthService{
   constructor(private restApi: RestApiService){}
@@ -19,9 +18,6 @@ export class AuthService{
         map(this.saveToken),
         catchError(this.handleError)
       )
-  }
-  public registration(){
-
   }
 
   private handleError(error: HttpErrorResponse) {

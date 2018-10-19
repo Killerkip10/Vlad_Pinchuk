@@ -1,13 +1,9 @@
-<section>
-  <div class="form">
-    <app-user-form (onSubmit)="addUser($event)"></app-user-form>
-  </div>
+<mat-tab-group>
+  <mat-tab label="Profile">
+    <app-user-info [userInfo]="user"></app-user-info>
+  </mat-tab>
 
-  <div class="cards">
-    <app-user-info-card
-      *ngFor="let value of users"
-      [userInfo]="value">
-    </app-user-info-card>
-  </div>
-</section>
-
+  <mat-tab label="Edit profile">
+    <app-user-edit-form [user]="user"></app-user-edit-form>
+  </mat-tab>
+</mat-tab-group>

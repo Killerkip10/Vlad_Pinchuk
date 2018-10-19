@@ -9,11 +9,11 @@ export function get(): User[]{
 export function getById(id: string): User | undefined{
   return users.find(user=>user.id === id);
 }
-export function update(updateUser: User, id: string): void{
+export function update(updateUser: User, id: string): User | undefined{
   const user = getById(id);
 
   if(!user){
-    return;
+    return user;
   }
 
   const {
@@ -24,12 +24,13 @@ export function update(updateUser: User, id: string): void{
     information = user.information
   } = updateUser;
 
-  console.log(dateOfNextNot);
   user.name = name;
   user.password = password;
   user.dateOfBirth = new Date(dateOfBirth).toISOString();
   user.dateOfNextNot = new Date(dateOfNextNot).toISOString();
   user.information = information;
+
+  return user;
 }
 export function remove(id: string): void{
   users = users.filter(user=>user.id !== id);

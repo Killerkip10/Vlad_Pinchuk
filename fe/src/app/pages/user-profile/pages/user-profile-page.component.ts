@@ -1,18 +1,27 @@
-import { Component} from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
+import {Subscription} from "rxjs/index";
 
 import {User} from '../../../models';
+import {UserService} from '../../../services';
 
 @Component({
   selector: 'app-user-info-page',
   templateUrl: './user-profile-page.component.html',
   styleUrls: ['./user-profile-page.component.scss']
 })
-export class UserProfileComponent{
-  public users: User[] = [];
+export class UserProfileComponent implements OnInit, OnDestroy{
+  public user: User = <User>{};
+  private subscription: Subscription;
 
-  constructor() { }
+  constructor(private userService: UserService) {}
 
-  public addUser(user: User): void{
-    this.users.push(user);
+  ngOnInit(): void {
+    this.subscription = this.userService.getUserSubject
+      .subscribe(
+        user => this.user = user
+      )
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

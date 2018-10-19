@@ -8,7 +8,8 @@ import {AppComponent} from './app.component';
 import {AuthGuard} from './guards';
 import {
   LoginPageModule,
-  UserProfileModule
+  UserProfileModule,
+  ForgotPasswordPageModule
 } from './pages';
 import {
   RestApiService,
@@ -23,6 +24,7 @@ import {
 
     LoginPageModule,
     UserProfileModule,
+    ForgotPasswordPageModule,
 
     AppRouting //last!!!
   ],

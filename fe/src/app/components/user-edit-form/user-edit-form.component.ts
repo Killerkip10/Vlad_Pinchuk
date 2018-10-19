@@ -1,7 +1,10 @@
-import {Component, Output, EventEmitter, OnInit} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {MatSnackBar} from '@angular/material';
 import {Validators, FormBuilder} from "@angular/forms";
+import * as moment from 'moment';
 
 import {User} from '../../models';
+import {UserService} from '../../services';
 import {
   NameAsyncValidatorService,
   ageValidator,
@@ -9,19 +12,21 @@ import {
 } from './validators';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss'],
+  selector: 'app-user-edit-form',
+  templateUrl: './user-edit-form.component.html',
+  styleUrls: ['./user-edit-form.component.scss'],
   providers: [NameAsyncValidatorService]
 })
-export class UserFormComponent implements OnInit{
+export class UserEditFormComponent implements OnInit, OnChanges{
+  @Input() public user: User;
+
   public userForm;
 
-  @Output() onSubmit = new EventEmitter<User>();
-
   constructor(
+    private userService: UserService,
     private nameAsyncValidService: NameAsyncValidatorService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar
   ) { }
 
   public get name(){
@@ -49,7 +54,24 @@ export class UserFormComponent implements OnInit{
       dateOfNextNot: ['', [Validators.required, dateValidator]]
     });
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes.user.firstChange) {
+      return;
+    }
+
+    this.userForm.patchValue({
+      name: this.user.name,
+      age: this.user.age,
+      dateOfBirth: moment(this.user.dateOfBirth).format('YYYY/MM/DD'),
+      dateOfFirstLogin: moment(this.user.dateOfFirstLogin).format('YYYY/MM/DD'),
+      dateOfNextNot: moment(this.user.dateOfNextNot).format('YYYY/MM/DD')
+    });
+  }
+
   public submit(): void{
-    this.onSubmit.emit(this.userForm.value);
+    this.userService.editUser(this.userForm.value)
+      .subscribe(
+        () => this.snackBar.open('Updated', 'Profile', {duration: 3000})
+      );
   }
 }

@@ -4,8 +4,11 @@ import {Observable} from "rxjs/index";
 import {delay, map, switchMap} from "rxjs/internal/operators";
 import {of} from 'rxjs';
 
-import {UserService} from '../../../services';
 import {User} from '../../../models';
+import {
+  UserService,
+  TokenService
+} from '../../../services';
 
 @Injectable()
 export class NameAsyncValidatorService{
@@ -93,7 +96,7 @@ export class NameAsyncValidatorService{
     return true;
   }
   private checkFindName(users: User[], name: string): boolean{
-    if(users.find(v => v.name === name)){
+    if(users.find(v => v.name === name && v.id !== TokenService.decodeToken().id)){
       return true;
     }else {
       return false;

@@ -22,8 +22,11 @@ export class RestApiService{
       observe: 'response',
     });
   }
-  public put(){
-
+  public put(route: string, body: object, headersObj?: {[name: string]: string}){
+    return this.http.put(urlConfig.url + route, body, {
+      headers: this.createHeaders(headersObj),
+      observe: 'response'
+    });
   }
   public delete(){
 

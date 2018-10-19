@@ -1,17 +1,17 @@
 import {NgModule} from "@angular/core";
 import {MatCardModule} from '@angular/material';
 
-import {UserInfoCardComponent} from './user-info-card.component';
+import {UserInfoComponent} from './user-info.component';
 
 @NgModule({
   imports:[
     MatCardModule
   ],
   declarations:[
-    UserInfoCardComponent
+    UserInfoComponent
   ],
   exports:[
-    UserInfoCardComponent
+    UserInfoComponent
   ]
 })
-export class UserInfoCardModule{}
+export class UserInfoModule{}

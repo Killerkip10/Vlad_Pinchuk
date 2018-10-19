@@ -9,7 +9,7 @@ import {
   MatToolbarModule,
 } from '@angular/material';
 
-import {UserFormComponent} from './user-form.component';
+import {UserEditFormComponent} from './user-edit-form.component';
 
 @NgModule({
   imports:[
@@ -23,10 +23,10 @@ import {UserFormComponent} from './user-form.component';
     BrowserAnimationsModule,
   ],
   declarations:[
-    UserFormComponent,
+    UserEditFormComponent,
   ],
   exports:[
-    UserFormComponent,
+    UserEditFormComponent,
   ]
 })
-export class UserFormModule{}
+export class UserEditFormModule{}

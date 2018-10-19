@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserInfoCardComponent } from './user-info-card.component';
+import { ForgotPasswordPageComponent } from './forgot-password-page.component';
 
-describe('UserInfoComponent', () => {
-  let component: UserInfoCardComponent;
-  let fixture: ComponentFixture<UserInfoCardComponent>;
+describe('ForgotPasswordPageComponent', () => {
+  let component: ForgotPasswordPageComponent;
+  let fixture: ComponentFixture<ForgotPasswordPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserInfoCardComponent ]
+      declarations: [ ForgotPasswordPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserInfoCardComponent);
+    fixture = TestBed.createComponent(ForgotPasswordPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
