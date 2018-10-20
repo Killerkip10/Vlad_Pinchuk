@@ -10,7 +10,7 @@ import {UserService} from '../../../services';
   styleUrls: ['./user-profile-page.component.scss']
 })
 export class UserProfileComponent implements OnInit, OnDestroy{
-  public user: User = <User>{};
+  public user: User;
   private subscription: Subscription;
 
   constructor(private userService: UserService) {}

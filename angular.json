@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "../build/fe",
+            "outputPath": "build/fe",
             "index": "fe/src/index.html",
             "main": "fe/src/main.ts",
             "polyfills": "fe/src/polyfills.ts",
@@ -41,7 +41,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": true,
+              "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
               "aot": true,

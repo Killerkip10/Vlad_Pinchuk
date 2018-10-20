@@ -9,7 +9,7 @@ import {TokenService} from './token.service';
 
 @Injectable()
 export class UserService{
-  private user = new BehaviorSubject<User>(<User>{});
+  private user = new BehaviorSubject<User>(null);
 
   constructor(private restApi: RestApiService){
     this.updateUser();
