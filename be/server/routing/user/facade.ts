@@ -1,7 +1,7 @@
 const uuid = require('uuid/v4');
 
 import {User} from '../../../models';
-let users: User[] = require('../../../../datas/users.json');
+let users: User[] = require('../../../datas/users.json');
 
 export function get(): User[]{
   return users;

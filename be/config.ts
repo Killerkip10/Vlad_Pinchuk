@@ -4,5 +4,12 @@ export const config = {
   jwt: {
     secretKey: 'secret',
     algorithm: 'HS256'
+  },
+  morgan: {
+    type: 'combined'
+  },
+  cors: {
+    origin: 'http://localhost:4200',
+    credentials: true
   }
 };

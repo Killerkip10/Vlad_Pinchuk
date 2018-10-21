@@ -25,6 +25,10 @@ export class AuthService{
         catchError(err => this.handleError(err))
       )
   }
+  public logout(): void{
+    TokenService.deleteToken();
+    this.router.navigate(['/login']);
+  }
 
   private handleError(error: HttpErrorResponse) {
     let message = 'Something bad happened; please try again later.';
@@ -35,11 +39,7 @@ export class AuthService{
 
     return throwError(message);
   };
-  private saveToken(token: string): void{
-    TokenService.setToken(token);
-  }
   private loginHelper(response){
-    this.saveToken(response.body.token);
     this.userService.updateUser();
     this.router.navigate(['/']);
 

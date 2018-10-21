@@ -58,7 +58,7 @@ export class UserEditFormComponent implements OnInit, OnChanges{
     if(changes.user.firstChange) {
       return;
     }
-
+    console.log(changes);
     this.userForm.patchValue({
       name: this.user.name,
       age: this.user.age,

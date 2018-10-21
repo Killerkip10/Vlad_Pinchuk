@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {BehaviorSubject, Observable} from "rxjs/index";
+import {BehaviorSubject, Observable} from 'rxjs/index';
 import {map} from "rxjs/internal/operators";
 
 import {User} from '../models'
@@ -9,7 +9,7 @@ import {TokenService} from './token.service';
 
 @Injectable()
 export class UserService{
-  private user = new BehaviorSubject<User>(<User>{});
+  private user = new BehaviorSubject<User>(null);
 
   constructor(private restApi: RestApiService){
     this.updateUser();
