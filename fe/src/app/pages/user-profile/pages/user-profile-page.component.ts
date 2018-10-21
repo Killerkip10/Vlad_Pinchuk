@@ -19,7 +19,7 @@ export class UserProfileComponent implements OnInit, OnDestroy{
     this.subscription = this.userService.getUserSubject
       .subscribe(
         user => this.user = user
-      )
+      );
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
