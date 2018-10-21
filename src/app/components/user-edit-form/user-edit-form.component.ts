@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
-import {Validators, FormBuilder} from "@angular/forms";
+import {Validators, FormBuilder} from '@angular/forms';
 import * as moment from 'moment';
 
 import {User} from '../../models';
@@ -17,7 +17,7 @@ import {
   styleUrls: ['./user-edit-form.component.scss'],
   providers: [NameAsyncValidatorService]
 })
-export class UserEditFormComponent implements OnInit, OnChanges{
+export class UserEditFormComponent implements OnInit, OnChanges {
   @Input() public user: User;
 
   public userForm;
@@ -29,19 +29,19 @@ export class UserEditFormComponent implements OnInit, OnChanges{
     private snackBar: MatSnackBar
   ) { }
 
-  public get name(){
+  public get name() {
     return this.userForm.get('name');
   }
-  public get age(){
+  public get age() {
     return this.userForm.get('age');
   }
-  public get dateOfBirth(){
+  public get dateOfBirth() {
     return this.userForm.get('dateOfBirth');
   }
-  public get dateOfFirstLogin(){
+  public get dateOfFirstLogin() {
     return this.userForm.get('dateOfFirstLogin');
   }
-  public get dateOfNextNot(){
+  public get dateOfNextNot() {
     return this.userForm.get('dateOfNextNot');
   }
 
@@ -55,7 +55,7 @@ export class UserEditFormComponent implements OnInit, OnChanges{
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes.user.firstChange) {
+    if (changes.user.firstChange) {
       return;
     }
 
@@ -68,7 +68,7 @@ export class UserEditFormComponent implements OnInit, OnChanges{
     });
   }
 
-  public submit(): void{
+  public submit(): void {
     this.userService.editUser(this.userForm.value)
       .subscribe(
         () => this.snackBar.open('Updated', 'Profile', {duration: 3000})
