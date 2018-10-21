@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "repository": "https://github.com/Killerkip10/FE-2018-angular.git",
   "author": "vpinchuk2012@gmail.com",
+  "private": true,
   "scripts": {
     "start": "node build/index",
     "build": "cd be && tsc && cd ../ && ng build && yarn copy",
@@ -19,7 +20,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "body-parser": "1.18.3",
     "cookie-parser": "1.4.3",
@@ -27,6 +27,7 @@
     "express": "4.16.3",
     "jsonwebtoken": "^8.3.0",
     "morgan": "1.9.1",
+    "tslint": "5.7.0",
     "uuid": "3.3.2"
   },
   "devDependencies": {
@@ -67,7 +68,6 @@
     "protractor": "~5.4.0",
     "rxjs": "~6.2.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
     "typescript": "~2.9.2",
     "zone.js": "~0.8.26"
   }

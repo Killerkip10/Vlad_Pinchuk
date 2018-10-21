@@ -1,7 +1,5 @@
-import { Component, OnInit, OnDestroy} from '@angular/core';
-import {Subscription} from "rxjs/index";
+import {Component, OnInit, OnDestroy} from '@angular/core';
 
-import {User} from '../../../models';
 import {UserService} from '../../../services';
 
 @Component({
@@ -9,19 +7,25 @@ import {UserService} from '../../../services';
   templateUrl: './user-profile-page.component.html',
   styleUrls: ['./user-profile-page.component.scss']
 })
-export class UserProfileComponent implements OnInit, OnDestroy{
-  public user: User;
-  private subscription: Subscription;
+export class UserProfileComponent {
+  public tabs: string[] = ['profile', 'edit-profile'];
+  public tabIndex: number = 1;
+  // public subscription;
+  // public user;
 
-  constructor(private userService: UserService) {}
+  constructor(public userService: UserService) {}
 
-  ngOnInit(): void {
-    this.subscription = this.userService.getUserSubject
-      .subscribe(
-        user => this.user = user
-      )
+  public selectTab(changeTab): void {
+    this.tabIndex = changeTab.index;
   }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+
+  // ngOnInit(): void {
+  //   this.subscription = this.userService.getUserSubject
+  //     .subscribe(
+  //       user => this.user = user
+  //     )
+  // }
+  // ngOnDestroy(): void {
+  //   this.subscription.unsubscribe();
+  // }
 }

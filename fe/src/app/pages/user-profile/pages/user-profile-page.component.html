@@ -1,9 +1,23 @@
-<mat-tab-group [dynamicHeight]="true">
-  <mat-tab label="Profile">
-    <app-user-info [userInfo]="user"></app-user-info>
-  </mat-tab>
+<!--<mat-tab-group [dynamicHeight]="true">-->
+  <!--<mat-tab label="Profile">-->
+    <!--<app-user-info [userInfo]="user"></app-user-info>-->
+  <!--</mat-tab>-->
 
-  <mat-tab label="Edit profile">
-    <app-user-edit-form [user]="user"></app-user-edit-form>
-  </mat-tab>
-</mat-tab-group>
+  <!--<mat-tab label="Edit profile">-->
+    <!--<app-user-edit-form [user]="user"></app-user-edit-form>-->
+  <!--</mat-tab>-->
+<!--</mat-tab-group>-->
+<section>
+  <mat-tab-group (selectedTabChange)="selectTab($event)">
+    <mat-tab *ngFor="let tab of tabs; let i = index" [label]="tab" ></mat-tab>
+  </mat-tab-group>
+
+  <div [ngSwitch]="tabIndex">
+    <div *ngSwitchCase="0">
+      <app-user-info [userInfo]="userService.getUserSubject | async"></app-user-info>
+    </div>
+    <div *ngSwitchCase="1">
+      <app-user-edit-form [user]="userService.getUserSubject | async"></app-user-edit-form>
+    </div>
+  </div>
+</section>

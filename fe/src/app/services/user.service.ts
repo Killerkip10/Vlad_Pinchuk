@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {BehaviorSubject, Observable} from "rxjs/index";
+import {BehaviorSubject, Observable} from 'rxjs/index';
 import {map} from "rxjs/internal/operators";
 
 import {User} from '../models'
