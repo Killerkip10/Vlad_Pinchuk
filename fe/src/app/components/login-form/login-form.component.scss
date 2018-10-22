@@ -1,8 +1,25 @@
 section{
   font-family: Roboto, sans-serif;
-  form{
-    .errMessage{
-      color: red;
+  mat-card{
+    padding: 0;
+    mat-card-content{
+      padding: 0 16px;
+      .err-message{
+        margin-top: 0;
+        color: red;
+      }
+      .actions{
+        display: flex;
+        justify-content: space-between;
+        margin: 4px 0;
+      }
+      .sign-up{
+        width: 100%;
+        margin-bottom: 16px;
+      }
+      mat-form-field{
+        width: 100%;
+      }
     }
   }
 }

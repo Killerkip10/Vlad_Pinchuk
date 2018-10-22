@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 
-import {Login} from '../../models';
 import {AuthService} from '../../services';
 
 @Component({
@@ -9,15 +8,22 @@ import {AuthService} from '../../services';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent {
-  public errorMessage: string = '';
+  public errorMessage = '';
 
   constructor(private authService: AuthService) { }
 
-  public submit(loginObj: Login){
-    this.authService.login(loginObj)
+  public submit(loginForm) {
+    if (!loginForm.valid) {
+      return;
+    }
+
+    this.authService.login(loginForm.value)
       .subscribe(
         () => {},
         errMessage => this.errorMessage = errMessage
-      )
+      );
+  }
+  public forgotPassword(): void {
+    this.authService.forgotPassword();
   }
 }

@@ -1,6 +1,6 @@
-import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
-import {Validators, FormBuilder} from "@angular/forms";
+import {Validators, FormBuilder} from '@angular/forms';
 import * as moment from 'moment';
 
 import {User} from '../../models';
@@ -17,7 +17,7 @@ import {
   styleUrls: ['./user-edit-form.component.scss'],
   providers: [NameAsyncValidatorService]
 })
-export class UserEditFormComponent implements OnInit, OnChanges{
+export class UserEditFormComponent implements OnInit {
   @Input() public user: User;
 
   public userForm;
@@ -27,7 +27,7 @@ export class UserEditFormComponent implements OnInit, OnChanges{
     private nameAsyncValidService: NameAsyncValidatorService,
     private fb: FormBuilder,
     private snackBar: MatSnackBar
-  ) { }
+  ) {}
 
   public get name(){
     return this.userForm.get('name');
@@ -47,31 +47,22 @@ export class UserEditFormComponent implements OnInit, OnChanges{
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
-      name: ['', [Validators.required], [this.nameAsyncValidService.nameAsyncValidator()]],
-      age: ['', [Validators.required, ageValidator]],
-      dateOfBirth: ['', [Validators.required, dateValidator]],
-      dateOfFirstLogin: ['', [Validators.required, dateValidator]],
-      dateOfNextNot: ['', [Validators.required, dateValidator]]
-    });
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    if(changes.user.firstChange) {
-      return;
-    }
-    console.log(changes);
-    this.userForm.patchValue({
-      name: this.user.name,
-      age: this.user.age,
-      dateOfBirth: moment(this.user.dateOfBirth).format('YYYY/MM/DD'),
-      dateOfFirstLogin: moment(this.user.dateOfFirstLogin).format('YYYY/MM/DD'),
-      dateOfNextNot: moment(this.user.dateOfNextNot).format('YYYY/MM/DD')
+      name: [this.user.name, [Validators.required], [this.nameAsyncValidService.nameAsyncValidator()]],
+      age: [this.user.age, [Validators.required, ageValidator]],
+      dateOfBirth: [this.dateFormat(this.user.dateOfBirth), [Validators.required, dateValidator]],
+      dateOfFirstLogin: [{value: this.dateFormat(this.user.dateOfFirstLogin), disabled: true}, [Validators.required, dateValidator]],
+      dateOfNextNot: [this.dateFormat(this.user.dateOfNextNot), [Validators.required, dateValidator]]
     });
   }
 
-  public submit(): void{
+  public submit(): void {
     this.userService.editUser(this.userForm.value)
       .subscribe(
         () => this.snackBar.open('Updated', 'Profile', {duration: 3000})
       );
+  }
+
+  private dateFormat(date: string, format: string = 'YYYY/MM/DD'): string {
+    return moment(date).format(format);
   }
 }

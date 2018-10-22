@@ -1,0 +1,31 @@
+{
+  "HEADER": {
+    "LOGO": "UMA"
+  },
+  "USER-PROFILE": {
+    "TABS": {
+      "PROFILE": "Profile",
+      "EDIT": "Edit"
+    },
+    "EDIT": {
+      "HEADER": "Main",
+      "NAME": "Name",
+      "AGE": "Age",
+      "DATE-OF-BIRTH": "Birthday",
+      "DATE-OF-FIRST-LOGIN": "Date of first login",
+      "DATE-OF-NEXT-NOT": "Date of next notification",
+      "DATE-FORMATS": "Date formats"
+    }
+  },
+  "ERROR": {
+    "BASE": "Something bad happened; Please try again later",
+    "LOGIN": "Invalid email or password"
+  },
+  "LOGIN": "Login",
+  "PASSWORD": "Password",
+  "FORGOT-PASSWORD": "Forgot password",
+  "SEND": "Send",
+  "SIGN-IN": "Sign in",
+  "SIGN-UP": "Sign up",
+  "SIGN-OUT": "Sign out"
+}

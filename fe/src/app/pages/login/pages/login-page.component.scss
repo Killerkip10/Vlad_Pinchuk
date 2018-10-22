@@ -1,0 +1,9 @@
+section{
+  display: flex;
+  justify-content: center;
+  app-login-form{
+    display: block;
+    flex-grow: 1;
+    max-width: 500px;
+  }
+}

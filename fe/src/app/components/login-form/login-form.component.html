@@ -1,30 +1,46 @@
 <section>
-  <form #loginForm="ngForm" (submit)="submit(loginForm.value)">
-    <div>
-      <mat-form-field>
-        <input
-          matInput
-          required
-          ngModel
-          name="login"
-          type="text"
-          placeholder="Login">
-      </mat-form-field>
-    </div>
+  <mat-card>
+    <mat-card-title>
+      <mat-toolbar color="primary">{{'SIGN-IN' | translate}}</mat-toolbar>
+    </mat-card-title>
 
-    <div>
-      <mat-form-field>
-        <input
-          matInput
-          ngModel
-          required
-          name="password"
-          type="text"
-          placeholder="Password">
-      </mat-form-field>
-    </div>
+    <mat-card-content>
+      <form #loginForm="ngForm">
+        <div>
+          <mat-form-field>
+            <input
+              matInput
+              required
+              ngModel
+              name="login"
+              type="text"
+              [placeholder]="'LOGIN' | translate">
+          </mat-form-field>
+        </div>
 
-    <p class="errMessage" *ngIf="errorMessage">{{errorMessage}}</p>
-    <button mat-flat-button color="primary" type="submit" [disabled]="!loginForm.valid">Send</button>
-  </form>
+        <div>
+          <mat-form-field>
+            <input
+              matInput
+              ngModel
+              required
+              name="password"
+              type="text"
+              [placeholder]="'PASSWORD' | translate">
+          </mat-form-field>
+        </div>
+      </form>
+
+      <p class="err-message" *ngIf="errorMessage">{{errorMessage | translate}}</p>
+
+      <div class="actions">
+        <button mat-flat-button color="primary" type="submit" (click)="submit(loginForm)">{{'SIGN-IN' | translate}}</button>
+        <button mat-button (click)="forgotPassword()">{{'FORGOT-PASSWORD' | translate}}</button>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <button class="sign-up" mat-button>{{'SIGN-UP' | translate}}</button>
+    </mat-card-content>
+  </mat-card>
 </section>

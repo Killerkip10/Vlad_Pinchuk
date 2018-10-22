@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {UserService} from '../../../services';
 
@@ -8,24 +8,12 @@ import {UserService} from '../../../services';
   styleUrls: ['./user-profile-page.component.scss']
 })
 export class UserProfileComponent {
-  public tabs: string[] = ['profile', 'edit-profile'];
-  public tabIndex: number = 1;
-  // public subscription;
-  // public user;
+  public tabs: string[] = ['USER-PROFILE.TABS.PROFILE', 'USER-PROFILE.TABS.EDIT'];
+  public tabIndex = 0;
 
   constructor(public userService: UserService) {}
 
   public selectTab(changeTab): void {
     this.tabIndex = changeTab.index;
   }
-
-  // ngOnInit(): void {
-  //   this.subscription = this.userService.getUserSubject
-  //     .subscribe(
-  //       user => this.user = user
-  //     )
-  // }
-  // ngOnDestroy(): void {
-  //   this.subscription.unsubscribe();
-  // }
 }

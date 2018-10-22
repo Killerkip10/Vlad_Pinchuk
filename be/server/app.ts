@@ -16,6 +16,7 @@ app.use(morgan(config.morgan.type));
 app.use(cors(config.cors));
 
 app.use(express.static(__dirname + '/../fe'));
+app.use(express.static(__dirname + '/../assets'));
 
 app.use(router);
 

@@ -1,5 +1,5 @@
 <section>
-  <mat-toolbar>Create User</mat-toolbar>
+  <mat-toolbar>{{'USER-PROFILE.EDIT.HEADER' | translate}}</mat-toolbar>
   <form [formGroup]="userForm" (ngSubmit)="submit()">
     <div>
       <mat-form-field>
@@ -7,7 +7,7 @@
           matInput
           type="text"
           formControlName="name"
-          placeholder="Name Surname">
+          [placeholder]="'USER-PROFILE.EDIT.NAME' | translate">
       </mat-form-field>
       <p *ngIf="name.errors?.name">{{name.errors?.name.message}}</p>
     </div>
@@ -18,7 +18,7 @@
           matInput
           type="text"
           formControlName="age"
-          placeholder="Age">
+          [placeholder]="'USER-PROFILE.EDIT.AGE' | translate">
       </mat-form-field>
       <p *ngIf="age.errors?.age">{{age.errors?.age.message}}</p>
     </div>
@@ -29,8 +29,7 @@
           matInput
           type="text"
           formControlName="dateOfBirth"
-          placeholder="Birthday"
-        >
+          [placeholder]="'USER-PROFILE.EDIT.DATE-OF-BIRTH' | translate">
       </mat-form-field>
       <p *ngIf="dateOfBirth.errors?.date">{{dateOfBirth.errors?.date.message}}</p>
     </div>
@@ -41,8 +40,7 @@
           matInput
           type="text"
           formControlName="dateOfFirstLogin"
-          placeholder="Date of first login"
-        >
+          [placeholder]="'USER-PROFILE.EDIT.DATE-OF-FIRST-LOGIN' | translate">
       </mat-form-field>
       <p *ngIf="dateOfFirstLogin.errors?.date">{{dateOfFirstLogin.errors?.date.message}}</p>
     </div>
@@ -53,17 +51,16 @@
           matInput
           type="text"
           formControlName="dateOfNextNot"
-          placeholder="Date of next notification"
-        >
+          [placeholder]="'USER-PROFILE.EDIT.DATE-OF-NEXT-NOT' | translate">
       </mat-form-field>
       <p *ngIf="dateOfNextNot.errors?.date">{{dateOfNextNot.errors?.date.message}}</p>
     </div>
 
     <div class="legend">
-      <div>Date formats: </div>
+      <div>{{'USER-PROFILE.EDIT.DATE-FORMATS' | translate}}: </div>
       <div>YYYY/MM/DD | DD MMMM YYYY | DD-MMM-YY</div>
     </div>
 
-    <button mat-flat-button color="primary" type="submit" [disabled]="!userForm.valid">Send</button>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!userForm.valid">{{'SEND' | translate}}</button>
   </form>
 </section>
