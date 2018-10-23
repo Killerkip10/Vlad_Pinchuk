@@ -1,37 +1,55 @@
-import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {urlConfig} from '../config';
 
-@Injectable()
-export class RestApiService{
-  constructor(
-    private http: HttpClient
-  ){}
+interface headers {
+  [name: string]: string;
+}
 
-  public get(route: string, headersObj?: {[name: string]: string}){
+@Injectable()
+export class RestApiService {
+  constructor(private http: HttpClient) {}
+
+  public get(route: string, headersObj?: headers) {
     return this.http.get(urlConfig.url + route, {
       headers: this.createHeaders(headersObj),
-      observe: 'response'
+      observe: 'response',
+      withCredentials: true
     });
   }
-  public post(route: string, body: object, headersObj?: {[name: string]: string}){
+  public post(route: string, body: object, headersObj?: headers) {
     return this.http.post(urlConfig.url + route, body, {
       headers: this.createHeaders(headersObj),
-      observe: 'response'
+      observe: 'response',
+      withCredentials: true
     });
   }
-  public put(){
+  public put(route: string, body: object, headersObj?: headers) {
+    return this.http.put(urlConfig.url + route, body, {
+      headers: this.createHeaders(headersObj),
+      observe: 'response',
+      withCredentials: true
+    });
+  }
+  public delete() {
 
   }
-  public delete(){
 
-  }
-  private createHeaders(headersObj: {[name: string]: string}): HttpHeaders{
-    const headers = new HttpHeaders(headersObj);
+  //Don't work, problem with types
+  // private createConfigObj(headersObj: headers){
+  //   return {
+  //     headers: this.createHeaders(headersObj),
+  //     observe: 'response',
+  //     withCredentials: true
+  //   };
+  // }
+  private createHeaders(headersObj: headers): HttpHeaders {
+    let headers = new HttpHeaders(headersObj);
 
-    headers.set('content-type', 'application/json');
+    headers = headers.set('content-type', 'application/json');
 
     return headers;
+
   }
 }

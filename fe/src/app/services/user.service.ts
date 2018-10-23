@@ -1,31 +1,51 @@
-import {Injectable} from "@angular/core";
-import {Observable} from "rxjs/index";
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs/index';
+import {map} from 'rxjs/internal/operators';
 
-import {RestApiService} from './rest-api.service'
-import {User} from '../models'
+import {User} from '../models';
 import {urlConfig} from '../config';
+import {RestApiService} from './rest-api.service';
+import {TokenService} from './token.service';
 
 @Injectable()
 export class UserService{
-  constructor(private restApi: RestApiService){}
+  private user = new BehaviorSubject<User>(null);
 
-  public getAll(): Observable<User[]>{
-    return new Observable(obs => {
-      this.restApi.get(urlConfig.getUsers)
+  constructor(private restApi: RestApiService){
+    this.updateUser();
+  }
+
+  public get getUserSubject(): BehaviorSubject<User>{
+    return this.user;
+  }
+
+  public updateUser(): void{
+    const userToken = TokenService.decodeToken();
+
+    if (userToken) {
+      this.restApi.get(urlConfig.getUser + userToken.id)
         .subscribe(
-          resp => obs.next(<User[]>resp.body),
-          error => obs.error(error),
-          () => obs.complete()
-        )
-    });
+          resp => this.user.next(<User>resp.body)
+        );
+    }
   }
-  public getById(){
-
+  public deleteUser(): void {
+    this.user.next(null);
   }
-  public remove(){
-
+  public editUser(user: User) {
+    return this.restApi.put(urlConfig.updateUser + TokenService.decodeToken().id, user)
+      .pipe(
+        map(resp => {
+          this.user.next(<User>resp.body);
+          return resp;
+        })
+      );
   }
-  public update(){
-
+  // Recreate to response only names
+  public getAll(): Observable<User[]> {
+    return this.restApi.get(urlConfig.getUsers)
+      .pipe(
+        map(response => <User[]>response.body)
+      );
   }
 }

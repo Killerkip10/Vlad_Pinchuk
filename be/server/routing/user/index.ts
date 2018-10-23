@@ -1,8 +1,8 @@
-import * as express from 'express';
+import {Router} from 'express';
 
 import * as controller from './controller';
 
-export const router = express.Router();
+export const router = Router();
 
 router.route('/users')
   .get(controller.get);

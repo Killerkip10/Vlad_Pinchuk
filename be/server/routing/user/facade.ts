@@ -1,35 +1,38 @@
 const uuid = require('uuid/v4');
 
 import {User} from '../../../models';
-let users: User[] = require('../../../../datas/users.json');
+let users: User[] = require('../../../datas/users.json');
 
 export function get(): User[]{
   return users;
 }
 export function getById(id: string): User | undefined{
-  return users.find(user=>user.id === id);
+  return users.find(v => v.id === id);
 }
-export function update(updateUser: User, id: string): void{
+export function update(updateUser: User, id: string): User | undefined{
   const user = getById(id);
 
   if(!user){
-    return;
+    return user;
   }
 
   const {
     name = user.name,
+    age = user.age,
     password = user.password,
     dateOfBirth = user.dateOfBirth,
     dateOfNextNot = user.dateOfNextNot,
     information = user.information
   } = updateUser;
 
-  console.log(dateOfNextNot);
   user.name = name;
+  user.age = age;
   user.password = password;
   user.dateOfBirth = new Date(dateOfBirth).toISOString();
   user.dateOfNextNot = new Date(dateOfNextNot).toISOString();
   user.information = information;
+
+  return user;
 }
 export function remove(id: string): void{
   users = users.filter(user=>user.id !== id);

@@ -1,0 +1,60 @@
+<section>
+  <mat-card>
+    <mat-card-title>
+      <mat-toolbar color="primary">{{'SIGN-IN' | translate}}</mat-toolbar>
+    </mat-card-title>
+
+    <mat-card-content>
+      <form #loginForm="ngForm" (submit)="submit(loginForm)">
+        <div>
+          <mat-form-field>
+            <input
+              matInput
+              required
+              ngModel
+              name="login"
+              type="text"
+              [placeholder]="'LOGIN' | translate">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input
+              matInput
+              ngModel
+              required
+              name="password"
+              type="password"
+              [placeholder]="'PASSWORD' | translate">
+          </mat-form-field>
+        </div>
+
+        <p class="err-message" *ngIf="errorMessage">{{errorMessage | translate}}</p>
+
+        <div class="actions">
+          <button
+            mat-flat-button
+            color="primary"
+            type="submit">
+              {{'SIGN-IN' | translate}}
+          </button>
+          <a
+            mat-button
+            [routerLink]="['/forgot-password']">
+              {{'FORGOT-PASSWORD' | translate}}
+          </a>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <button
+          class="sign-up"
+          type="button"
+          mat-button>
+            {{'SIGN-UP' | translate}}
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

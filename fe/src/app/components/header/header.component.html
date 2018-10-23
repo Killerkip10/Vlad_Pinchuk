@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <div>
+    <a [routerLink]="['/']">{{'HEADER.LOGO' | translate}}</a>
+  </div>
+
+  <div>
+    <mat-select #select (selectionChange)="selectLanguage($event)" [value]="translateService.getLangs()[0]">
+      <mat-option *ngFor="let lang of translateService.getLangs()" [value]="lang">{{lang}}</mat-option>
+    </mat-select>
+
+    <button mat-flat-button color="primary" (click)="logout()">{{'SIGN-OUT' | translate}}</button>
+  </div>
+</mat-toolbar>

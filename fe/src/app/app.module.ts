@@ -1,11 +1,21 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule} from "@angular/router";
-import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppRouting} from './app.routing';
 import {AppComponent} from './app.component';
-import {UserInfoModule} from './pages';
+import {AuthGuard} from './guards';
+import {AppTranslate} from './app.translate';
+import {
+  HeaderModule,
+  FooterModule
+} from './components';
+import {
+  LoginPageModule,
+  UserProfileModule,
+  ForgotPasswordPageModule
+} from './pages';
 import {
   RestApiService,
   UserService
@@ -16,16 +26,25 @@ import {
     BrowserModule,
     RouterModule,
     HttpClientModule,
+    AppTranslate,
 
-    UserInfoModule,
+    HeaderModule,
+    FooterModule,
+
+    LoginPageModule,
+    UserProfileModule,
+    ForgotPasswordPageModule,
+
     AppRouting //last!!!
   ],
   declarations: [
+
     AppComponent
   ],
   providers: [
     RestApiService,
-    UserService
+    UserService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
