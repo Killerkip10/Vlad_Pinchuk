@@ -19,11 +19,8 @@ export class LoginFormComponent {
 
     this.authService.login(loginForm.value)
       .subscribe(
-        () => {},
-        errMessage => this.errorMessage = errMessage
+        null,
+        err => this.errorMessage = err
       );
-  }
-  public forgotPassword(): void {
-    this.authService.forgotPassword();
   }
 }

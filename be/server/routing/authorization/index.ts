@@ -7,5 +7,5 @@ export const router = Router();
 router.route('/login')
   .post(controller.login);
 
-// router.route('/registration')
-//   .post(controller.registration);
+router.route('/forgot/:login')
+  .get(controller.forgotPassword);

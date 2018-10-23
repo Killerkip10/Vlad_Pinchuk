@@ -7,7 +7,7 @@ export function get(): User[]{
   return users;
 }
 export function getById(id: string): User | undefined{
-  return users.find(user=>user.id === id);
+  return users.find(v => v.id === id);
 }
 export function update(updateUser: User, id: string): User | undefined{
   const user = getById(id);
@@ -18,6 +18,7 @@ export function update(updateUser: User, id: string): User | undefined{
 
   const {
     name = user.name,
+    age = user.age,
     password = user.password,
     dateOfBirth = user.dateOfBirth,
     dateOfNextNot = user.dateOfNextNot,
@@ -25,6 +26,7 @@ export function update(updateUser: User, id: string): User | undefined{
   } = updateUser;
 
   user.name = name;
+  user.age = age;
   user.password = password;
   user.dateOfBirth = new Date(dateOfBirth).toISOString();
   user.dateOfNextNot = new Date(dateOfNextNot).toISOString();

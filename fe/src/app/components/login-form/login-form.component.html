@@ -5,7 +5,7 @@
     </mat-card-title>
 
     <mat-card-content>
-      <form #loginForm="ngForm">
+      <form #loginForm="ngForm" (submit)="submit(loginForm)">
         <div>
           <mat-form-field>
             <input
@@ -25,22 +25,36 @@
               ngModel
               required
               name="password"
-              type="text"
+              type="password"
               [placeholder]="'PASSWORD' | translate">
           </mat-form-field>
         </div>
+
+        <p class="err-message" *ngIf="errorMessage">{{errorMessage | translate}}</p>
+
+        <div class="actions">
+          <button
+            mat-flat-button
+            color="primary"
+            type="submit">
+              {{'SIGN-IN' | translate}}
+          </button>
+          <a
+            mat-button
+            [routerLink]="['/forgot-password']">
+              {{'FORGOT-PASSWORD' | translate}}
+          </a>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <button
+          class="sign-up"
+          type="button"
+          mat-button>
+            {{'SIGN-UP' | translate}}
+        </button>
       </form>
-
-      <p class="err-message" *ngIf="errorMessage">{{errorMessage | translate}}</p>
-
-      <div class="actions">
-        <button mat-flat-button color="primary" type="submit" (click)="submit(loginForm)">{{'SIGN-IN' | translate}}</button>
-        <button mat-button (click)="forgotPassword()">{{'FORGOT-PASSWORD' | translate}}</button>
-      </div>
-
-      <mat-divider></mat-divider>
-
-      <button class="sign-up" mat-button>{{'SIGN-UP' | translate}}</button>
     </mat-card-content>
   </mat-card>
 </section>

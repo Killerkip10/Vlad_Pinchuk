@@ -5,7 +5,7 @@
   "projects": {
     "fe": {
       "root": "fe",
-      "sourceRoot": "src",
+      "sourceRoot": "fe",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -23,8 +23,8 @@
             "polyfills": "fe/src/polyfills.ts",
             "tsConfig": "fe/src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "fe/src/favicon.ico",
+              "fe/src/assets"
             ],
             "styles": [
               "fe/src/styles.scss"
@@ -80,8 +80,8 @@
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "fe/src/favicon.ico",
+              "fe/src/assets"
             ]
           }
         },

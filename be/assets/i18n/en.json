@@ -19,7 +19,8 @@
   },
   "ERROR": {
     "BASE": "Something bad happened; Please try again later",
-    "LOGIN": "Invalid email or password"
+    "LOGIN": "Invalid login or password",
+    "FORGOT": "Invalid login"
   },
   "LOGIN": "Login",
   "PASSWORD": "Password",

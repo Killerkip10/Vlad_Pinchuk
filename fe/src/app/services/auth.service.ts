@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {throwError} from 'rxjs/index';
+import {Observable, throwError} from 'rxjs/index';
 import {catchError, map} from 'rxjs/internal/operators';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
@@ -16,13 +16,13 @@ export class AuthService{
     private restApi: RestApiService,
     private userService: UserService,
     private router: Router
-  ){}
+  ) {}
 
-  public login(loginObj: Login){
+  public login(loginObj: Login) {
     return this.restApi.post(urlConfig.login, loginObj)
       .pipe(
         map(resp => this.loginHelper(resp)),
-        catchError(err => this.handleError(err))
+        catchError(err => this.handleLoginError(err))
       );
   }
   public logout(): void{
@@ -30,23 +30,39 @@ export class AuthService{
     this.userService.deleteUser();
     this.router.navigate(['/login']);
   }
-  public forgotPassword(): void {
-    this.router.navigate(['/forgot-password']);
+  public forgotPassword(login: string): Observable<string> {
+    return this.restApi.get(urlConfig.forgot + login)
+      .pipe(
+        map(resp => this.forgotHelper(resp)),
+        catchError(err => this.handleForgotError(err))
+      );
   }
 
-  private handleError(error: HttpErrorResponse) {
+  private handleLoginError(error: HttpErrorResponse) {
     let message = 'ERROR.BASE';
 
-    if(error.status === 401) {
+    if (error.status === 401) {
       message = 'ERROR.LOGIN';
     }
 
     return throwError(message);
-  };
-  private loginHelper(response){
+  }
+  private handleForgotError(error: HttpErrorResponse) {
+    return throwError('ERROR.FORGOT');
+  }
+  private loginHelper(response) {
     this.userService.updateUser();
     this.router.navigate(['/']);
 
     return response;
+  }
+  private forgotHelper(response) {
+    const body = response.body;
+
+    if (!body) {
+      throw new Error();
+    }
+
+    return <string>response.body;
   }
 }

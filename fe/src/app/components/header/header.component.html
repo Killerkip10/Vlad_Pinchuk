@@ -5,7 +5,7 @@
 
   <div>
     <mat-select #select (selectionChange)="selectLanguage($event)" [value]="translateService.getLangs()[0]">
-      <mat-option *ngFor="let lang of translateService.getLangs()" [value]="lang" selected>{{lang}}</mat-option>
+      <mat-option *ngFor="let lang of translateService.getLangs()" [value]="lang">{{lang}}</mat-option>
     </mat-select>
 
     <button mat-flat-button color="primary" (click)="logout()">{{'SIGN-OUT' | translate}}</button>

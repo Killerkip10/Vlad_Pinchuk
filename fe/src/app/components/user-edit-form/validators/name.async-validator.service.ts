@@ -24,7 +24,7 @@ export class NameAsyncValidatorService {
           switchMap(value => this.nameValidator(value)),
           switchMap(value => this.nameHttpValidator(value))
         );
-    }
+    };
   }
 
   private nameValidator(value: string): Observable<ValidationErrors> {

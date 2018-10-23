@@ -1,10 +1,10 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs/index';
-import {map} from "rxjs/internal/operators";
+import {map} from 'rxjs/internal/operators';
 
-import {User} from '../models'
+import {User} from '../models';
 import {urlConfig} from '../config';
-import {RestApiService} from './rest-api.service'
+import {RestApiService} from './rest-api.service';
 import {TokenService} from './token.service';
 
 @Injectable()
@@ -41,7 +41,7 @@ export class UserService{
         })
       );
   }
-  //Переделать, чтобы не приходили все данные, а только name и id
+  // Recreate to response only names
   public getAll(): Observable<User[]> {
     return this.restApi.get(urlConfig.getUsers)
       .pipe(

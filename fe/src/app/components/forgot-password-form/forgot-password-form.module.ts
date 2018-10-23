@@ -1,38 +1,34 @@
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {TranslateModule} from '@ngx-translate/core';
-import {RouterModule} from '@angular/router';
 
-import {LoginFormComponent} from './login-form.component';
+import {ForgotPasswordFormComponent} from './forgot-password-form.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
   MatButtonModule,
-  MatDividerModule,
   MatToolbarModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
-    RouterModule,
-    TranslateModule,
     FormsModule,
+    TranslateModule,
 
     MatFormFieldModule,
-    MatCardModule,
-    MatDividerModule,
     MatInputModule,
+    MatCardModule,
     MatButtonModule,
     MatToolbarModule,
     BrowserAnimationsModule
   ],
   declarations: [
-    LoginFormComponent
+    ForgotPasswordFormComponent
   ],
   exports: [
-    LoginFormComponent
+    ForgotPasswordFormComponent
   ]
 })
-export class LoginFormModule{}
+export class ForgotPasswordFormModule {}

@@ -1,4 +1,4 @@
-import {NgModule} from "@angular/core";
+import {NgModule} from '@angular/core';
 
 import {LoginPageComponent} from './pages/login-page.component';
 import {LoginPageRouting} from './login-page.routing';
