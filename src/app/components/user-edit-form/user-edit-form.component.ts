@@ -4,12 +4,12 @@ import {Validators, FormBuilder} from '@angular/forms';
 import * as moment from 'moment';
 
 import {User} from '../../models/index';
-import {UserService} from '../../services/index';
+import {UserService} from '../../services';
 import {
   NameAsyncValidatorService,
   ageValidator,
   dateValidator,
-} from './validators/index';
+} from './validators';
 
 @Component({
   selector: 'app-user-edit-form',

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, throwError} from 'rxjs/index';
+import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/internal/operators';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
@@ -7,11 +7,11 @@ import {Router} from '@angular/router';
 import {RestApiService} from './rest-api.service';
 import {TokenService} from './token.service';
 import {UserService} from './user.service';
-import {urlConfig} from '../config/index';
+import {urlConfig} from '../config';
 import {Login} from '../models/index';
 
 @Injectable()
-export class AuthService{
+export class AuthService {
   constructor(
     private restApi: RestApiService,
     private userService: UserService,
@@ -25,7 +25,7 @@ export class AuthService{
         catchError(err => this.handleLoginError(err))
       );
   }
-  public logout(): void{
+  public logout(): void {
     TokenService.deleteToken();
     this.userService.deleteUser();
     this.router.navigate(['/login']);

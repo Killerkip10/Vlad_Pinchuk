@@ -7,7 +7,7 @@ import {User} from '../../models/index';
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.scss']
 })
-export class UserInfoComponent{
+export class UserInfoComponent {
   @Input() userInfo: User;
 
   constructor() { }

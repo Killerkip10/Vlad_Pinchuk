@@ -16,4 +16,4 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ]
 })
-export class ForgotPasswordPageRouting{}
+export class ForgotPasswordPageRouting {}

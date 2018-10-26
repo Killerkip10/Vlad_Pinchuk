@@ -1,25 +1,25 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs/index';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {map} from 'rxjs/internal/operators';
 
 import {User} from '../models/index';
-import {urlConfig} from '../config/index';
+import {urlConfig} from '../config';
 import {RestApiService} from './rest-api.service';
 import {TokenService} from './token.service';
 
 @Injectable()
-export class UserService{
+export class UserService {
   private user = new BehaviorSubject<User>(null);
 
-  constructor(private restApi: RestApiService){
+  constructor(private restApi: RestApiService) {
     this.updateUser();
   }
 
-  public get getUserSubject(): BehaviorSubject<User>{
+  public get getUserSubject(): BehaviorSubject<User> {
     return this.user;
   }
 
-  public updateUser(): void{
+  public updateUser(): void {
     const userToken = TokenService.decodeToken();
 
     if (userToken) {
@@ -36,7 +36,7 @@ export class UserService{
     return this.restApi.put(urlConfig.updateUser + TokenService.decodeToken().id, user)
       .pipe(
         map(resp => {
-          this.user.next(<User>resp.body);
+          this.user.next(resp.body as User);
           return resp;
         })
       );

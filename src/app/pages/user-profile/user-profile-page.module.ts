@@ -14,7 +14,7 @@ import {
 import {
   UserEditFormModule,
   UserInfoModule,
-} from '../../components/index';
+} from '../../components';
 
 @NgModule({
   imports: [
@@ -34,7 +34,7 @@ import {
   declarations: [
     UserProfileComponent
   ],
-  exports:[
+  exports: [
     UserProfileComponent
   ]
 })

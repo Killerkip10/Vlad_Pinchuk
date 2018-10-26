@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 
 import {ForgotPasswordPageComponent} from './pages/forgot-password-page.component';
 import {ForgotPasswordPageRouting} from './forgot-password-page.routing';
-import {ForgotPasswordFormModule} from '../../components/index';
+import {ForgotPasswordFormModule} from '../../components';
 
 @NgModule({
   imports: [
@@ -17,4 +17,4 @@ import {ForgotPasswordFormModule} from '../../components/index';
     ForgotPasswordPageComponent
   ]
 })
-export class ForgotPasswordPageModule{}
+export class ForgotPasswordPageModule {}

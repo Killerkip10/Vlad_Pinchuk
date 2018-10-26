@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {UserProfileComponent} from './pages/user-profile-page.component';
-import {AuthGuard} from '../../guards/index';
+import {AuthGuard} from '../../guards';
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports:[
+  imports: [
     RouterModule.forRoot(routes)
   ]
 })
-export class UserProfileRouting{}
+export class UserProfileRouting {}

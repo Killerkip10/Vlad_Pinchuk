@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {UserService} from '../../../services/index';
+import {UserService} from '../../../services';
 
 @Component({
   selector: 'app-user-info-page',

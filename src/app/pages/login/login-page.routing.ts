@@ -12,8 +12,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports:[
+  imports: [
     RouterModule.forChild(routes)
   ]
 })
-export class LoginPageRouting{}
+export class LoginPageRouting {}
