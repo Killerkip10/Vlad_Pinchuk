@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 
 import {LoginPageComponent} from './pages/login-page.component';
 import {LoginPageRouting} from './login-page.routing';
-import {LoginFormModule} from '../../components/index';
-import {AuthService} from '../../services/index';
+import {LoginFormModule} from '../../components';
+import {AuthService} from '../../services';
 
 @NgModule({
   imports: [
@@ -21,4 +21,4 @@ import {AuthService} from '../../services/index';
     LoginPageComponent
   ]
 })
-export class LoginPageModule{}
+export class LoginPageModule {}

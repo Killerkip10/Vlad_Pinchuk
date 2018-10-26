@@ -29,4 +29,4 @@ import {
     HeaderComponent
   ]
 })
-export class HeaderModule{}
+export class HeaderModule {}

@@ -4,14 +4,14 @@ import {MatCardModule} from '@angular/material';
 import {UserInfoComponent} from './user-info.component';
 
 @NgModule({
-  imports:[
+  imports: [
     MatCardModule
   ],
-  declarations:[
+  declarations: [
     UserInfoComponent
   ],
-  exports:[
+  exports: [
     UserInfoComponent
   ]
 })
-export class UserInfoModule{}
+export class UserInfoModule {}

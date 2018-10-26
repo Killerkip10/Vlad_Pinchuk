@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ValidationErrors, AbstractControl, ValidatorFn} from '@angular/forms';
-import {Observable} from 'rxjs/index';
+import {Observable} from 'rxjs';
 import {delay, map, switchMap} from 'rxjs/internal/operators';
 import {of} from 'rxjs';
 
@@ -8,7 +8,7 @@ import {User} from '../../../models/index';
 import {
   UserService,
   TokenService
-} from '../../../services/index';
+} from '../../../services';
 
 @Injectable()
 export class NameAsyncValidatorService {

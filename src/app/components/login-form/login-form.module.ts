@@ -35,4 +35,4 @@ import {
     LoginFormComponent
   ]
 })
-export class LoginFormModule{}
+export class LoginFormModule {}

@@ -5,21 +5,21 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppRouting} from './app.routing';
 import {AppComponent} from './app.component';
-import {AuthGuard} from './guards/index';
+import {AuthGuard} from './guards';
 import {AppTranslate} from './app.translate';
 import {
   HeaderModule,
   FooterModule
-} from './components/index';
+} from './components';
 import {
   LoginPageModule,
   UserProfileModule,
   ForgotPasswordPageModule
-} from './pages/index';
+} from './pages';
 import {
   RestApiService,
   UserService
-} from './services/index';
+} from './services';
 
 @NgModule({
   imports: [
@@ -35,7 +35,7 @@ import {
     UserProfileModule,
     ForgotPasswordPageModule,
 
-    AppRouting //last!!!
+    AppRouting
   ],
   declarations: [
 
