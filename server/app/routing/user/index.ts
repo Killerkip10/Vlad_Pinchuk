@@ -14,3 +14,9 @@ router.route('/users/:id')
 
 router.route('/users/add')
   .post(controller.add);
+
+router.route('/user/profile')
+  .get(controller.getProfile);
+
+router.route('/user/check/:name')
+  .get(controller.checkName);

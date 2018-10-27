@@ -15,10 +15,10 @@
     "copy": "copyfiles -f server/datas/* build/datas && copyfiles -f package.json build && copyfiles -f yarn.lock build && copyfiles -f server/assets/i18n/* build/assets/i18n",
     "ng": "ng",
     "tsc": "tsc",
-    "nodemon": "nodemon",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "nodemon": "nodemon"
   },
   "dependencies": {
     "body-parser": "1.18.3",

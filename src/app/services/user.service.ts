@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import {map} from 'rxjs/internal/operators';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 
 import {User} from '../models/index';
-import {urlConfig} from '../config';
-import {RestApiService} from './rest-api.service';
+import {urlConfig, options} from '../config';
 import {TokenService} from './token.service';
 
 @Injectable()
 export class UserService {
   private user = new BehaviorSubject<User>(null);
 
-  constructor(private restApi: RestApiService) {
+  constructor(private http: HttpClient) {
     this.updateUser();
   }
 
@@ -20,12 +20,10 @@ export class UserService {
   }
 
   public updateUser(): void {
-    const userToken = TokenService.decodeToken();
-
-    if (userToken) {
-      this.restApi.get(urlConfig.getUser + userToken.id)
+    if (TokenService.getToken()) {
+      this.http.get<HttpResponse<User>>(urlConfig.getProfile, options)
         .subscribe(
-          resp => this.user.next(<User>resp.body)
+          resp => this.user.next(resp.body)
         );
     }
   }
@@ -33,19 +31,15 @@ export class UserService {
     this.user.next(null);
   }
   public editUser(user: User) {
-    return this.restApi.put(urlConfig.updateUser + TokenService.decodeToken().id, user)
+    return this.http.put<HttpResponse<User>>(urlConfig.updateUser + TokenService.decodeToken().id, user, options)
       .pipe(
         map(resp => {
-          this.user.next(resp.body as User);
+          this.user.next(resp.body);
           return resp;
         })
       );
   }
-  // Recreate to response only names
-  public getAll(): Observable<User[]> {
-    return this.restApi.get(urlConfig.getUsers)
-      .pipe(
-        map(response => <User[]>response.body)
-      );
+  public checkName(name: string) {
+    return this.http.get(urlConfig.checkName + name, options);
   }
 }

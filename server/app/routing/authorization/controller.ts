@@ -14,9 +14,6 @@ export function login(req: Request, res: Response, next: NextFunction){
     })
     .catch(err => next(err));
 }
-export function registration() {
-
-}
 export function forgotPassword(req: Request, res: Response, next: NextFunction) {
   res.status(200).send(facade.forgotPassword(req.params.login));
 }

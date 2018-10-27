@@ -6,7 +6,7 @@ export function get(req: Request, res: Response, next: NextFunction): void {
   res.status(200).send(facade.get());
 }
 export function getById(req: Request, res: Response, next: NextFunction): void {
-  setTimeout(() => res.status(200).send(facade.getById(req.params.id)), 3000);
+  res.status(200).send(facade.getById(req.params.id));
 }
 export function remove(req: Request, res: Response, next: NextFunction): void {
   facade.remove(req.params.id);
@@ -17,4 +17,16 @@ export function update(req: Request, res: Response, next: NextFunction): void {
 }
 export function add(req: Request, res: Response, next: NextFunction): void {
   res.status(201).send(facade.add(req.body));
+}
+export function getProfile(req: Request, res: Response, next: NextFunction): void {
+  setTimeout(() => res.status(200).send(facade.getProfile(req.cookies.token)), 3 * 1000);
+}
+export function checkName(req: Request, res: Response, next: NextFunction): void {
+  const user = facade.checkName(req.params.name, req.cookies.token);
+
+  if (user) {
+    res.status(400).send();
+  } else {
+    res.status(200).send();
+  }
 }

@@ -16,10 +16,7 @@ import {
   UserProfileModule,
   ForgotPasswordPageModule
 } from './pages';
-import {
-  RestApiService,
-  UserService
-} from './services';
+import {UserService} from './services';
 
 @NgModule({
   imports: [
@@ -42,7 +39,6 @@ import {
     AppComponent
   ],
   providers: [
-    RestApiService,
     UserService,
     AuthGuard
   ],
