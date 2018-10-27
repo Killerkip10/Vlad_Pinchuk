@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable()
 export class TokenService {
@@ -9,9 +8,6 @@ export class TokenService {
     ));
 
     return matches ? matches[1] : null;
-  }
-  static decodeToken() {
-    return (new JwtHelperService()).decodeToken(this.getToken());
   }
   static deleteToken(): void {
     document.cookie = `token= ;expires=${new Date(1)}`;

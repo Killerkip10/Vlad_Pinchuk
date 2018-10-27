@@ -1,20 +1,24 @@
 import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 import {ForgotPasswordFormComponent} from './forgot-password-form.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {FormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
   MatButtonModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatIconModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
+    CommonModule,
     FormsModule,
+    RouterModule,
     TranslateModule,
 
     MatFormFieldModule,
@@ -22,7 +26,7 @@ import {
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    BrowserAnimationsModule
+    MatIconModule
   ],
   declarations: [
     ForgotPasswordFormComponent

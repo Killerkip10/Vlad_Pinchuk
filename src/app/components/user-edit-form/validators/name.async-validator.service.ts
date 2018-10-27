@@ -4,13 +4,13 @@ import {Observable} from 'rxjs';
 import {catchError, delay, map, switchMap} from 'rxjs/internal/operators';
 import {of} from 'rxjs';
 
-import {UserService} from '../../../services';
+import {ProfileService} from '../../../services';
 
 @Injectable()
 export class NameAsyncValidatorService {
   private name: string;
 
-  constructor(public userService: UserService) {}
+  constructor(public profileService: ProfileService) {}
 
   public nameAsyncValidator(): ValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> =>
@@ -29,11 +29,11 @@ export class NameAsyncValidatorService {
     this.name = value;
 
     if (!this.checkLength(name, 2)) {
-      result = {name: {message: 'Must server one or two words'}};
+      result = {name: {message: 'ERROR.WORDS-COUNT'}};
     }else if (!this.checkCamelSensitive(name)) {
-      result = {name: {message: 'Must server camel case sensitive'}};
+      result = {name: {message: 'ERROR.CAMEL'}};
     }else if (!this.checkLatinLetter(name)) {
-      result = {name: {message: 'Must server only latin letters'}};
+      result = {name: {message: 'ERROR.LATIN'}};
     }
 
     return result;
@@ -43,10 +43,10 @@ export class NameAsyncValidatorService {
       return of(value);
     }
 
-    return this.userService.checkName(this.name)
+    return this.profileService.checkName(this.name)
       .pipe(
         map(() => null),
-        catchError(() => of({name: {message: 'This name already exists'}}))
+        catchError(() => of({name: {message: 'ERROR.EXIST'}}))
       );
   }
   private findWords(value: string): string[] {

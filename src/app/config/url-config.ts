@@ -8,10 +8,9 @@ export const urlConfig = {
   forgot: url + 'forgot/',
 
   getUsers: url + 'users/',
-  getUser: url + 'users/',
-  getProfile: url + 'user/profile',
+  getProfile: url + 'users/profile',
+  editProfile: url + 'users/profile',
   deleteUser: url + 'users/',
-  updateUser: url + 'users/',
   addUser: url + 'users/add/',
-  checkName: url + 'user/check/'
+  checkName: url + 'users/check/'
 };

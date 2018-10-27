@@ -3,13 +3,13 @@
     <mat-tab *ngFor="let tab of tabs" [label]="tab | translate"></mat-tab>
   </mat-tab-group>
 
-  <div [ngSwitch]="tabIndex" *ngIf="userService.getUserSubject | async; else spinner">
+  <div [ngSwitch]="tabIndex" *ngIf="profileService.getUserSubject | async; else spinner">
     <ng-template ngSwitchCase="0">
-      <app-user-info [userInfo]="userService.getUserSubject | async"></app-user-info>
+      <app-user-info [userInfo]="profileService.getUserSubject | async"></app-user-info>
     </ng-template>
 
     <ng-template ngSwitchCase="1">
-      <app-user-edit-form [user]="userService.getUserSubject | async"></app-user-edit-form>
+      <app-user-edit-form [user]="profileService.getUserSubject | async"></app-user-edit-form>
     </ng-template>
   </div>
 

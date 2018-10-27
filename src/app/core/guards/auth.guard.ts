@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 
-import {TokenService} from '../services';
+import {TokenService} from '../../services';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

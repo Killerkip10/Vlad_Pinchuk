@@ -4,6 +4,7 @@ mat-toolbar{
   height: 56px;
   >:last-child{
     display: flex;
+    align-items: center;
     mat-select{
       display: block;
       width: 50px;

@@ -11,7 +11,7 @@ import {AuthService} from '../../services';
 export class HeaderComponent {
   constructor(
     private authService: AuthService,
-    private translateService: TranslateService
+    public translateService: TranslateService
   ) {}
 
   public selectLanguage(event): void {

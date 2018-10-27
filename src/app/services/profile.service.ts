@@ -8,7 +8,7 @@ import {urlConfig, options} from '../config';
 import {TokenService} from './token.service';
 
 @Injectable()
-export class UserService {
+export class ProfileService {
   private user = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient) {
@@ -31,7 +31,7 @@ export class UserService {
     this.user.next(null);
   }
   public editUser(user: User) {
-    return this.http.put<HttpResponse<User>>(urlConfig.updateUser + TokenService.decodeToken().id, user, options)
+    return this.http.put<HttpResponse<User>>(urlConfig.editProfile, user, options)
       .pipe(
         map(resp => {
           this.user.next(resp.body);

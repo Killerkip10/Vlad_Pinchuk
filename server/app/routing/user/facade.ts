@@ -54,12 +54,17 @@ export function add(user: User): User {
   return newUser;
 }
 export function getProfile(token: string): User | undefined {
-  const tokenObj = verifyToken(token) as {id: string};
+  const tokenObj = verifyToken(token);
 
   return users.find(v => v.id === tokenObj.id);
 }
+export function editProfile(updateUser: User, token: string): User | undefined {
+  const tokenObj = verifyToken(token);
+
+  return update(updateUser, tokenObj.id);
+}
 export function checkName(name: string, token: string): User | undefined {
-  const tokenObj = verifyToken(token) as {id: string};
+  const tokenObj = verifyToken(token);
 
   return users.find(v => v.name === name && v.id !== tokenObj.id);
 }

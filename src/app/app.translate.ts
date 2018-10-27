@@ -16,6 +16,6 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppTranslate {}
 
-function HttpLoaderFactory(http: HttpClient) {
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'http://localhost:3030/i18n/', '.json');
 }

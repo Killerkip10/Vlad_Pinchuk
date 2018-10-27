@@ -21,6 +21,9 @@ export function add(req: Request, res: Response, next: NextFunction): void {
 export function getProfile(req: Request, res: Response, next: NextFunction): void {
   setTimeout(() => res.status(200).send(facade.getProfile(req.cookies.token)), 3 * 1000);
 }
+export function editProfile(req: Request, res: Response, next: NextFunction): void {
+  res.status(200).send(facade.editProfile(req.body, req.cookies.token));
+}
 export function checkName(req: Request, res: Response, next: NextFunction): void {
   const user = facade.checkName(req.params.name, req.cookies.token);
 
@@ -30,3 +33,4 @@ export function checkName(req: Request, res: Response, next: NextFunction): void
     res.status(200).send();
   }
 }
+

@@ -9,7 +9,7 @@ export function dateValidator(control: AbstractControl): ValidationErrors | null
   const value = control.value.trim();
 
   if (!moment(value, ['YYYY/MM/DD', 'DD MMMM YYYY', 'DD-MMM-YY'], true).isValid()) {
-    return {date: {message: 'Date is invalid'}};
+    return {date: {message: 'ERROR.DATE'}};
   }
 
   return null;
