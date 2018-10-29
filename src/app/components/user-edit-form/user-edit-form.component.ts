@@ -4,7 +4,7 @@ import {Validators, FormBuilder} from '@angular/forms';
 import * as moment from 'moment';
 
 import {User} from '../../models/index';
-import {ProfileService} from '../../services';
+import {ProfileService} from '../../core/services';
 import {
   NameAsyncValidatorService,
   ageValidator,

@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {UserProfileComponent} from './user-profile-page.component';
+import {UserListComponent} from './user-list.component';
 import {AuthGuard} from '../../core/guards';
 
 const routes: Routes = [
   {
-    path: 'user-profile',
-    component: UserProfileComponent,
+    path: 'user-list',
+    component: UserListComponent,
     pathMatch: 'full',
     canActivate: [AuthGuard]
   }
@@ -18,4 +18,4 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ]
 })
-export class UserProfileRouting {}
+export class UserListRouting {}

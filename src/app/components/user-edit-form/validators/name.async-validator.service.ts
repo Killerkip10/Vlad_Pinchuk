@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {catchError, delay, map, switchMap} from 'rxjs/internal/operators';
 import {of} from 'rxjs';
 
-import {ProfileService} from '../../../services';
+import {ProfileService} from '../../../core/services';
 
 @Injectable()
 export class NameAsyncValidatorService {

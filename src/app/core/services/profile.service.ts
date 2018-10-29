@@ -3,8 +3,8 @@ import {BehaviorSubject} from 'rxjs';
 import {map} from 'rxjs/internal/operators';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 
-import {User} from '../models/index';
-import {urlConfig, options} from '../config';
+import {User} from '../../models/index';
+import {urlConfig, options} from '../../config';
 import {TokenService} from './token.service';
 
 @Injectable()

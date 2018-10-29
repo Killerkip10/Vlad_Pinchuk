@@ -12,5 +12,6 @@ export const urlConfig = {
   editProfile: url + 'users/profile',
   deleteUser: url + 'users/',
   addUser: url + 'users/add/',
-  checkName: url + 'users/check/'
+  checkName: url + 'users/check/',
+  findUsers: url + 'users/find/'
 };

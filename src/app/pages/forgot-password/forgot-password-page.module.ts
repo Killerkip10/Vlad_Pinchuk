@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 
-import {ForgotPasswordPageComponent} from './pages/forgot-password-page.component';
+import {ForgotPasswordPageComponent} from './forgot-password-page.component';
 import {ForgotPasswordPageRouting} from './forgot-password-page.routing';
 import {ForgotPasswordFormModule} from '../../components';
 

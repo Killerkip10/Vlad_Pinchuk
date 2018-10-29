@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {ProfileService} from '../../../services';
+import {ProfileService} from '../../core/services';
 
 @Component({
   selector: 'app-user-info-page',

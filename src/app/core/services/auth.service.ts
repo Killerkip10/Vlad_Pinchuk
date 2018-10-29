@@ -7,10 +7,8 @@ import {HttpClient} from '@angular/common/http';
 
 import {urlConfig, options} from '../../config';
 import {Login} from '../../models';
-import {
-  TokenService,
-  ProfileService
-} from '../../services';
+import {TokenService} from './token.service';
+import {ProfileService} from './profile.service';
 
 @Injectable()
 export class AuthService {

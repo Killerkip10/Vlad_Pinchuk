@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
 
-import {UserProfileComponent} from './pages/user-profile-page.component';
+import {UserProfileComponent} from './user-profile-page.component';
 import {UserProfileRouting} from './user-profile-page.routing';
-import {ProfileService} from '../../services';
 import {
   MatTabsModule,
   MatSnackBarModule,
@@ -32,11 +31,8 @@ import {
   declarations: [
     UserProfileComponent
   ],
-  providers: [
-    ProfileService
-  ],
   exports: [
     UserProfileComponent
   ]
 })
-export class UserProfileModule { }
+export class UserProfilePageModule { }
