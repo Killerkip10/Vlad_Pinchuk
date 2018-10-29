@@ -8,8 +8,9 @@
           type="text"
           formControlName="name"
           [placeholder]="'USER-PROFILE.EDIT.NAME' | translate">
+        <mat-spinner *ngIf="name.pending" matSuffix [diameter]="18"></mat-spinner>
       </mat-form-field>
-      <p *ngIf="name.errors?.name">{{name.errors?.name.message}}</p>
+      <p *ngIf="name.errors?.name">{{name.errors?.name.message | translate}}</p>
     </div>
 
     <div>
@@ -20,7 +21,7 @@
           formControlName="age"
           [placeholder]="'USER-PROFILE.EDIT.AGE' | translate">
       </mat-form-field>
-      <p *ngIf="age.errors?.age">{{age.errors?.age.message}}</p>
+      <p *ngIf="age.errors?.age">{{age.errors?.age.message | translate:{from: 18, to: 65} }}</p>
     </div>
 
     <div>
@@ -31,7 +32,7 @@
           formControlName="dateOfBirth"
           [placeholder]="'USER-PROFILE.EDIT.DATE-OF-BIRTH' | translate">
       </mat-form-field>
-      <p *ngIf="dateOfBirth.errors?.date">{{dateOfBirth.errors?.date.message}}</p>
+      <p *ngIf="dateOfBirth.errors?.date">{{dateOfBirth.errors?.date.message | translate}}</p>
     </div>
 
     <div>
@@ -42,7 +43,7 @@
           formControlName="dateOfFirstLogin"
           [placeholder]="'USER-PROFILE.EDIT.DATE-OF-FIRST-LOGIN' | translate">
       </mat-form-field>
-      <p *ngIf="dateOfFirstLogin.errors?.date">{{dateOfFirstLogin.errors?.date.message}}</p>
+      <p *ngIf="dateOfFirstLogin.errors?.date">{{dateOfFirstLogin.errors?.date.message | translate}}</p>
     </div>
 
     <div>
@@ -53,7 +54,7 @@
           formControlName="dateOfNextNot"
           [placeholder]="'USER-PROFILE.EDIT.DATE-OF-NEXT-NOT' | translate">
       </mat-form-field>
-      <p *ngIf="dateOfNextNot.errors?.date">{{dateOfNextNot.errors?.date.message}}</p>
+      <p *ngIf="dateOfNextNot.errors?.date">{{dateOfNextNot.errors?.date.message | translate}}</p>
     </div>
 
     <div class="legend">

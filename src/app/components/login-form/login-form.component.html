@@ -15,6 +15,7 @@
               name="login"
               type="text"
               [placeholder]="'LOGIN' | translate">
+            <mat-icon matSuffix>account_circle</mat-icon>
           </mat-form-field>
         </div>
 
@@ -27,6 +28,7 @@
               name="password"
               type="password"
               [placeholder]="'PASSWORD' | translate">
+            <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>
         </div>
 
@@ -39,11 +41,8 @@
             type="submit">
               {{'SIGN-IN' | translate}}
           </button>
-          <a
-            mat-button
-            [routerLink]="['/forgot-password']">
-              {{'FORGOT-PASSWORD' | translate}}
-          </a>
+
+          <a mat-button [routerLink]="['/forgot-password']">{{'FORGOT-PASSWORD' | translate}}</a>
         </div>
 
         <mat-divider></mat-divider>

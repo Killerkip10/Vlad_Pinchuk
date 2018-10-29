@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {UserService} from '../../../services';
+import {ProfileService} from '../../../services';
 
 @Component({
   selector: 'app-user-info-page',
@@ -11,7 +11,7 @@ export class UserProfileComponent {
   public tabs: string[] = ['USER-PROFILE.TABS.PROFILE', 'USER-PROFILE.TABS.EDIT'];
   public tabIndex = 0;
 
-  constructor(public userService: UserService) {}
+  constructor(public profileService: ProfileService) {}
 
   public selectTab(changeTab): void {
     this.tabIndex = changeTab.index;

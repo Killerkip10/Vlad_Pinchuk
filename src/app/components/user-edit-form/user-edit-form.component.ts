@@ -4,7 +4,7 @@ import {Validators, FormBuilder} from '@angular/forms';
 import * as moment from 'moment';
 
 import {User} from '../../models/index';
-import {UserService} from '../../services';
+import {ProfileService} from '../../services';
 import {
   NameAsyncValidatorService,
   ageValidator,
@@ -23,7 +23,7 @@ export class UserEditFormComponent implements OnInit {
   public userForm;
 
   constructor(
-    private userService: UserService,
+    private profileService: ProfileService,
     private nameAsyncValidService: NameAsyncValidatorService,
     private fb: FormBuilder,
     private snackBar: MatSnackBar
@@ -56,7 +56,7 @@ export class UserEditFormComponent implements OnInit {
   }
 
   public submit(): void {
-    this.userService.editUser(this.userForm.value)
+    this.profileService.editUser(this.userForm.value)
       .subscribe(
         () => this.snackBar.open('Updated', 'Profile', {duration: 3000})
       );

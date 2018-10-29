@@ -2,20 +2,22 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 import {LoginFormComponent} from './login-form.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
   MatButtonModule,
   MatDividerModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatIconModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
+    CommonModule,
     RouterModule,
     TranslateModule,
     FormsModule,
@@ -24,9 +26,9 @@ import {
     MatCardModule,
     MatDividerModule,
     MatInputModule,
+    MatIconModule,
     MatButtonModule,
-    MatToolbarModule,
-    BrowserAnimationsModule
+    MatToolbarModule
   ],
   declarations: [
     LoginFormComponent

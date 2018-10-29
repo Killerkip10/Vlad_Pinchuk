@@ -20,7 +20,15 @@
   "ERROR": {
     "BASE": "Something bad happened; Please try again later",
     "LOGIN": "Invalid login or password",
-    "FORGOT": "Invalid login"
+    "FORGOT": "Invalid login",
+    "LATIN": "Must server only latin letters",
+    "WORDS-COUNT": "Must server one or two words",
+    "CAMEL": "Must server camel case sensitive",
+    "EXIST": "This name already exists",
+    "NOT-NUMBER": "It's not a number",
+    "INTEGER": "Must server integer",
+    "RANGE": "Age range from {{from}} till {{to}}",
+    "DATE": "Date is invalid"
   },
   "LOGIN": "Login",
   "PASSWORD": "Password",

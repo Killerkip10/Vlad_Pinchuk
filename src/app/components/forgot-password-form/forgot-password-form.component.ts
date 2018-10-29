@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {AuthService} from '../../services';
+import {AuthService} from '../../core/services';
 
 @Component({
   selector: 'app-forgot-password',
@@ -9,21 +9,15 @@ import {AuthService} from '../../services';
 })
 export class ForgotPasswordFormComponent {
   public errorMessage = '';
-  public password = ' ';
+  public password = '';
 
   constructor(private authService: AuthService) {}
 
   public submit(forgotForm): void {
-    if (!forgotForm.valid) {
-      return;
-    }
-
+    this.errorMessage = '';
     this.authService.forgotPassword(forgotForm.value.login)
       .subscribe(
-        password => {
-            this.password = password;
-            this.errorMessage = '';
-          },
+        password => this.password = password,
         err => this.errorMessage = err
       );
   }

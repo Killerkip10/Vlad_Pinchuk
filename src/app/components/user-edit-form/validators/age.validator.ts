@@ -8,13 +8,13 @@ export function ageValidator(control: AbstractControl): ValidationErrors | null 
   const num = control.value.trim();
 
   if (isNaN(parseFloat(num)) && !isFinite(num)) {
-    return {age: {message: 'It\'s not a number'}};
+    return {age: {message: 'ERROR.NOT-NUMBER'}};
   }
   if (num % 1 !== 0) {
-    return {age: {message: 'Must server integer'}};
+    return {age: {message: 'ERROR.INTEGER'}};
   }
   if (num < 18 || num > 65) {
-    return {age: {message: 'Age range from 18 till 65'}};
+    return {age: {message: 'ERROR.RANGE'}};
   }
 
   return null;

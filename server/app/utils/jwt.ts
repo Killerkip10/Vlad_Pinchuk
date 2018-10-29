@@ -2,13 +2,17 @@ import {sign, verify} from 'jsonwebtoken';
 
 import {config} from '../../config';
 
-export function createToken(obj: object): string{
+interface TokenObj{
+  id: string;
+}
+
+export function createToken(obj: object): string {
   return sign(obj, config.jwt.secretKey, {algorithm: config.jwt.algorithm});
 }
-export function verifyToken(token: string = ''){
+export function verifyToken(token: string = ''): TokenObj {
   try {
-    return verify(token, config.jwt.secretKey, {algorithms: [config.jwt.algorithm]});
-  }catch (err){
+    return verify(token, config.jwt.secretKey, {algorithms: [config.jwt.algorithm]}) as TokenObj;
+  }catch (err) {
     err.status = 401;
     throw err;
   }

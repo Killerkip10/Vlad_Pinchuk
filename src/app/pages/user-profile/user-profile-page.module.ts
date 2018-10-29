@@ -4,13 +4,12 @@ import {TranslateModule} from '@ngx-translate/core';
 
 import {UserProfileComponent} from './pages/user-profile-page.component';
 import {UserProfileRouting} from './user-profile-page.routing';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ProfileService} from '../../services';
 import {
   MatTabsModule,
   MatSnackBarModule,
   MatProgressSpinnerModule
 } from '@angular/material';
-
 import {
   UserEditFormModule,
   UserInfoModule,
@@ -27,12 +26,14 @@ import {
     MatTabsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    BrowserAnimationsModule,
 
     UserProfileRouting,
   ],
   declarations: [
     UserProfileComponent
+  ],
+  providers: [
+    ProfileService
   ],
   exports: [
     UserProfileComponent

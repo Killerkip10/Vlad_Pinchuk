@@ -14,9 +14,13 @@ export function login(req: Request, res: Response, next: NextFunction){
     })
     .catch(err => next(err));
 }
-export function registration() {
-
-}
 export function forgotPassword(req: Request, res: Response, next: NextFunction) {
-  res.status(200).send(facade.forgotPassword(req.params.login));
+  const password = facade.forgotPassword(req.params.login);
+
+  if (password) {
+    res.status(200).send(password);
+  } else {
+    res.status(404).send();
+  }
 }
+
