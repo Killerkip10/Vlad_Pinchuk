@@ -30,6 +30,10 @@
     "RANGE": "Age range from {{from}} till {{to}}",
     "DATE": "Date is invalid"
   },
+  "SIDENAV": {
+    "PROFILE": "Profile",
+    "SEARCH-USERS": "Search users"
+  },
   "LOGIN": "Login",
   "PASSWORD": "Password",
   "FORGOT-PASSWORD": "Forgot password",

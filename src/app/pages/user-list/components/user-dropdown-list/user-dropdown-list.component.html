@@ -1,9 +1,0 @@
-<div>
-  <div>
-    <input #searchUser type="text">
-  </div>
-
-  <div>
-    <app-user-dropdown-item *ngFor="let item of inputObs | async" [user]="item" (click)="onSelect.emit(item)"></app-user-dropdown-item>
-  </div>
-</div>

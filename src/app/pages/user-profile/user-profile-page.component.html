@@ -3,7 +3,7 @@
     <mat-tab *ngFor="let tab of tabs" [label]="tab | translate"></mat-tab>
   </mat-tab-group>
 
-  <div [ngSwitch]="tabIndex" *ngIf="profileService.getUserSubject | async; else spinner">
+  <div class="container" [ngSwitch]="tabIndex" *ngIf="profileService.getUserSubject | async; else spinner">
     <ng-template ngSwitchCase="0">
       <app-user-info [userInfo]="profileService.getUserSubject | async"></app-user-info>
     </ng-template>

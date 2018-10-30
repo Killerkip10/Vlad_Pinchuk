@@ -1,0 +1,4 @@
+<section>
+  <app-user-choosen [user]="selectedUser" (click)="changeComboBox = !changeComboBox"></app-user-choosen>
+  <app-user-dropdown-list (select)="selectUser($event)" *ngIf="changeComboBox"></app-user-dropdown-list>
+</section>

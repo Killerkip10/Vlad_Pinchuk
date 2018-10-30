@@ -69,9 +69,5 @@ export function checkName(name: string, token: string): User | undefined {
   return users.find(v => v.name === name && v.id !== tokenObj.id);
 }
 export function findUsers(name: string): ShortUser[] {
-  const findedUsers =  users.filter(v => v.name.toLowerCase().startsWith(name.toLowerCase()));
-
-  findedUsers.forEach(v => delete v.password);
-
-  return findedUsers;
+  return users.filter(v => v.name.toLowerCase().startsWith(name.toLowerCase()));
 }

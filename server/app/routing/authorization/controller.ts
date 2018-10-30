@@ -18,7 +18,7 @@ export function forgotPassword(req: Request, res: Response, next: NextFunction) 
   const password = facade.forgotPassword(req.params.login);
 
   if (password) {
-    res.status(200).send(password);
+    res.status(200).json(password);
   } else {
     res.status(404).send();
   }

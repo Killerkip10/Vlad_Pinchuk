@@ -7,7 +7,7 @@ import {ProfileService} from '../../core/services';
   templateUrl: './user-profile-page.component.html',
   styleUrls: ['./user-profile-page.component.scss']
 })
-export class UserProfileComponent {
+export class UserProfilePageComponent {
   public tabs: string[] = ['USER-PROFILE.TABS.PROFILE', 'USER-PROFILE.TABS.EDIT'];
   public tabIndex = 0;
 

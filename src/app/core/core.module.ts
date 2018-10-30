@@ -9,7 +9,8 @@ import {AuthGuard} from './guards';
 import {
   MatButtonModule,
   MatToolbarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatIconModule
 } from '@angular/material';
 import {
   AuthService,
@@ -29,6 +30,7 @@ import {
 
     RouterModule,
 
+    MatIconModule,
     MatButtonModule,
     MatSelectModule,
     MatToolbarModule

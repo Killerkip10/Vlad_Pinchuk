@@ -1,0 +1,12 @@
+section{
+  max-width: 500px;
+  position: relative;
+  app-user-dropdown-list{
+    position: absolute;
+    max-height: calc(100vh - 200px);
+    overflow: auto;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+}

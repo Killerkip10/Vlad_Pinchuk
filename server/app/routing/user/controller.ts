@@ -34,6 +34,6 @@ export function checkName(req: Request, res: Response, next: NextFunction): void
   }
 }
 export function findUsers(req: Request, res: Response, next: NextFunction): void{
-  res.status(200).send(facade.findUsers(req.params.name));
+  setTimeout(() => res.status(200).send(facade.findUsers(req.params.name)), 1000);
 }
 

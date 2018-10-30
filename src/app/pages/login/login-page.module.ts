@@ -1,19 +1,43 @@
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+import {TranslateModule} from '@ngx-translate/core';
+import {FormsModule} from '@angular/forms';
 
 import {LoginPageComponent} from './login-page.component';
 import {LoginPageRouting} from './login-page.routing';
-import {LoginFormModule} from '../../components';
+import {LoginFormComponent} from './components';
+import {
+  MatFormFieldModule,
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatDividerModule,
+  MatToolbarModule,
+  MatIconModule
+} from '@angular/material';
+
 
 @NgModule({
   imports: [
-    LoginFormModule,
+    CommonModule,
+    RouterModule,
+    TranslateModule,
+    FormsModule,
+
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
 
     LoginPageRouting
   ],
   declarations: [
-    LoginPageComponent
-  ],
-  exports: [
+    LoginFormComponent,
+
     LoginPageComponent
   ]
 })
