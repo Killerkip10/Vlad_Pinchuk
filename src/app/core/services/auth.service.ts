@@ -1,14 +1,22 @@
 import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/internal/operators';
-import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
+import {HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
-import {urlConfig, options} from '../../config';
+import {urlConfig} from '../../config';
 import {Login} from '../../models';
 import {TokenService} from './token.service';
 import {ProfileService} from './profile.service';
+
+const options = <object>{
+  headers: new HttpHeaders({
+    'content-type': 'application/json'
+  }),
+  observe: 'response',
+  withCredentials: true,
+};
 
 @Injectable()
 export class AuthService {

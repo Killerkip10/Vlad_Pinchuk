@@ -3,17 +3,17 @@ import {CommonModule} from '@angular/common';
 
 import {UserListComponent} from './user-list.component';
 import {
+  UserChosenComponent,
+  UserDropdownListComponent,
+  UserDropdownItemComponent
+} from './components';
+import {
   MatCardModule,
   MatIconModule,
   MatInputModule,
   MatFormFieldModule,
   MatProgressSpinnerModule
 } from '@angular/material';
-import {
-  UserChoosenComponent,
-  UserDropdownListComponent,
-  UserDropdownItemComponent
-} from './components';
 
 @NgModule({
   imports: [
@@ -27,7 +27,7 @@ import {
   ],
   declarations: [
     UserListComponent,
-    UserChoosenComponent,
+    UserChosenComponent,
     UserDropdownListComponent,
     UserDropdownItemComponent
   ],

@@ -6,5 +6,12 @@ import {Component} from '@angular/core';
   styleUrls: ['./search-users-page.component.scss']
 })
 export class SearchUsersPageComponent {
+  public tabs = ['SEARCH-USER.TABS.SEARCH', 'SEARCH-USER.TABS.ITEMS'];
+  public tabIndex = 0;
+
   constructor() {}
+
+  public selectTab(changeTab): void {
+    this.tabIndex = changeTab.index;
+  }
 }

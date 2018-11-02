@@ -1,0 +1,19 @@
+.combobox{
+  display: flex;
+  align-items: center;
+  height: 30px;
+  >div{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+  mat-icon{
+    background-color: rgb(245, 245, 245);
+    align-items: stretch;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    text-align: center;
+  }
+}

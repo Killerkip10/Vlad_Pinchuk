@@ -8,7 +8,7 @@ import {ProfileService} from '../../core/services';
   styleUrls: ['./user-profile-page.component.scss']
 })
 export class UserProfilePageComponent {
-  public tabs: string[] = ['USER-PROFILE.TABS.PROFILE', 'USER-PROFILE.TABS.EDIT'];
+  public tabs = ['USER-PROFILE.TABS.PROFILE', 'USER-PROFILE.TABS.EDIT'];
   public tabIndex = 0;
 
   constructor(public profileService: ProfileService) {}

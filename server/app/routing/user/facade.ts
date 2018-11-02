@@ -1,6 +1,6 @@
 const uuid = require('uuid/v4');
 
-import {User, ShortUser} from '../../../models';
+import {User} from '../../../models';
 import {verifyToken} from '../../utils/jwt';
 let users: User[] = require('../../../datas/users.json');
 
@@ -68,6 +68,6 @@ export function checkName(name: string, token: string): User | undefined {
 
   return users.find(v => v.name === name && v.id !== tokenObj.id);
 }
-export function findUsers(name: string): ShortUser[] {
-  return users.filter(v => v.name.toLowerCase().startsWith(name.toLowerCase()));
+export function findUsers(name: string): User[] {
+  return name ? users.filter(v => v.name.toLowerCase().startsWith(name.toLowerCase())) : users;
 }

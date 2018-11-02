@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 
-import {ShortUser} from '../../../models';
+import {User} from '../../../models';
 
 @Component({
   selector: 'app-user-dropdown-item',
@@ -8,7 +8,7 @@ import {ShortUser} from '../../../models';
   styleUrls: ['./user-dropdown-item.component.scss']
 })
 export class UserDropdownItemComponent {
-  @Input() public user: ShortUser;
+  @Input() public user: User;
 
   constructor() { }
 }

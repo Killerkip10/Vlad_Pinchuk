@@ -11,7 +11,7 @@ router.route('/users/profile')
   .get(controller.getProfile)
   .put(controller.editProfile);
 
-router.route('/users/find/:name')
+router.route('/users/find/')
   .get(controller.findUsers);
 
 router.route('/users/check/:name')

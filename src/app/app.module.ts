@@ -18,7 +18,6 @@ import {
   SearchUsersPageModule
 } from './pages';
 
-
 @NgModule({
   imports: [
     CoreModule,

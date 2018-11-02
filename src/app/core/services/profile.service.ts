@@ -1,11 +1,19 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {map} from 'rxjs/internal/operators';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 
 import {User} from '../../models/index';
-import {urlConfig, options} from '../../config';
+import {urlConfig} from '../../config';
 import {TokenService} from './token.service';
+
+const options = <object>{
+  headers: new HttpHeaders({
+    'content-type': 'application/json'
+  }),
+  observe: 'response',
+  withCredentials: true
+};
 
 @Injectable()
 export class ProfileService {

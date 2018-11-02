@@ -17,6 +17,12 @@
       "DATE-FORMATS": "Date formats"
     }
   },
+  "SEARCH-USER": {
+    "TABS": {
+      "SEARCH": "Search",
+      "ITEMS": "Items"
+    }
+  },
   "ERROR": {
     "BASE": "Something bad happened; Please try again later",
     "LOGIN": "Invalid login or password",

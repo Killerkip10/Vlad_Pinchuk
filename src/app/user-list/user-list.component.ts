@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {ShortUser} from '../models';
+import {User} from '../models';
 
 @Component({
   selector: 'app-user-list',
@@ -8,13 +8,13 @@ import {ShortUser} from '../models';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent {
-  public selectedUser: ShortUser;
-  public changeComboBox = false;
+  public selectedUser: User;
+  public comboBox = false;
 
   constructor() { }
 
-  public selectUser(user: ShortUser): void {
-    this.changeComboBox = !this.changeComboBox;
+  public selectUser(user: User): void {
+    this.comboBox = !this.comboBox;
     this.selectedUser = user;
   }
 }

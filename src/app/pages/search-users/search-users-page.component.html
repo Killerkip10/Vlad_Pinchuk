@@ -1,1 +1,16 @@
-<app-user-list></app-user-list>
+<section>
+  <mat-tab-group (selectedTabChange)="selectTab($event)">
+    <mat-tab *ngFor="let tab of tabs" [label]="tab | translate"></mat-tab>
+  </mat-tab-group>
+
+  <div [ngSwitch]="tabIndex" class="container">
+    <ng-template ngSwitchCase="0">
+      <app-user-list></app-user-list>
+    </ng-template>
+
+    <ng-template ngSwitchCase="1">
+      <app-item-list></app-item-list>
+    </ng-template>
+  </div>
+</section>
+

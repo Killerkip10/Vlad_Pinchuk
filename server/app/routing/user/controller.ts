@@ -33,7 +33,7 @@ export function checkName(req: Request, res: Response, next: NextFunction): void
     res.status(200).send();
   }
 }
-export function findUsers(req: Request, res: Response, next: NextFunction): void{
-  setTimeout(() => res.status(200).send(facade.findUsers(req.params.name)), 1000);
+export function findUsers(req: Request, res: Response, next: NextFunction): void {
+  setTimeout(() => res.status(200).send(facade.findUsers(req.query.name)), 1000);
 }
 

@@ -9,7 +9,7 @@ import {TokenService} from './core/services';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private tokenService = TokenService;
+  public tokenService = TokenService;
 
   constructor(translateService: TranslateService) {
     translateService.addLangs(['en', 'ru']);
