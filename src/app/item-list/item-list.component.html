@@ -1,0 +1,13 @@
+<div>
+  <app-search (search)="onSearch($event)"></app-search>
+
+  <app-path [path]="path"></app-path>
+
+  <div class="list">
+    <app-item
+      *ngFor="let value of nodes"
+      [node]="value"
+      (select)="onSelect($event)">
+    </app-item>
+  </div>
+</div>

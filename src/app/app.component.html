@@ -1,5 +1,16 @@
 <app-header></app-header>
-<main>
-  <router-outlet></router-outlet>
-</main>
+
+<mat-drawer-container class="container">
+  <mat-drawer *ngIf="tokenService.getToken()" mode="side" opened>
+    <mat-list>
+      <a mat-list-item [routerLink]="['user-profile']" routerLinkActive="active">{{'SIDENAV.PROFILE' | translate}}</a>
+      <a mat-list-item [routerLink]="['search-users']" routerLinkActive="active">{{'SIDENAV.SEARCH-USERS' | translate}}</a>
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
 <app-footer></app-footer>

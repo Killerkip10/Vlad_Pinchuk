@@ -1,0 +1,10 @@
+<div class="item" *ngIf="node?.open">
+  <span (click)="addItems($event)">{{node?.value}}</span>
+
+  <div *ngIf="node?.children">
+    <app-item
+      *ngFor="let value of node?.children"
+      [node]="value"
+      (select)="onSelect($event)"></app-item>
+  </div>
+</div>

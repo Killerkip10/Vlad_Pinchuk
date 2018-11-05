@@ -3,7 +3,7 @@ import {createToken} from '../../utils/jwt';
 
 const users: User[] = require('../../../datas/users.json');
 
-export function login(login: string, password: string): Promise<string | null>{
+export function login(login: string, password: string): Promise<string | null> {
   return new Promise((res, rej) => {
     const user = users.find(v => v.login === login && v.password === password);
 

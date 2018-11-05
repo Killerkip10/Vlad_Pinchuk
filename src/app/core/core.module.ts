@@ -1,18 +1,21 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {TranslateModule} from '@ngx-translate/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import {RouterModule} from '@angular/router';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AuthService} from './services';
 import {AuthGuard} from './guards';
 import {
   MatButtonModule,
   MatToolbarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatIconModule
 } from '@angular/material';
+import {
+  AuthService,
+  SearchUserService
+} from './services';
 import {
   HeaderComponent,
   FooterComponent
@@ -25,9 +28,9 @@ import {
     TranslateModule,
     BrowserAnimationsModule,
 
-    CommonModule,
     RouterModule,
 
+    MatIconModule,
     MatButtonModule,
     MatSelectModule,
     MatToolbarModule
@@ -38,6 +41,8 @@ import {
   ],
   providers: [
     AuthService,
+    SearchUserService,
+
     AuthGuard
   ],
   exports: [

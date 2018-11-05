@@ -1,42 +1,47 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
+import {ReactiveFormsModule} from '@angular/forms';
 
-import {UserProfileComponent} from './pages/user-profile-page.component';
+import {UserProfilePageComponent} from './user-profile-page.component';
 import {UserProfileRouting} from './user-profile-page.routing';
-import {ProfileService} from '../../services';
+import {
+  UserEditFormComponent,
+  UserInfoComponent
+} from './components';
 import {
   MatTabsModule,
   MatSnackBarModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatToolbarModule,
   MatProgressSpinnerModule
 } from '@angular/material';
-import {
-  UserEditFormModule,
-  UserInfoModule,
-} from '../../components';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
-
-    UserEditFormModule,
-    UserInfoModule,
+    ReactiveFormsModule,
 
     MatTabsModule,
     MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
     MatProgressSpinnerModule,
 
     UserProfileRouting,
   ],
   declarations: [
-    UserProfileComponent
-  ],
-  providers: [
-    ProfileService
-  ],
-  exports: [
-    UserProfileComponent
+    UserEditFormComponent,
+    UserInfoComponent,
+
+    UserProfilePageComponent,
   ]
 })
-export class UserProfileModule { }
+export class UserProfilePageModule { }

@@ -1,0 +1,11 @@
+<section>
+  <app-user-chosen [user]="selectedUser" (click)="dropDownList()">
+    <mat-spinner *ngIf="!(users$ | async).loaded" matSuffix [diameter]="18"></mat-spinner>
+  </app-user-chosen>
+
+  <app-user-dropdown-list
+    [users]="(users$ | async).users"
+    (select)="selectUser($event)"
+    *ngIf="dropDownListFlag">
+  </app-user-dropdown-list>
+</section>

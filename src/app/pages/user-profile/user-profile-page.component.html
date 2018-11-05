@@ -1,0 +1,21 @@
+<section>
+  <mat-tab-group (selectedTabChange)="selectTab($event)">
+    <mat-tab *ngFor="let tab of tabs" [label]="tab | translate"></mat-tab>
+  </mat-tab-group>
+
+  <div class="container" [ngSwitch]="tabIndex" *ngIf="(profile$ | async).loaded; else spinner">
+    <ng-template ngSwitchCase="0">
+      <app-user-info [userInfo]="(profile$ | async).profile"></app-user-info>
+    </ng-template>
+
+    <ng-template ngSwitchCase="1">
+      <app-user-edit-form [user]="(profile$ | async).profile"></app-user-edit-form>
+    </ng-template>
+  </div>
+
+  <ng-template #spinner>
+    <div class="spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</section>

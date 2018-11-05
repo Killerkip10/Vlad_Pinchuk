@@ -17,6 +17,12 @@
       "DATE-FORMATS": "Date formats"
     }
   },
+  "SEARCH-USER": {
+    "TABS": {
+      "SEARCH": "Search",
+      "ITEMS": "Items"
+    }
+  },
   "ERROR": {
     "BASE": "Something bad happened; Please try again later",
     "LOGIN": "Invalid login or password",
@@ -29,6 +35,10 @@
     "INTEGER": "Must server integer",
     "RANGE": "Age range from {{from}} till {{to}}",
     "DATE": "Date is invalid"
+  },
+  "SIDENAV": {
+    "PROFILE": "Profile",
+    "SEARCH-USERS": "Search users"
   },
   "LOGIN": "Login",
   "PASSWORD": "Password",

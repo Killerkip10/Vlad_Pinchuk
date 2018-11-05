@@ -1,0 +1,13 @@
+section{
+  box-sizing: border-box;
+  border: 2px solid black;
+  position: relative;
+  app-user-dropdown-list{
+    position: absolute;
+    max-height: calc(100vh - 240px);
+    overflow: auto;
+    top: 100%;
+    left: -2px;
+    right: -2px;
+  }
+}
