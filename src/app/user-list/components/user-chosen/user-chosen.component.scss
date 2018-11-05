@@ -1,4 +1,4 @@
-.combobox{
+.chosen{
   display: flex;
   align-items: center;
   height: 30px;
@@ -9,7 +9,8 @@
     padding: 5px;
   }
   mat-icon{
-    background-color: rgb(245, 245, 245);
+    color: white;
+    background-color: black;
     align-items: stretch;
     width: 30px;
     height: 30px;

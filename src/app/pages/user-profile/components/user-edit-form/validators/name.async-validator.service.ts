@@ -4,13 +4,13 @@ import {Observable} from 'rxjs';
 import {catchError, delay, map, switchMap} from 'rxjs/internal/operators';
 import {of} from 'rxjs';
 
-import {ProfileService} from '../../../../../core/services';
+import {SearchUserService} from '../../../../../core/services';
 
 @Injectable()
 export class NameAsyncValidatorService {
   private name: string;
 
-  constructor(public profileService: ProfileService) {}
+  constructor(public searchUserService: SearchUserService) {}
 
   public nameAsyncValidator(): ValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> =>
@@ -40,7 +40,7 @@ export class NameAsyncValidatorService {
   private nameHttpValidator(value: ValidationErrors): Observable<ValidationErrors | null> {
     if (value || !this.name) { return of(value); }
 
-    return this.profileService.checkName(this.name)
+    return this.searchUserService.checkName(this.name)
       .pipe(
         map(() => null),
         catchError(() => of({name: {message: 'ERROR.EXIST'}}))

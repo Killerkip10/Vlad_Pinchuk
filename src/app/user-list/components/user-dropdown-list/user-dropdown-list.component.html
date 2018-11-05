@@ -2,13 +2,12 @@
   <div>
     <mat-form-field>
       <input matInput #searchUser type="text" placeholder="Search">
-      <mat-spinner *ngIf="spinner" matSuffix [diameter]="18"></mat-spinner>
     </mat-form-field>
   </div>
 
   <div>
     <app-user-dropdown-item
-      *ngFor="let item of input$ | async"
+      *ngFor="let item of filterUsers$ | async"
       [user]="item"
       (click)="select.emit(item)">
     </app-user-dropdown-item>

@@ -14,13 +14,13 @@ import {
 } from '@angular/material';
 import {
   AuthService,
-  ProfileService,
   SearchUserService
 } from './services';
 import {
   HeaderComponent,
   FooterComponent
 } from './components';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -41,7 +41,6 @@ import {
   ],
   providers: [
     AuthService,
-    ProfileService,
     SearchUserService,
 
     AuthGuard

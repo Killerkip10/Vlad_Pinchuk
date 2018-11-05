@@ -6,7 +6,7 @@ import {Node} from '../../models';
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemComponent {
   @Input() node: Node;

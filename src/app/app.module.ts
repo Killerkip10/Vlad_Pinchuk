@@ -3,6 +3,12 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 
+import {StoreModule} from '@ngrx/store';
+import {reducers} from './store/reducers';
+import {EffectsModule} from '@ngrx/effects';
+import {effects} from './store/effects';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+
 import {CoreModule} from './core/core.module';
 import {AppRouting} from './app.routing';
 import {AppComponent} from './app.component';
@@ -24,6 +30,10 @@ import {
     CommonModule,
     RouterModule,
     TranslateModule,
+
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot(effects),
+    StoreDevtoolsModule.instrument({maxAge: 10}),
 
     LoginPageModule,
     UserProfilePageModule,

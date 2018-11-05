@@ -1,10 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MatSnackBar} from '@angular/material';
 import {Validators, FormBuilder} from '@angular/forms';
+import {MatSnackBar} from '@angular/material';
 import * as moment from 'moment';
 
+import {Store} from '@ngrx/store';
+import {Edit} from '../../../../store/actions/profile';
+
 import {User} from '../../../../models';
-import {ProfileService} from '../../../../core/services';
 import {
   NameAsyncValidatorService,
   ageValidator,
@@ -23,10 +25,10 @@ export class UserEditFormComponent implements OnInit {
   public userForm;
 
   constructor(
-    private profileService: ProfileService,
+    private snackBar: MatSnackBar,
     private nameAsyncValidService: NameAsyncValidatorService,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private store: Store<null>
   ) {}
 
   public get name(){
@@ -56,10 +58,8 @@ export class UserEditFormComponent implements OnInit {
   }
 
   public submit(): void {
-    this.profileService.editUser(this.userForm.value)
-      .subscribe(
-        () => this.snackBar.open('Updated', 'Profile', {duration: 3000})
-      );
+    this.store.dispatch(new Edit(this.userForm.value));
+    this.snackBar.open('Updated', 'Profile', {duration: 3000});
   }
 
   private dateFormat(date: string, format: string = 'YYYY/MM/DD'): string {

@@ -1,9 +1,8 @@
-import {Component, ElementRef, OnInit, ViewChild, Output, EventEmitter, AfterViewInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild, Output, Input, EventEmitter} from '@angular/core';
 import {fromEvent, Observable} from 'rxjs';
-import {debounceTime, switchMap, tap} from 'rxjs/operators';
+import {debounceTime, map} from 'rxjs/operators';
 
 import {User} from '../../../models';
-import {SearchUserService} from '../../../core/services';
 
 interface InputEvent {
   target: {value: string};
@@ -14,25 +13,20 @@ interface InputEvent {
   templateUrl: './user-dropdown-list.component.html',
   styleUrls: ['./user-dropdown-list.component.scss']
 })
-export class UserDropdownListComponent implements OnInit, AfterViewInit {
+export class UserDropdownListComponent implements OnInit {
   @ViewChild('searchUser') searchUser: ElementRef;
   @Output() select = new EventEmitter<User>();
+  @Input() users: User[];
 
-  public input$: Observable<User[]>;
-  public spinner = false;
+  public filterUsers$: Observable<User[]>;
 
-  constructor(private searchUserService: SearchUserService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.input$ = fromEvent<InputEvent>(this.searchUser.nativeElement, 'input')
+    this.filterUsers$ = fromEvent<InputEvent>(this.searchUser.nativeElement, 'input')
       .pipe(
         debounceTime(500),
-        tap(() => this.spinner = true),
-        switchMap(v => this.searchUserService.findUser(v.target.value)),
-        tap(() => this.spinner = false),
+        map(input => this.users.filter(v => v.name.startsWith(input.target.value)))
       );
    }
-  ngAfterViewInit(): void {
-    this.searchUser.nativeElement.dispatchEvent(new Event('input'));
-  }
 }

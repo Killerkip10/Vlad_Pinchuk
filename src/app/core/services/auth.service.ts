@@ -5,36 +5,37 @@ import {HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
+import {Store} from '@ngrx/store';
+import {Delete} from '../../store/actions/profile';
+
 import {urlConfig} from '../../config';
 import {Login} from '../../models';
 import {TokenService} from './token.service';
-import {ProfileService} from './profile.service';
 
-const options = <object>{
-  headers: new HttpHeaders({
-    'content-type': 'application/json'
-  }),
+const options = {
+  headers: new HttpHeaders({'content-type': 'application/json'}),
   observe: 'response',
   withCredentials: true,
+  params: null
 };
 
 @Injectable()
 export class AuthService {
   constructor(
-    private userService: ProfileService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private store: Store<null>
   ) {}
 
   public login(loginObj: Login) {
-    return this.http.post(urlConfig.login, loginObj, options)
+    return this.http.post(urlConfig.login, loginObj, options as object)
       .pipe(
         map(resp => this.loginHelper(resp)),
         catchError(err => this.handleLoginError(err))
       );
   }
   public forgotPassword(login: string): Observable<string> {
-    return this.http.get<HttpResponse<string>>(urlConfig.forgot + login, options)
+    return this.http.get<HttpResponse<string>>(urlConfig.forgot + login, options as object)
       .pipe(
         map(resp => resp.body),
         catchError(err => this.handleForgotError(err))
@@ -42,7 +43,7 @@ export class AuthService {
   }
   public logout(): void {
     TokenService.deleteToken();
-    this.userService.deleteUser();
+    this.store.dispatch(new Delete());
     this.router.navigate(['/login']);
   }
 
@@ -53,7 +54,6 @@ export class AuthService {
     return throwError(error.status === 404 ? 'ERROR.FORGOT' : 'ERROR.BASE');
   }
   private loginHelper(resp): void {
-    this.userService.updateUser();
     this.router.navigate(['/']);
   }
 }

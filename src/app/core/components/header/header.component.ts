@@ -10,8 +10,8 @@ import {AuthService} from '../../services';
 })
 export class HeaderComponent {
   constructor(
-    private authService: AuthService,
-    public translateService: TranslateService
+    public translateService: TranslateService,
+    private authService: AuthService
   ) {}
 
   public selectLanguage(event): void {
