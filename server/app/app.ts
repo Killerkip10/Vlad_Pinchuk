@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/../assets'));
 app.use(router);
 
 app.use((error: any, req: Request, res: Response, next: NextFunction) => {
-  if(error.status !== 404) {
+  if (error.status !== 404) {
     console.log(error);
   }
   res.sendStatus(error.status || 500);

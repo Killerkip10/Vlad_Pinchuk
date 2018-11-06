@@ -1,6 +1,9 @@
-import {Component, ElementRef, OnInit, ViewChild, Output, Input, EventEmitter} from '@angular/core';
-import {fromEvent, Observable} from 'rxjs';
-import {debounceTime, map} from 'rxjs/operators';
+import {Component, ElementRef, OnInit, OnDestroy, ViewChild, Output, Input, EventEmitter} from '@angular/core';
+import {fromEvent, Subscription} from 'rxjs';
+import {debounceTime} from 'rxjs/operators';
+
+import {Store} from '@ngrx/store';
+import {FindUsers, SelectUser} from '../../../store/actions/users';
 
 import {User} from '../../../models';
 
@@ -13,20 +16,27 @@ interface InputEvent {
   templateUrl: './user-dropdown-list.component.html',
   styleUrls: ['./user-dropdown-list.component.scss']
 })
-export class UserDropdownListComponent implements OnInit {
+export class UserDropdownListComponent implements OnInit, OnDestroy {
   @ViewChild('searchUser') searchUser: ElementRef;
-  @Output() select = new EventEmitter<User>();
+  @Output() select = new EventEmitter();
   @Input() users: User[];
+  @Input() searchName: string;
 
-  public filterUsers$: Observable<User[]>;
+  private input$: Subscription;
 
-  constructor() {}
+  constructor(private store: Store<null>) {}
 
   ngOnInit(): void {
-    this.filterUsers$ = fromEvent<InputEvent>(this.searchUser.nativeElement, 'input')
-      .pipe(
-        debounceTime(500),
-        map(input => this.users.filter(v => v.name.startsWith(input.target.value)))
-      );
-   }
+    this.input$ = fromEvent<InputEvent>(this.searchUser.nativeElement, 'input')
+      .pipe(debounceTime(500))
+      .subscribe(input => this.store.dispatch(new FindUsers(input.target.value)));
+  }
+  ngOnDestroy(): void {
+    this.input$.unsubscribe();
+  }
+
+  public selectUser(user: User): void {
+    this.store.dispatch(new SelectUser(user));
+    this.select.emit();
+  }
 }

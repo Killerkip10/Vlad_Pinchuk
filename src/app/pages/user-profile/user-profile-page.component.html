@@ -11,6 +11,10 @@
     <ng-template ngSwitchCase="1">
       <app-user-edit-form [user]="(profile$ | async).profile"></app-user-edit-form>
     </ng-template>
+
+    <ng-template ngSwitchCase="2">
+      <app-user-list></app-user-list>
+    </ng-template>
   </div>
 
   <ng-template #spinner>

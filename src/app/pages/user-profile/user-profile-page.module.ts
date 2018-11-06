@@ -5,6 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 import {UserProfilePageComponent} from './user-profile-page.component';
 import {UserProfileRouting} from './user-profile-page.routing';
+import {UserListModule} from '../../user-list/user-list.module';
 import {
   UserEditFormComponent,
   UserInfoComponent
@@ -25,6 +26,8 @@ import {
     CommonModule,
     TranslateModule,
     ReactiveFormsModule,
+
+    UserListModule,
 
     MatTabsModule,
     MatSnackBarModule,

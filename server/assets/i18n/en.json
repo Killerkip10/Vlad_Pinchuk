@@ -5,7 +5,8 @@
   "USER-PROFILE": {
     "TABS": {
       "PROFILE": "Profile",
-      "EDIT": "Edit"
+      "EDIT": "Edit",
+      "USERS": "Users"
     },
     "EDIT": {
       "HEADER": "Main",
@@ -23,6 +24,10 @@
       "ITEMS": "Items"
     }
   },
+  "SIDENAV": {
+    "PROFILE": "Profile",
+    "SEARCH-USERS": "Search users"
+  },
   "ERROR": {
     "BASE": "Something bad happened; Please try again later",
     "LOGIN": "Invalid login or password",
@@ -36,10 +41,7 @@
     "RANGE": "Age range from {{from}} till {{to}}",
     "DATE": "Date is invalid"
   },
-  "SIDENAV": {
-    "PROFILE": "Profile",
-    "SEARCH-USERS": "Search users"
-  },
+  "SEARCH": "Search",
   "LOGIN": "Login",
   "PASSWORD": "Password",
   "FORGOT-PASSWORD": "Forgot password",

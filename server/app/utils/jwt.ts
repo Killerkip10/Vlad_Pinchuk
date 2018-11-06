@@ -4,6 +4,7 @@ import {config} from '../../config';
 
 interface TokenObj{
   id: string;
+  role: string;
 }
 
 export function createToken(obj: object): string {

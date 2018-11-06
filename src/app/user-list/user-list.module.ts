@@ -1,5 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {TranslateModule} from '@ngx-translate/core';
 
 import {UserListComponent} from './user-list.component';
 import {
@@ -18,6 +20,8 @@ import {
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    TranslateModule,
 
     MatCardModule,
     MatIconModule,

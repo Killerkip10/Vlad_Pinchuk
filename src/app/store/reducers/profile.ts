@@ -1,15 +1,18 @@
 import * as profileAction from '../actions/profile';
 import {User} from '../../models';
+
 import {createFeatureSelector} from '@ngrx/store';
 
 export interface State {
   profile: User;
   loaded: boolean;
+  err: string;
 }
 
 export const initialState: State = {
-  profile: null,
-  loaded: false
+  profile: {} as User,
+  loaded: false,
+  err: ''
 };
 
 export function reducer(state = initialState, action: profileAction.Action) {
@@ -20,17 +23,25 @@ export function reducer(state = initialState, action: profileAction.Action) {
         loaded: false
       };
     }
-    case profileAction.EDIT: {
-      return state;
-    }
     case profileAction.DELETE: {
-      return null;
+      return {
+        ...state,
+        profile: {} as User,
+        loaded: false
+      };
     }
     case profileAction.SUCCESS: {
       return {
         ...state,
         profile: action.profile,
-        loaded: true
+        loaded: true,
+        err: ''
+      };
+    }
+    case profileAction.ERROR: {
+      return {
+        ...state,
+        err: action.err
       };
     }
     default: {

@@ -3,9 +3,10 @@ import {Action} from '@ngrx/store';
 import {User} from '../../models';
 
 export const GET_PROFILE = '[Profile] Get profile';
-export const SUCCESS = '[Profile] Success';
 export const EDIT = '[Profile] Update';
 export const DELETE = '[Profile] Delete';
+export const SUCCESS = '[Profile] Success';
+export const ERROR = '[Profile] Error';
 
 export class GetProfile implements Action {
   public readonly type = GET_PROFILE;
@@ -23,8 +24,14 @@ export class Success implements Action {
 
   constructor(public profile: User) {}
 }
+export class Error implements Action {
+  public readonly type = ERROR;
+
+  constructor(public err: string) {}
+}
 
 export type Action = GetProfile
   | Edit
+  | Delete
   | Success
-  | Delete;
+  | Error;

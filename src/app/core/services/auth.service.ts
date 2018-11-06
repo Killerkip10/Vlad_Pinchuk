@@ -2,11 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/internal/operators';
 import {HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http';
-import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
-
-import {Store} from '@ngrx/store';
-import {Delete} from '../../store/actions/profile';
 
 import {urlConfig} from '../../config';
 import {Login} from '../../models';
@@ -21,18 +17,11 @@ const options = {
 
 @Injectable()
 export class AuthService {
-  constructor(
-    private router: Router,
-    private http: HttpClient,
-    private store: Store<null>
-  ) {}
+  constructor(private http: HttpClient) {}
 
   public login(loginObj: Login) {
     return this.http.post(urlConfig.login, loginObj, options as object)
-      .pipe(
-        map(resp => this.loginHelper(resp)),
-        catchError(err => this.handleLoginError(err))
-      );
+      .pipe(catchError(err => this.handleLoginError(err)));
   }
   public forgotPassword(login: string): Observable<string> {
     return this.http.get<HttpResponse<string>>(urlConfig.forgot + login, options as object)
@@ -43,8 +32,6 @@ export class AuthService {
   }
   public logout(): void {
     TokenService.deleteToken();
-    this.store.dispatch(new Delete());
-    this.router.navigate(['/login']);
   }
 
   private handleLoginError(error: HttpErrorResponse) {
@@ -52,8 +39,5 @@ export class AuthService {
   }
   private handleForgotError(error: HttpErrorResponse) {
     return throwError(error.status === 404 ? 'ERROR.FORGOT' : 'ERROR.BASE');
-  }
-  private loginHelper(resp): void {
-    this.router.navigate(['/']);
   }
 }
