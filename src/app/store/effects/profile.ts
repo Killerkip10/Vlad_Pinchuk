@@ -7,7 +7,7 @@ import {Actions, Effect, ofType} from '@ngrx/effects';
 import {
   GET_PROFILE,
   EDIT,
-  Edit,
+  EditProfile,
   Success,
   Error
 } from '../actions/profile';
@@ -45,7 +45,7 @@ export class ProfileEffects {
   editProfile$ = this.actions$
     .pipe(
       ofType(EDIT),
-      mergeMap((action: Edit) => this.http.put<HttpResponse<User>>(urlConfig.editProfile, action.profile, options as object)
+      mergeMap((action: EditProfile) => this.http.put<HttpResponse<User>>(urlConfig.editProfile, action.profile, options as object)
         .pipe(
           map(resp => new Success(resp.body)),
           catchError(() => of(new Error('ERROR.BASE')))

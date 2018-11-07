@@ -11,12 +11,12 @@ export const ERROR = '[Profile] Error';
 export class GetProfile implements Action {
   public readonly type = GET_PROFILE;
 }
-export class Edit implements Action {
+export class EditProfile implements Action {
   public readonly type = EDIT;
 
   constructor(public profile: User) {}
 }
-export class Delete implements Action {
+export class DeleteProfile implements Action {
   public readonly type = DELETE;
 }
 export class Success implements Action {
@@ -31,7 +31,7 @@ export class Error implements Action {
 }
 
 export type Action = GetProfile
-  | Edit
-  | Delete
+  | EditProfile
+  | DeleteProfile
   | Success
   | Error;

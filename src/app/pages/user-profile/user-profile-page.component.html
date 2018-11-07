@@ -9,11 +9,12 @@
     </ng-template>
 
     <ng-template ngSwitchCase="1">
-      <app-user-edit-form [user]="(profile$ | async).profile"></app-user-edit-form>
+      <app-user-form [user]="(profile$ | async).profile" (submit)="onEditProfile($event)"></app-user-form>
     </ng-template>
 
     <ng-template ngSwitchCase="2">
       <app-user-list></app-user-list>
+      <app-user-form [user]="(users$ | async).selected" (submit)="onEditUser($event)" *ngIf="(users$ | async).selected.id"></app-user-form>
     </ng-template>
   </div>
 

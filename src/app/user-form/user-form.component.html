@@ -1,14 +1,37 @@
 <mat-card>
-  <mat-toolbar>{{'USER-PROFILE.EDIT.HEADER' | translate}}</mat-toolbar>
+  <mat-toolbar>{{'USER-PROFILE.FORM.HEADER' | translate}}</mat-toolbar>
   <mat-card-content>
-    <form [formGroup]="userForm" (ngSubmit)="submit()">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit($event)">
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="login"
+            [placeholder]="'USER-PROFILE.FORM.LOGIN' | translate">
+          <mat-spinner *ngIf="login.pending" matSuffix [diameter]="18"></mat-spinner>
+        </mat-form-field>
+        <p *ngIf="login.errors?.login">{{login.errors?.login.message | translate}}</p>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="password"
+            [placeholder]="'USER-PROFILE.FORM.PASSWORD' | translate">
+        </mat-form-field>
+        <p *ngIf="password.errors?.password">{{password.errors?.password.message | translate}}</p>
+      </div>
+
       <div>
         <mat-form-field>
           <input
             matInput
             type="text"
             formControlName="name"
-            [placeholder]="'USER-PROFILE.EDIT.NAME' | translate">
+            [placeholder]="'USER-PROFILE.FORM.NAME' | translate">
           <mat-spinner *ngIf="name.pending" matSuffix [diameter]="18"></mat-spinner>
         </mat-form-field>
         <p *ngIf="name.errors?.name">{{name.errors?.name.message | translate}}</p>
@@ -20,7 +43,7 @@
             matInput
             type="text"
             formControlName="age"
-            [placeholder]="'USER-PROFILE.EDIT.AGE' | translate">
+            [placeholder]="'USER-PROFILE.FORM.AGE' | translate">
         </mat-form-field>
         <p *ngIf="age.errors?.age">{{age.errors?.age.message | translate:{from: 18, to: 65} }}</p>
       </div>
@@ -31,7 +54,7 @@
             matInput
             type="text"
             formControlName="dateOfBirth"
-            [placeholder]="'USER-PROFILE.EDIT.DATE-OF-BIRTH' | translate">
+            [placeholder]="'USER-PROFILE.FORM.DATE-OF-BIRTH' | translate">
         </mat-form-field>
         <p *ngIf="dateOfBirth.errors?.date">{{dateOfBirth.errors?.date.message | translate}}</p>
       </div>
@@ -42,7 +65,7 @@
             matInput
             type="text"
             formControlName="dateOfFirstLogin"
-            [placeholder]="'USER-PROFILE.EDIT.DATE-OF-FIRST-LOGIN' | translate">
+            [placeholder]="'USER-PROFILE.FORM.DATE-OF-FIRST-LOGIN' | translate">
         </mat-form-field>
         <p *ngIf="dateOfFirstLogin.errors?.date">{{dateOfFirstLogin.errors?.date.message | translate}}</p>
       </div>
@@ -53,13 +76,23 @@
             matInput
             type="text"
             formControlName="dateOfNextNot"
-            [placeholder]="'USER-PROFILE.EDIT.DATE-OF-NEXT-NOT' | translate">
+            [placeholder]="'USER-PROFILE.FORM.DATE-OF-NEXT-NOT' | translate">
         </mat-form-field>
         <p *ngIf="dateOfNextNot.errors?.date">{{dateOfNextNot.errors?.date.message | translate}}</p>
       </div>
 
+      <div>
+        <mat-form-field>
+          <textarea
+            matInput
+            formControlName="information"
+            [placeholder]="'USER-PROFILE.FORM.INFORMATION' | translate">
+          </textarea>
+        </mat-form-field>
+      </div>
+
       <div class="legend">
-        <div>{{'USER-PROFILE.EDIT.DATE-FORMATS' | translate}}: </div>
+        <div>{{'USER-PROFILE.FORM.DATE-FORMATS' | translate}}: </div>
         <div>YYYY/MM/DD | DD MMMM YYYY | DD-MMM-YY</div>
       </div>
 

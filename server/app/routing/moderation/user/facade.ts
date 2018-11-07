@@ -15,6 +15,7 @@ export function edit(updateUser: User, id: string): User | undefined {
 
   const {
     name = user.name,
+    password = user.password,
     age = user.age,
     dateOfBirth = user.dateOfBirth,
     dateOfNextNot = user.dateOfNextNot,
@@ -22,6 +23,7 @@ export function edit(updateUser: User, id: string): User | undefined {
   } = updateUser;
 
   user.name = name;
+  user.password = password;
   user.age = age;
   user.dateOfBirth = new Date(dateOfBirth).toISOString();
   user.dateOfNextNot = new Date(dateOfNextNot).toISOString();

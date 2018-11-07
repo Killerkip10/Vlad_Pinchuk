@@ -7,9 +7,12 @@ import {Actions, Effect, ofType} from '@ngrx/effects';
 import {
   GET_USERS,
   FIND_USERS,
+  EDIT_USER,
+  EditUser,
   FindUsers,
+  SuccessEdit,
   Success,
-  Error
+  Error,
 } from '../actions/users';
 
 import {User} from '../../../../server/models';
@@ -54,5 +57,17 @@ export class UsersEffects {
             catchError(() => of(new Error('ERROR.BASE')))
           );
       })
+    );
+
+  @Effect()
+  editUser$ = this.actions$
+    .pipe(
+      ofType(EDIT_USER),
+      mergeMap((action: EditUser) => this.http.put<HttpResponse<User>>(urlConfig.editUser, action.user, options as object)
+        .pipe(
+          map(resp => new SuccessEdit(resp.body)),
+          catchError(() => of(new Error('ERROR.BASE')))
+        )
+      )
     );
 }

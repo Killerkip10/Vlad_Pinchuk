@@ -23,6 +23,11 @@ export function checkName(name: string, token: string): User | undefined {
 
   return users.find(v => v.name === name && v.id !== tokenObj.id);
 }
+export function checkLogin(login: string, token: string): User | undefined {
+  const tokenObj = verifyToken(token);
+
+  return users.find(v => v.login === login && v.id !== tokenObj.id);
+}
 export function findUsers(name: string): User[] {
   return name ? users.filter(v => v.name.toLowerCase().startsWith(name.toLowerCase())) : users;
 }
@@ -34,6 +39,8 @@ function edit(updateUser: User, id: string): User | undefined {
   }
 
   const {
+    login = user.login,
+    password = user.password,
     name = user.name,
     age = user.age,
     dateOfBirth = user.dateOfBirth,
@@ -41,6 +48,8 @@ function edit(updateUser: User, id: string): User | undefined {
     information = user.information
   } = updateUser;
 
+  user.login = login;
+  user.password = password;
   user.name = name;
   user.age = age;
   user.dateOfBirth = new Date(dateOfBirth).toISOString();

@@ -5,6 +5,8 @@ import {User} from '../../models';
 export const GET_USERS = '[Users] Get users';
 export const FIND_USERS = '[Users] Find users';
 export const SELECT_USER = '[Users] Select user';
+export const EDIT_USER = '[Users] Edit user';
+export const SUCCESS_EDIT = '[Users] Success edit';
 export const SUCCESS = '[Users] Success';
 export const ERROR = '[Users] Error';
 
@@ -18,6 +20,16 @@ export class FindUsers implements Action {
 }
 export class SelectUser implements Action {
   public readonly type = SELECT_USER;
+
+  constructor(public user: User) {}
+}
+export class EditUser implements Action {
+  public readonly type = EDIT_USER;
+
+  constructor(public user: User) {}
+}
+export class SuccessEdit implements Action {
+  readonly type = SUCCESS_EDIT;
 
   constructor(public user: User) {}
 }
@@ -35,5 +47,7 @@ export class Error implements Action {
 export type Action = GetUsers
   | FindUsers
   | SelectUser
+  | EditUser
+  | SuccessEdit
   | Success
   | Error;

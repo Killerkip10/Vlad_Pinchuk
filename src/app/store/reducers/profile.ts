@@ -11,6 +11,8 @@ export interface State {
   err: string;
 }
 
+export type MapState = boolean | string | object;
+
 export const initialState = Map({
   profile: Map(),
   loaded: false,
@@ -20,9 +22,7 @@ export const initialState = Map({
 export function reducer(state = initialState, action: profileAction.Action) {
   switch (action.type) {
     case profileAction.GET_PROFILE: {
-      return state
-        .set('loaded', false)
-        .set('err', '');
+      return state.set('loaded', false);
     }
     case profileAction.DELETE: {
       return state
@@ -44,5 +44,5 @@ export function reducer(state = initialState, action: profileAction.Action) {
   }
 }
 
-export const getProfileMapState = createFeatureSelector<Map<string, boolean | string | object>>('profile');
+export const getProfileMapState = createFeatureSelector<Map<string, MapState>>('profile');
 export const getProfileJsState = createSelector(getProfileMapState, state => state.toJS());

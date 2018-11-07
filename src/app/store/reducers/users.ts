@@ -12,6 +12,8 @@ export interface State {
   err: string;
 }
 
+export type MapState = List<User> | object | boolean | string;
+
 export const initialState = Map({
   users: List<User>(),
   selected: Map(),
@@ -24,14 +26,20 @@ export function reducer(state = initialState, action: usersAction.Action) {
     case usersAction.GET_USERS: {
       return state
         .set('users', List())
-        .set('loaded', false)
-        .set('err', '');
+        .set('loaded', false);
     }
     case usersAction.FIND_USERS: {
       return state.set('loaded', false);
     }
     case usersAction.SELECT_USER: {
       return state.set('selected', Map(action.user));
+    }
+    case usersAction.SUCCESS_EDIT: {
+      return state
+        .set('selected', Map(action.user))
+        .updateIn(['users'], users =>
+          List(users.toJS().map(v => v.id === action.user.id ? action.user : v))
+        );
     }
     case usersAction.SUCCESS: {
       return state
@@ -48,5 +56,5 @@ export function reducer(state = initialState, action: usersAction.Action) {
   }
 }
 
-export const getUserMapState = createFeatureSelector<Map<string, List<User> | object | boolean | string>>('users');
-export const getUserJsState = createSelector(getUserMapState, state => state.toJS());
+export const getUsersMapState = createFeatureSelector<Map<string, MapState>>('users');
+export const getUsersJsState = createSelector(getUsersMapState, state => state.toJS());

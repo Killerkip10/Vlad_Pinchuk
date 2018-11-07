@@ -1,23 +1,17 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
-import {ReactiveFormsModule} from '@angular/forms';
 
 import {UserProfilePageComponent} from './user-profile-page.component';
 import {UserProfileRouting} from './user-profile-page.routing';
 import {UserListModule} from '../../user-list/user-list.module';
-import {
-  UserEditFormComponent,
-  UserInfoComponent
-} from './components';
+import {UserFormModule} from '../../user-form/user-form.module';
+import {UserInfoComponent} from './components';
 import {
   MatTabsModule,
-  MatSnackBarModule,
-  MatFormFieldModule,
-  MatInputModule,
   MatCardModule,
-  MatButtonModule,
   MatToolbarModule,
+  MatSnackBarModule,
   MatProgressSpinnerModule
 } from '@angular/material';
 
@@ -25,23 +19,19 @@ import {
   imports: [
     CommonModule,
     TranslateModule,
-    ReactiveFormsModule,
 
     UserListModule,
+    UserFormModule,
 
     MatTabsModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatCardModule,
-    MatButtonModule,
     MatToolbarModule,
+    MatSnackBarModule,
     MatProgressSpinnerModule,
 
     UserProfileRouting,
   ],
   declarations: [
-    UserEditFormComponent,
     UserInfoComponent,
 
     UserProfilePageComponent,
