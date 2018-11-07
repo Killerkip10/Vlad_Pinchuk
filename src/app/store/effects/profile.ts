@@ -1,11 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
-import {Actions, Effect, ofType} from '@ngrx/effects';
 import {catchError, map, mergeMap} from 'rxjs/operators';
 import {of} from 'rxjs';
 
-import {User} from '../../../../server/models';
-import {urlConfig} from '../../config';
+import {Actions, Effect, ofType} from '@ngrx/effects';
 import {
   GET_PROFILE,
   EDIT,
@@ -13,6 +11,9 @@ import {
   Success,
   Error
 } from '../actions/profile';
+
+import {User} from '../../../../server/models';
+import {urlConfig} from '../../config';
 
 const options = {
   headers: new HttpHeaders({'content-type': 'application/json'}),

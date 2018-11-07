@@ -15,7 +15,6 @@ import {
 import {User} from '../../../../server/models';
 import {urlConfig} from '../../config';
 
-
 const options = {
   headers: new HttpHeaders({'content-type': 'application/json'}),
   observe: 'response',
@@ -47,10 +46,7 @@ export class UsersEffects {
     .pipe(
       ofType(FIND_USERS),
       mergeMap((action: FindUsers) => {
-        const option = {
-          ...options,
-          params: new HttpParams().set('name', action.name)
-        };
+        const option = { ...options, params: new HttpParams().set('name', action.name)};
 
         return this.http.get<HttpResponse<User[]>>(urlConfig.findUsers, option as object)
           .pipe(

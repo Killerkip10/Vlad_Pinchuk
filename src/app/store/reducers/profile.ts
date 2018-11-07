@@ -1,7 +1,9 @@
-import * as profileAction from '../actions/profile';
-import {User} from '../../models';
+import {Map} from 'immutable';
 
-import {createFeatureSelector} from '@ngrx/store';
+import * as profileAction from '../actions/profile';
+import {createFeatureSelector, createSelector} from '@ngrx/store';
+
+import {User} from '../../models';
 
 export interface State {
   profile: User;
@@ -9,40 +11,32 @@ export interface State {
   err: string;
 }
 
-export const initialState: State = {
-  profile: {} as User,
+export const initialState = Map({
+  profile: Map(),
   loaded: false,
   err: ''
-};
+});
 
 export function reducer(state = initialState, action: profileAction.Action) {
   switch (action.type) {
     case profileAction.GET_PROFILE: {
-      return {
-        ...state,
-        loaded: false
-      };
+      return state
+        .set('loaded', false)
+        .set('err', '');
     }
     case profileAction.DELETE: {
-      return {
-        ...state,
-        profile: {} as User,
-        loaded: false
-      };
+      return state
+        .set('profile', Map())
+        .set('loaded', false);
     }
     case profileAction.SUCCESS: {
-      return {
-        ...state,
-        profile: action.profile,
-        loaded: true,
-        err: ''
-      };
+      return state
+        .set('profile', Map(action.profile))
+        .set('loaded', true)
+        .set('err', '');
     }
     case profileAction.ERROR: {
-      return {
-        ...state,
-        err: action.err
-      };
+      return state.set('err', action.err);
     }
     default: {
       return state;
@@ -50,5 +44,5 @@ export function reducer(state = initialState, action: profileAction.Action) {
   }
 }
 
-export const getProfileState = createFeatureSelector<State>('profile');
-
+export const getProfileMapState = createFeatureSelector<Map<string, boolean | string | object>>('profile');
+export const getProfileJsState = createSelector(getProfileMapState, state => state.toJS());

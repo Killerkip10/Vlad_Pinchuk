@@ -36,7 +36,6 @@ function edit(updateUser: User, id: string): User | undefined {
   const {
     name = user.name,
     age = user.age,
-    password = user.password,
     dateOfBirth = user.dateOfBirth,
     dateOfNextNot = user.dateOfNextNot,
     information = user.information
@@ -44,7 +43,6 @@ function edit(updateUser: User, id: string): User | undefined {
 
   user.name = name;
   user.age = age;
-  user.password = password;
   user.dateOfBirth = new Date(dateOfBirth).toISOString();
   user.dateOfNextNot = new Date(dateOfNextNot).toISOString();
   user.information = information;

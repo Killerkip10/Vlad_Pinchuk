@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
-import {take} from 'rxjs/operators';
 
 import {select, Store} from '@ngrx/store';
-import {getUserState, State} from '../store/reducers/users';
+import {getUserJsState, State} from '../store/reducers/users';
 import {GetUsers} from '../store/actions/users';
 
 @Component({
@@ -17,7 +16,7 @@ export class UserListComponent {
   private loadFlag = true;
 
   constructor(private store: Store<State>) {
-    this.users$ = store.pipe(select(getUserState));
+    this.users$ = store.pipe(select(getUserJsState));
   }
 
   public dropDownList(): void {

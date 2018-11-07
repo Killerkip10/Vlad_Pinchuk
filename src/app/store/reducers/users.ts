@@ -1,7 +1,9 @@
-import {User} from '../../models';
+import {Map, List} from 'immutable';
 
 import * as usersAction from '../actions/users';
-import {createFeatureSelector} from '@ngrx/store';
+import {createFeatureSelector, createSelector} from '@ngrx/store';
+
+import {User} from '../../models';
 
 export interface State {
   users: User[];
@@ -10,48 +12,35 @@ export interface State {
   err: string;
 }
 
-export const initialState: State = {
-  users: [],
-  selected: {} as User,
+export const initialState = Map({
+  users: List<User>(),
+  selected: Map(),
   loaded: false,
   err: ''
-};
+});
 
 export function reducer(state = initialState, action: usersAction.Action) {
   switch (action.type) {
     case usersAction.GET_USERS: {
-      return {
-        ...state,
-        users: [],
-        loaded: false,
-        err: ''
-      };
+      return state
+        .set('users', List())
+        .set('loaded', false)
+        .set('err', '');
     }
     case usersAction.FIND_USERS: {
-      return {
-        ...state,
-        loaded: false
-      };
+      return state.set('loaded', false);
     }
     case usersAction.SELECT_USER: {
-      return {
-        ...state,
-        selected: action.user
-      };
+      return state.set('selected', Map(action.user));
     }
     case usersAction.SUCCESS: {
-      return {
-        ...state,
-        users: action.users,
-        loaded: true,
-        err: ''
-      };
+      return state
+        .set('users', List(action.users))
+        .set('loaded', true)
+        .set('err', '');
     }
     case usersAction.ERROR: {
-      return {
-        ...state,
-        err: action.err
-      };
+      return state.set('err', action.err);
     }
     default: {
       return state;
@@ -59,4 +48,5 @@ export function reducer(state = initialState, action: usersAction.Action) {
   }
 }
 
-export const getUserState = createFeatureSelector<State>('users');
+export const getUserMapState = createFeatureSelector<Map<string, List<User> | object | boolean | string>>('users');
+export const getUserJsState = createSelector(getUserMapState, state => state.toJS());
