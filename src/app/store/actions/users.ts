@@ -6,7 +6,9 @@ export const GET_USERS = '[Users] Get users';
 export const FIND_USERS = '[Users] Find users';
 export const SELECT_USER = '[Users] Select user';
 export const EDIT_USER = '[Users] Edit user';
-export const SUCCESS_EDIT = '[Users] Success edit';
+export const CREATE_USER = '[Users] Create user';
+export const CREATE_SUCCESS = '[Users] Success create';
+export const EDIT_SUCCESS = '[Users] Success edit';
 export const SUCCESS = '[Users] Success';
 export const ERROR = '[Users] Error';
 
@@ -28,8 +30,18 @@ export class EditUser implements Action {
 
   constructor(public user: User) {}
 }
-export class SuccessEdit implements Action {
-  readonly type = SUCCESS_EDIT;
+export class CreateUser implements Action {
+  public readonly type = CREATE_USER;
+
+  constructor(public user: User) {}
+}
+export class CreateSuccess implements Action {
+  public readonly type = CREATE_SUCCESS;
+
+  constructor(public user: User) {}
+}
+export class EditSuccess implements Action {
+  readonly type = EDIT_SUCCESS;
 
   constructor(public user: User) {}
 }
@@ -48,6 +60,8 @@ export type Action = GetUsers
   | FindUsers
   | SelectUser
   | EditUser
-  | SuccessEdit
+  | CreateUser
+  | CreateSuccess
+  | EditSuccess
   | Success
   | Error;

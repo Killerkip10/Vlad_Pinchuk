@@ -9,12 +9,29 @@
     </ng-template>
 
     <ng-template ngSwitchCase="1">
-      <app-user-form [user]="(profile$ | async).profile" (submit)="onEditProfile($event)"></app-user-form>
+      <app-user-form
+        [user]="(profile$ | async).profile"
+        [options]="{nameForm: 'USER-PROFILE.FORM.EDIT-PROFILE', send: 'EDIT', dateOfFirstLogin: true}"
+        (submit)="onEditProfile($event)">
+      </app-user-form>
     </ng-template>
 
     <ng-template ngSwitchCase="2">
       <app-user-list></app-user-list>
-      <app-user-form [user]="(users$ | async).selected" (submit)="onEditUser($event)" *ngIf="(users$ | async).selected.id"></app-user-form>
+      <app-user-form
+        [user]="(users$ | async).selected"
+        [options]="{nameForm: 'USER-PROFILE.FORM.EDIT-USER', send: 'EDIT', login: true, dateOfFirstLogin: true}"
+        (submit)="onEditUser($event)"
+        *ngIf="(users$ | async).selected.id">
+      </app-user-form>
+    </ng-template>
+
+    <ng-template ngSwitchCase="3">
+      <app-user-form
+        [options]="{nameForm: 'USER-PROFILE.FORM.CREATE-USER', send: 'CREATE', reset: true, dateOfFirstLogin: true}"
+        (submit)="onCreateUser($event)"
+      >
+      </app-user-form>
     </ng-template>
   </div>
 

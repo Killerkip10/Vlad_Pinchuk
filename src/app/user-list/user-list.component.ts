@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
+import {first} from 'rxjs/operators';
 
 import {select, Store} from '@ngrx/store';
 import {getUsersJsState} from '../store/reducers/users';
-import {State} from '../store/reducers';
+import {State} from '../store/reducers/users';
 import {GetUsers} from '../store/actions/users';
 
 @Component({
@@ -11,21 +12,25 @@ import {GetUsers} from '../store/actions/users';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit {
   public dropDownListFlag = false;
   public users$: Observable<State>;
-  private loadFlag = true;
 
-  constructor(private store: Store<State>) {
-    this.users$ = store.pipe(select(getUsersJsState));
+  constructor(private store: Store<State>) {}
+
+  ngOnInit(): void {
+    this.users$ = this.store.pipe(select(getUsersJsState));
   }
 
   public dropDownList(): void {
     this.dropDownListFlag = !this.dropDownListFlag;
 
-    if (this.loadFlag) {
-      this.store.dispatch(new GetUsers());
-      this.loadFlag = !this.loadFlag;
-    }
+    this.users$
+      .pipe(first())
+      .subscribe(state => {
+        if (!state.loaded) {
+          this.store.dispatch(new GetUsers());
+        }
+      });
   }
 }

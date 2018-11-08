@@ -34,12 +34,13 @@ export function reducer(state = initialState, action: usersAction.Action) {
     case usersAction.SELECT_USER: {
       return state.set('selected', Map(action.user));
     }
-    case usersAction.SUCCESS_EDIT: {
+    case usersAction.CREATE_SUCCESS: {
+      return state.updateIn(['users'], users => users.push(action.user));
+    }
+    case usersAction.EDIT_SUCCESS: {
       return state
         .set('selected', Map(action.user))
-        .updateIn(['users'], users =>
-          List(users.toJS().map(v => v.id === action.user.id ? action.user : v))
-        );
+        .updateIn(['users'], users => users.map(v => v.id === action.user.id ? action.user : v));
     }
     case usersAction.SUCCESS: {
       return state

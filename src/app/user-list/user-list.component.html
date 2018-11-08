@@ -7,7 +7,6 @@
     class="drop-down-list"
     (select)="dropDownList()"
     [users]="(users$ | async).users"
-    [searchName]="(users$ | async).key"
     *ngIf="dropDownListFlag">
     <mat-spinner *ngIf="!(users$ | async).loaded" [diameter]="18"></mat-spinner>
   </app-user-dropdown-list>

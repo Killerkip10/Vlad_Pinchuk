@@ -6,10 +6,13 @@
     "TABS": {
       "PROFILE": "Profile",
       "EDIT": "Edit",
-      "USERS": "Users"
+      "USERS": "Users",
+      "CREATE-USER": "Create user"
     },
     "FORM": {
-      "HEADER": "Main",
+      "EDIT-PROFILE": "Edit profile",
+      "EDIT-USER": "Edit user",
+      "CREATE-USER": "Create user",
       "LOGIN": "Login",
       "PASSWORD": "Password",
       "NAME": "Name",
@@ -46,6 +49,8 @@
     "RANGE": "Age range from {{from}} till {{to}}",
     "DATE": "Date is invalid"
   },
+  "EDIT": "Edit",
+  "CREATE": "Create",
   "SEARCH": "Search",
   "LOGIN": "Login",
   "PASSWORD": "Password",

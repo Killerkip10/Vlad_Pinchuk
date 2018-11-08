@@ -8,11 +8,13 @@ import {
   GET_USERS,
   FIND_USERS,
   EDIT_USER,
+  CREATE_USER,
   EditUser,
   FindUsers,
-  SuccessEdit,
+  CreateSuccess,
+  EditSuccess,
   Success,
-  Error,
+  Error, CreateUser,
 } from '../actions/users';
 
 import {User} from '../../../../server/models';
@@ -65,7 +67,19 @@ export class UsersEffects {
       ofType(EDIT_USER),
       mergeMap((action: EditUser) => this.http.put<HttpResponse<User>>(urlConfig.editUser, action.user, options as object)
         .pipe(
-          map(resp => new SuccessEdit(resp.body)),
+          map(resp => new EditSuccess(resp.body)),
+          catchError(() => of(new Error('ERROR.BASE')))
+        )
+      )
+    );
+
+  @Effect()
+  createUser$ = this.actions$
+    .pipe(
+      ofType(CREATE_USER),
+      mergeMap((action: CreateUser) => this.http.post<HttpResponse<User>>(urlConfig.createUser, action.user, options as object)
+        .pipe(
+          map(resp => new CreateSuccess(resp.body)),
           catchError(() => of(new Error('ERROR.BASE')))
         )
       )

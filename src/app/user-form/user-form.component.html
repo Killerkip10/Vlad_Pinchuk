@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-toolbar>{{'USER-PROFILE.FORM.HEADER' | translate}}</mat-toolbar>
+  <mat-toolbar>{{options.nameForm | translate}}</mat-toolbar>
   <mat-card-content>
     <form [formGroup]="userForm" (ngSubmit)="onSubmit($event)">
       <div>
@@ -96,7 +96,7 @@
         <div>YYYY/MM/DD | DD MMMM YYYY | DD-MMM-YY</div>
       </div>
 
-      <button mat-flat-button color="primary" type="submit" [disabled]="!userForm.valid">{{'SEND' | translate}}</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="!userForm.valid">{{options.send | translate}}</button>
     </form>
   </mat-card-content>
 </mat-card>

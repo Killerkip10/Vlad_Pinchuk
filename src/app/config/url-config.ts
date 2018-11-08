@@ -15,6 +15,6 @@ export const urlConfig = {
   findUsers: url + 'users/find/',
 
   editUser: url + 'admin/users/',
-  addUser: url + 'admin/users/',
+  createUser: url + 'admin/users/',
   deleteUser: url + 'admin/users/'
 };

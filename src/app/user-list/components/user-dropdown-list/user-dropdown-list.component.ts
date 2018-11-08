@@ -20,7 +20,6 @@ export class UserDropdownListComponent implements OnInit, OnDestroy {
   @ViewChild('searchUser') searchUser: ElementRef;
   @Output() select = new EventEmitter();
   @Input() users: User[];
-  @Input() searchName: string;
 
   private input$: Subscription;
 
