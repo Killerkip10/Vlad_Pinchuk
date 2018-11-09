@@ -1,16 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PathComponent } from './path.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
-describe('PathComponent', () => {
+describe('ItemComponent', () => {
   let component: PathComponent;
   let fixture: ComponentFixture<PathComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PathComponent ]
+      declarations: [
+        PathComponent
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

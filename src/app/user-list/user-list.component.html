@@ -1,7 +1,5 @@
 <section>
-  <app-user-chosen [user]="(users$ | async).selected" (click)="dropDownList()">
-
-  </app-user-chosen>
+  <app-user-chosen [user]="(users$ | async).selected" (click)="dropDownList()"></app-user-chosen>
 
   <app-user-dropdown-list
     class="drop-down-list"

@@ -1,0 +1,422 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemComponent snapshot 1`] = `
+<app-user-list
+  dropDownListFlag="false"
+  store={[Function Store]}
+  users$={[Function Observable]}
+>
+  <section>
+    <app-user-chosen
+      ng-reflect-user="[object Object]"
+    >
+      <div
+        class="chosen"
+      >
+        <div
+          class="container"
+        >
+          <div>
+            
+          </div>
+          <div>
+            
+          </div>
+          <div>
+            
+          </div>
+        </div>
+        <mat-icon>
+          keyboard_arrow_down
+        </mat-icon>
+      </div>
+    </app-user-chosen>
+    
+  </section>
+</app-user-list>
+`;
+
+exports[`ItemComponent snapshot 2`] = `
+<app-user-list
+  dropDownListFlag={[Function Boolean]}
+  store={[Function Store]}
+  users$={[Function Observable]}
+>
+  <section>
+    <app-user-chosen
+      ng-reflect-user="[object Object]"
+    >
+      <div
+        class="chosen"
+      >
+        <div
+          class="container"
+        >
+          <div>
+            
+          </div>
+          <div>
+            
+          </div>
+          <div>
+            
+          </div>
+        </div>
+        <mat-icon>
+          keyboard_arrow_down
+        </mat-icon>
+      </div>
+    </app-user-chosen>
+    
+    <app-user-dropdown-list
+      class="drop-down-list"
+      ng-reflect-users=""
+    >
+      <div
+        class="list"
+      >
+        <div>
+          <mat-form-field>
+            <input
+              matinput=""
+              placeholder="SEARCH"
+              type="text"
+            />
+            
+            <mat-spinner />
+          </mat-form-field>
+        </div>
+        <div>
+          
+        </div>
+      </div>
+    </app-user-dropdown-list>
+  </section>
+</app-user-list>
+`;
+
+exports[`ItemComponent snapshot 3`] = `
+<app-user-list
+  dropDownListFlag={[Function Boolean]}
+  store={[Function Store]}
+  users$={[Function Observable]}
+>
+  <section>
+    <app-user-chosen
+      ng-reflect-user="[object Object]"
+    >
+      <div
+        class="chosen"
+      >
+        <div
+          class="container"
+        >
+          <div>
+            
+          </div>
+          <div>
+            
+          </div>
+          <div>
+            
+          </div>
+        </div>
+        <mat-icon>
+          keyboard_arrow_down
+        </mat-icon>
+      </div>
+    </app-user-chosen>
+    
+    <app-user-dropdown-list
+      class="drop-down-list"
+      ng-reflect-users="[object Object],[object Object"
+    >
+      <div
+        class="list"
+      >
+        <div>
+          <mat-form-field>
+            <input
+              matinput=""
+              placeholder="SEARCH"
+              type="text"
+            />
+            
+          </mat-form-field>
+        </div>
+        <div>
+          
+          <app-user-dropdown-item
+            ng-reflect-user="[object Object]"
+          >
+            <mat-card>
+              <mat-card-title>
+                Vlad
+              </mat-card-title>
+              <mat-card-subtitle>
+                1234567890
+              </mat-card-subtitle>
+              <mat-card-content>
+                <div>
+                  20
+                </div>
+                <div>
+                  Nov 9, 2018, 11:11:55 PM
+                </div>
+                <div>
+                  Nov 9, 2018, 11:11:55 PM
+                </div>
+                <div>
+                  Nov 9, 2018, 11:11:55 PM
+                </div>
+                <div>
+                  i like angular
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </app-user-dropdown-item>
+          <app-user-dropdown-item
+            ng-reflect-user="[object Object]"
+          >
+            <mat-card>
+              <mat-card-title>
+                Pasha
+              </mat-card-title>
+              <mat-card-subtitle>
+                0000000000000
+              </mat-card-subtitle>
+              <mat-card-content>
+                <div>
+                  65
+                </div>
+                <div>
+                  Nov 9, 2018, 11:28:11 PM
+                </div>
+                <div>
+                  Nov 9, 2018, 11:28:11 PM
+                </div>
+                <div>
+                  Nov 9, 2018, 11:28:11 PM
+                </div>
+                <div>
+                  I AM PROGRAMMER, may be
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </app-user-dropdown-item>
+          <app-user-dropdown-item
+            ng-reflect-user="[object Object]"
+          >
+            <mat-card>
+              <mat-card-title>
+                Iran
+              </mat-card-title>
+              <mat-card-subtitle>
+                iranium
+              </mat-card-subtitle>
+              <mat-card-content>
+                <div>
+                  100
+                </div>
+                <div>
+                  Nov 9, 2018, 12:00:00 AM
+                </div>
+                <div>
+                  Nov 9, 2018, 12:00:00 AM
+                </div>
+                <div>
+                  Nov 9, 2018, 12:00:00 AM
+                </div>
+                <div>
+                  minecraft is my life!!!
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </app-user-dropdown-item>
+        </div>
+      </div>
+    </app-user-dropdown-list>
+  </section>
+</app-user-list>
+`;
+
+exports[`ItemComponent snapshot 4`] = `
+<app-user-list
+  dropDownListFlag={[Function Boolean]}
+  store={[Function Store]}
+  users$={[Function Observable]}
+>
+  <section>
+    <app-user-chosen
+      ng-reflect-user="[object Object]"
+    >
+      <div
+        class="chosen"
+      >
+        <div
+          class="container"
+        >
+          <div>
+            Pasha
+          </div>
+          <div>
+            0000000000000
+          </div>
+          <div>
+            Nov 9, 2018, 11:28:11 PM
+          </div>
+        </div>
+        <mat-icon>
+          keyboard_arrow_down
+        </mat-icon>
+      </div>
+    </app-user-chosen>
+    
+    <app-user-dropdown-list
+      class="drop-down-list"
+      ng-reflect-users="[object Object],[object Object"
+    >
+      <div
+        class="list"
+      >
+        <div>
+          <mat-form-field>
+            <input
+              matinput=""
+              placeholder="SEARCH"
+              type="text"
+            />
+            
+          </mat-form-field>
+        </div>
+        <div>
+          
+          <app-user-dropdown-item
+            ng-reflect-user="[object Object]"
+          >
+            <mat-card>
+              <mat-card-title>
+                Vlad
+              </mat-card-title>
+              <mat-card-subtitle>
+                1234567890
+              </mat-card-subtitle>
+              <mat-card-content>
+                <div>
+                  20
+                </div>
+                <div>
+                  Nov 9, 2018, 11:11:55 PM
+                </div>
+                <div>
+                  Nov 9, 2018, 11:11:55 PM
+                </div>
+                <div>
+                  Nov 9, 2018, 11:11:55 PM
+                </div>
+                <div>
+                  i like angular
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </app-user-dropdown-item>
+          <app-user-dropdown-item
+            ng-reflect-user="[object Object]"
+          >
+            <mat-card>
+              <mat-card-title>
+                Pasha
+              </mat-card-title>
+              <mat-card-subtitle>
+                0000000000000
+              </mat-card-subtitle>
+              <mat-card-content>
+                <div>
+                  65
+                </div>
+                <div>
+                  Nov 9, 2018, 11:28:11 PM
+                </div>
+                <div>
+                  Nov 9, 2018, 11:28:11 PM
+                </div>
+                <div>
+                  Nov 9, 2018, 11:28:11 PM
+                </div>
+                <div>
+                  I AM PROGRAMMER, may be
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </app-user-dropdown-item>
+          <app-user-dropdown-item
+            ng-reflect-user="[object Object]"
+          >
+            <mat-card>
+              <mat-card-title>
+                Iran
+              </mat-card-title>
+              <mat-card-subtitle>
+                iranium
+              </mat-card-subtitle>
+              <mat-card-content>
+                <div>
+                  100
+                </div>
+                <div>
+                  Nov 9, 2018, 12:00:00 AM
+                </div>
+                <div>
+                  Nov 9, 2018, 12:00:00 AM
+                </div>
+                <div>
+                  Nov 9, 2018, 12:00:00 AM
+                </div>
+                <div>
+                  minecraft is my life!!!
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </app-user-dropdown-item>
+        </div>
+      </div>
+    </app-user-dropdown-list>
+  </section>
+</app-user-list>
+`;
+
+exports[`ItemComponent snapshot 5`] = `
+<app-user-list
+  dropDownListFlag="false"
+  store={[Function Store]}
+  users$={[Function Observable]}
+>
+  <section>
+    <app-user-chosen
+      ng-reflect-user="[object Object]"
+    >
+      <div
+        class="chosen"
+      >
+        <div
+          class="container"
+        >
+          <div>
+            Pasha
+          </div>
+          <div>
+            0000000000000
+          </div>
+          <div>
+            Nov 9, 2018, 11:28:11 PM
+          </div>
+        </div>
+        <mat-icon>
+          keyboard_arrow_down
+        </mat-icon>
+      </div>
+    </app-user-chosen>
+    
+  </section>
+</app-user-list>
+`;

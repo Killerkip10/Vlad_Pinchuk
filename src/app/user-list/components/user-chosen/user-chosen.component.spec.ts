@@ -1,16 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 import { UserChosenComponent } from './user-chosen.component';
 
-describe('UserChosenComponent', () => {
+describe('ItemComponent', () => {
   let component: UserChosenComponent;
   let fixture: ComponentFixture<UserChosenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserChosenComponent ]
-    })
-    .compileComponents();
+      declarations: [
+        UserChosenComponent
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

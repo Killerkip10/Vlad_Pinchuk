@@ -1,16 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 import { UserDropdownItemComponent } from './user-dropdown-item.component';
 
-describe('UserDropdownItemComponent', () => {
+describe('ItemComponent', () => {
   let component: UserDropdownItemComponent;
   let fixture: ComponentFixture<UserDropdownItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserDropdownItemComponent ]
-    })
-    .compileComponents();
+      declarations: [
+        UserDropdownItemComponent
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
