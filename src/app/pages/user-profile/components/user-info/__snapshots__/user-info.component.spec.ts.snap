@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserInfoComponent snapshot 1`] = `
+<app-user-info>
+  <mat-card>
+    <mat-toolbar>
+      <span>
+        
+      </span>
+      <span>
+        
+      </span>
+    </mat-toolbar>
+    <mat-card-content>
+      <mat-card-subtitle>
+        
+      </mat-card-subtitle>
+      <p>
+        
+      </p>
+      <p>
+        
+      </p>
+      <p>
+        
+      </p>
+      <p>
+        
+      </p>
+    </mat-card-content>
+  </mat-card>
+</app-user-info>
+`;
+
+exports[`UserInfoComponent snapshot 2`] = `
+<app-user-info
+  userInfo={[Function Object]}
+>
+  <mat-card>
+    <mat-toolbar>
+      <span>
+        
+      </span>
+      <span>
+        
+      </span>
+    </mat-toolbar>
+    <mat-card-content>
+      <mat-card-subtitle>
+        
+      </mat-card-subtitle>
+      <p>
+        
+      </p>
+      <p>
+        
+      </p>
+      <p>
+        
+      </p>
+      <p>
+        
+      </p>
+    </mat-card-content>
+  </mat-card>
+</app-user-info>
+`;
+
+exports[`UserInfoComponent snapshot 3`] = `
+<app-user-info
+  userInfo={[Function Object]}
+>
+  <mat-card>
+    <mat-toolbar>
+      <span>
+        Vlad
+      </span>
+      <span>
+        1234
+      </span>
+    </mat-toolbar>
+    <mat-card-content>
+      <mat-card-subtitle>
+        i like angular
+      </mat-card-subtitle>
+      <p>
+        24
+      </p>
+      <p>
+        2018-11-10T18:52:23.023Z
+      </p>
+      <p>
+        2018-11-10T18:52:23.023Z
+      </p>
+      <p>
+        2018-11-10T18:52:23.023Z
+      </p>
+    </mat-card-content>
+  </mat-card>
+</app-user-info>
+`;

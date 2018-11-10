@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PathComponent snapshot 1`] = `
+<app-path>
+  <mat-form-field>
+    <input
+      disabled=""
+      matinput=""
+      placeholder="Path"
+    />
+  </mat-form-field>
+</app-path>
+`;
+
+exports[`PathComponent snapshot 2`] = `
+<app-path
+  path={[Function String]}
+>
+  <mat-form-field>
+    <input
+      disabled=""
+      matinput=""
+      placeholder="Path"
+    />
+  </mat-form-field>
+</app-path>
+`;

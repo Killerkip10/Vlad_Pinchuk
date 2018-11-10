@@ -1,9 +1,8 @@
 <div class="chosen">
-  <div>
-    <span>{{user?.name}}</span>
-    <span>{{user?.login}}</span>
-    <span>{{user?.dateOfBirth | date: 'medium'}}</span>
-    <ng-content></ng-content>
+  <div class="container">
+    <div>{{user?.name}}</div>
+    <div>{{user?.login}}</div>
+    <div>{{user?.dateOfBirth | date: 'medium'}}</div>
   </div>
 
   <mat-icon>keyboard_arrow_down</mat-icon>

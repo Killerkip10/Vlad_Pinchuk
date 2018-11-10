@@ -7,7 +7,7 @@ export class ItemService {
   constructor() {}
 
   public getItems(): Node[] {
-    return Array.from({length: 1000}, (v, i) => ({value: `item ${i}`, open: true, children: null}));
+    return Array.from({length: 100}, (v, i) => ({value: `item ${i}`, open: true, children: null}));
   }
   public searchItem(nodes: Node[], value: string): Node[] {
     this.allOpenItems(nodes);

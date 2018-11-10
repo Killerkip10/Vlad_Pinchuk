@@ -3,19 +3,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {TranslateModule} from '@ngx-translate/core';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {AuthGuard} from './guards';
+import {AuthService} from './services';
 import {
   MatButtonModule,
   MatToolbarModule,
   MatSelectModule,
   MatIconModule
 } from '@angular/material';
-import {
-  AuthService,
-  SearchUserService
-} from './services';
 import {
   HeaderComponent,
   FooterComponent
@@ -41,7 +38,6 @@ import {
   ],
   providers: [
     AuthService,
-    SearchUserService,
 
     AuthGuard
   ],

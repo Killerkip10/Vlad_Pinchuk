@@ -1,20 +1,14 @@
 .chosen{
+  min-height: 70px;
   display: flex;
   align-items: center;
-  height: 30px;
-  >div{
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
+  .container{
     padding: 5px;
+    flex: 1;
   }
   mat-icon{
-    color: white;
-    background-color: black;
-    align-items: stretch;
     width: 30px;
     height: 30px;
     font-size: 30px;
-    text-align: center;
   }
 }

@@ -1,16 +1,19 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
-import {Actions, Effect, ofType} from '@ngrx/effects';
-import {map, switchMap} from 'rxjs/operators';
+import {catchError, map, mergeMap} from 'rxjs/operators';
+import {of} from 'rxjs';
 
-import {User} from '../../../../server/models';
-import {urlConfig} from '../../config';
+import {Actions, Effect, ofType} from '@ngrx/effects';
 import {
   GET_PROFILE,
   EDIT,
-  Edit,
-  Success
+  EditProfile,
+  Success,
+  Error
 } from '../actions/profile';
+
+import {User} from '../../../../server/models';
+import {urlConfig} from '../../config';
 
 const options = {
   headers: new HttpHeaders({'content-type': 'application/json'}),
@@ -30,15 +33,23 @@ export class ProfileEffects {
   loadProfile$ = this.actions$
     .pipe(
       ofType(GET_PROFILE),
-      switchMap(() => this.http.get<HttpResponse<User>>(urlConfig.getProfile, options as object)),
-      map(resp => new Success(resp.body))
+      mergeMap(() => this.http.get<HttpResponse<User>>(urlConfig.getProfile, options as object)
+        .pipe(
+          map(resp => new Success(resp.body)),
+          catchError(() => of(new Error('ERROR.BASE')))
+        )
+      )
     );
 
   @Effect()
   editProfile$ = this.actions$
     .pipe(
       ofType(EDIT),
-      switchMap((action: Edit) => this.http.put<HttpResponse<User>>(urlConfig.editProfile, action.profile, options as object)),
-      map(resp => new Success(resp.body))
+      mergeMap((action: EditProfile) => this.http.put<HttpResponse<User>>(urlConfig.editProfile, action.profile, options as object)
+        .pipe(
+          map(resp => new Success(resp.body)),
+          catchError(() => of(new Error('ERROR.BASE')))
+        )
+      )
     );
 }

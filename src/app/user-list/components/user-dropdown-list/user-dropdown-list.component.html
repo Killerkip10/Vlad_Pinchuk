@@ -1,15 +1,20 @@
 <div class="list">
   <div>
     <mat-form-field>
-      <input matInput #searchUser type="text" placeholder="Search">
+      <input
+        matInput
+        #searchUser
+        type="text"
+        [placeholder]="'SEARCH' | translate">
+      <ng-content></ng-content>
     </mat-form-field>
   </div>
 
   <div>
     <app-user-dropdown-item
-      *ngFor="let item of filterUsers$ | async"
+      *ngFor="let item of users; let i = index"
       [user]="item"
-      (click)="select.emit(item)">
+      (click)="selectUser(item)">
     </app-user-dropdown-item>
   </div>
 </div>

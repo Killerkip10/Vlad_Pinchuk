@@ -1,0 +1,622 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserFormComponent snapshot 1`] = `
+<app-user-form
+  fb={[Function FormBuilder]}
+  loginAsyncValidService={[Function LoginAsyncValidatorService]}
+  nameAsyncValidService={[Function NameAsyncValidatorService]}
+  options={[Function Object]}
+  submit={[Function EventEmitter]}
+  user={[Function Object]}
+  userForm={[Function FormGroup]}
+>
+  <mat-card>
+    <mat-toolbar>
+      
+    </mat-toolbar>
+    <mat-card-content>
+      <form
+        class="ng-untouched ng-pristine ng-invalid"
+        ng-reflect-form="[object Object]"
+        novalidate=""
+      >
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="login"
+              matinput=""
+              ng-reflect-name="login"
+              placeholder="USER-PROFILE.FORM.LOGIN"
+              type="text"
+            />
+            
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="password"
+              matinput=""
+              ng-reflect-name="password"
+              placeholder="USER-PROFILE.FORM.PASSWORD"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="name"
+              matinput=""
+              ng-reflect-name="name"
+              placeholder="USER-PROFILE.FORM.NAME"
+              type="text"
+            />
+            
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="age"
+              matinput=""
+              ng-reflect-name="age"
+              placeholder="USER-PROFILE.FORM.AGE"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfBirth"
+              matinput=""
+              ng-reflect-name="dateOfBirth"
+              placeholder="USER-PROFILE.FORM.DATE-OF-BIRTH"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfFirstLogin"
+              matinput=""
+              ng-reflect-name="dateOfFirstLogin"
+              placeholder="USER-PROFILE.FORM.DATE-OF-FIRST-LOGIN"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfNextNot"
+              matinput=""
+              ng-reflect-name="dateOfNextNot"
+              placeholder="USER-PROFILE.FORM.DATE-OF-NEXT-NOT"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <textarea
+              class="ng-untouched ng-pristine ng-valid"
+              formcontrolname="information"
+              matinput=""
+              ng-reflect-name="information"
+              placeholder="USER-PROFILE.FORM.INFORMATION"
+            >
+                        
+            </textarea>
+          </mat-form-field>
+        </div>
+        <div
+          class="legend"
+        >
+          <div>
+            USER-PROFILE.FORM.DATE-FORMATS: 
+          </div>
+          <div>
+            YYYY/MM/DD | DD MMMM YYYY | DD-MMM-YY
+          </div>
+        </div>
+        <button
+          color="primary"
+          disabled=""
+          mat-flat-button=""
+          type="submit"
+        >
+          
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</app-user-form>
+`;
+
+exports[`UserFormComponent snapshot 2`] = `
+<app-user-form
+  fb={[Function FormBuilder]}
+  loginAsyncValidService={[Function LoginAsyncValidatorService]}
+  nameAsyncValidService={[Function NameAsyncValidatorService]}
+  options={[Function Object]}
+  submit={[Function EventEmitter]}
+  user={[Function Object]}
+  userForm={[Function FormGroup]}
+>
+  <mat-card>
+    <mat-toolbar>
+      
+    </mat-toolbar>
+    <mat-card-content>
+      <form
+        class="ng-untouched ng-pristine ng-invalid"
+        ng-reflect-form="[object Object]"
+        novalidate=""
+      >
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="login"
+              matinput=""
+              ng-reflect-name="login"
+              placeholder="USER-PROFILE.FORM.LOGIN"
+              type="text"
+            />
+            
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="password"
+              matinput=""
+              ng-reflect-name="password"
+              placeholder="USER-PROFILE.FORM.PASSWORD"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="name"
+              matinput=""
+              ng-reflect-name="name"
+              placeholder="USER-PROFILE.FORM.NAME"
+              type="text"
+            />
+            
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="age"
+              matinput=""
+              ng-reflect-name="age"
+              placeholder="USER-PROFILE.FORM.AGE"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfBirth"
+              matinput=""
+              ng-reflect-name="dateOfBirth"
+              placeholder="USER-PROFILE.FORM.DATE-OF-BIRTH"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfFirstLogin"
+              matinput=""
+              ng-reflect-name="dateOfFirstLogin"
+              placeholder="USER-PROFILE.FORM.DATE-OF-FIRST-LOGIN"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfNextNot"
+              matinput=""
+              ng-reflect-name="dateOfNextNot"
+              placeholder="USER-PROFILE.FORM.DATE-OF-NEXT-NOT"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <textarea
+              class="ng-untouched ng-pristine ng-valid"
+              formcontrolname="information"
+              matinput=""
+              ng-reflect-name="information"
+              placeholder="USER-PROFILE.FORM.INFORMATION"
+            >
+                        
+            </textarea>
+          </mat-form-field>
+        </div>
+        <div
+          class="legend"
+        >
+          <div>
+            USER-PROFILE.FORM.DATE-FORMATS: 
+          </div>
+          <div>
+            YYYY/MM/DD | DD MMMM YYYY | DD-MMM-YY
+          </div>
+        </div>
+        <button
+          color="primary"
+          disabled=""
+          mat-flat-button=""
+          type="submit"
+        >
+          
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</app-user-form>
+`;
+
+exports[`UserFormComponent snapshot 3`] = `
+<app-user-form
+  fb={[Function FormBuilder]}
+  loginAsyncValidService={[Function LoginAsyncValidatorService]}
+  nameAsyncValidService={[Function NameAsyncValidatorService]}
+  options={[Function Object]}
+  submit={[Function EventEmitter]}
+  user={[Function Object]}
+  userForm={[Function FormGroup]}
+>
+  <mat-card>
+    <mat-toolbar>
+      MAIN
+    </mat-toolbar>
+    <mat-card-content>
+      <form
+        class="ng-untouched ng-pristine ng-invalid"
+        ng-reflect-form="[object Object]"
+        novalidate=""
+      >
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="login"
+              matinput=""
+              ng-reflect-name="login"
+              placeholder="USER-PROFILE.FORM.LOGIN"
+              type="text"
+            />
+            
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="password"
+              matinput=""
+              ng-reflect-name="password"
+              placeholder="USER-PROFILE.FORM.PASSWORD"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="name"
+              matinput=""
+              ng-reflect-name="name"
+              placeholder="USER-PROFILE.FORM.NAME"
+              type="text"
+            />
+            
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="age"
+              matinput=""
+              ng-reflect-name="age"
+              placeholder="USER-PROFILE.FORM.AGE"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfBirth"
+              matinput=""
+              ng-reflect-name="dateOfBirth"
+              placeholder="USER-PROFILE.FORM.DATE-OF-BIRTH"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfFirstLogin"
+              matinput=""
+              ng-reflect-name="dateOfFirstLogin"
+              placeholder="USER-PROFILE.FORM.DATE-OF-FIRST-LOGIN"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfNextNot"
+              matinput=""
+              ng-reflect-name="dateOfNextNot"
+              placeholder="USER-PROFILE.FORM.DATE-OF-NEXT-NOT"
+              type="text"
+            />
+          </mat-form-field>
+          
+        </div>
+        <div>
+          <mat-form-field>
+            <textarea
+              class="ng-untouched ng-pristine ng-valid"
+              formcontrolname="information"
+              matinput=""
+              ng-reflect-name="information"
+              placeholder="USER-PROFILE.FORM.INFORMATION"
+            >
+                        
+            </textarea>
+          </mat-form-field>
+        </div>
+        <div
+          class="legend"
+        >
+          <div>
+            USER-PROFILE.FORM.DATE-FORMATS: 
+          </div>
+          <div>
+            YYYY/MM/DD | DD MMMM YYYY | DD-MMM-YY
+          </div>
+        </div>
+        <button
+          color="primary"
+          disabled=""
+          mat-flat-button=""
+          type="submit"
+        >
+          SEND
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</app-user-form>
+`;
+
+exports[`UserFormComponent snapshot 4`] = `
+<app-user-form
+  fb={[Function FormBuilder]}
+  loginAsyncValidService={[Function LoginAsyncValidatorService]}
+  nameAsyncValidService={[Function NameAsyncValidatorService]}
+  options={[Function Object]}
+  submit={[Function EventEmitter]}
+  user={[Function Object]}
+  userForm={[Function FormGroup]}
+>
+  <mat-card>
+    <mat-toolbar>
+      
+    </mat-toolbar>
+    <mat-card-content>
+      <form
+        class="ng-untouched ng-pristine ng-invalid"
+        ng-reflect-form="[object Object]"
+        novalidate=""
+      >
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="login"
+              matinput=""
+              ng-reflect-name="login"
+              placeholder="USER-PROFILE.FORM.LOGIN"
+              type="text"
+            />
+            
+          </mat-form-field>
+          
+          <p>
+            TEST-ERROR
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="password"
+              matinput=""
+              ng-reflect-name="password"
+              placeholder="USER-PROFILE.FORM.PASSWORD"
+              type="text"
+            />
+          </mat-form-field>
+          
+          <p>
+            TEST-ERROR
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="name"
+              matinput=""
+              ng-reflect-name="name"
+              placeholder="USER-PROFILE.FORM.NAME"
+              type="text"
+            />
+            
+          </mat-form-field>
+          
+          <p>
+            TEST-ERROR
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="age"
+              matinput=""
+              ng-reflect-name="age"
+              placeholder="USER-PROFILE.FORM.AGE"
+              type="text"
+            />
+          </mat-form-field>
+          
+          <p>
+            TEST-ERROR
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfBirth"
+              matinput=""
+              ng-reflect-name="dateOfBirth"
+              placeholder="USER-PROFILE.FORM.DATE-OF-BIRTH"
+              type="text"
+            />
+          </mat-form-field>
+          
+          <p>
+            TEST-ERROR
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfFirstLogin"
+              matinput=""
+              ng-reflect-name="dateOfFirstLogin"
+              placeholder="USER-PROFILE.FORM.DATE-OF-FIRST-LOGIN"
+              type="text"
+            />
+          </mat-form-field>
+          
+          <p>
+            TEST-ERROR
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              class="ng-untouched ng-pristine ng-invalid"
+              formcontrolname="dateOfNextNot"
+              matinput=""
+              ng-reflect-name="dateOfNextNot"
+              placeholder="USER-PROFILE.FORM.DATE-OF-NEXT-NOT"
+              type="text"
+            />
+          </mat-form-field>
+          
+          <p>
+            TEST-ERROR
+          </p>
+        </div>
+        <div>
+          <mat-form-field>
+            <textarea
+              class="ng-untouched ng-pristine ng-valid"
+              formcontrolname="information"
+              matinput=""
+              ng-reflect-name="information"
+              placeholder="USER-PROFILE.FORM.INFORMATION"
+            >
+                        
+            </textarea>
+          </mat-form-field>
+        </div>
+        <div
+          class="legend"
+        >
+          <div>
+            USER-PROFILE.FORM.DATE-FORMATS: 
+          </div>
+          <div>
+            YYYY/MM/DD | DD MMMM YYYY | DD-MMM-YY
+          </div>
+        </div>
+        <button
+          color="primary"
+          disabled=""
+          mat-flat-button=""
+          type="submit"
+        >
+          
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</app-user-form>
+`;

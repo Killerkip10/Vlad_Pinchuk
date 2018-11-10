@@ -1,4 +1,8 @@
-import { Component} from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+
+import {Store} from '@ngrx/store';
+import {GetProfile} from '../../../../store/actions/profile';
 
 import {AuthService} from '../../../../core/services';
 
@@ -10,14 +14,21 @@ import {AuthService} from '../../../../core/services';
 export class LoginFormComponent {
   public errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private store: Store<null>
+  ) { }
 
   public submit(loginForm) {
     if (!loginForm.valid) { return; }
 
     this.authService.login(loginForm.value)
       .subscribe(
-        null,
+        () => {
+          this.store.dispatch(new GetProfile());
+          this.router.navigate(['/']);
+        },
         err => this.errorMessage = err
       );
   }

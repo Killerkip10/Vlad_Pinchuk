@@ -1,14 +1,12 @@
-import {ActionReducerMap} from '@ngrx/store';
-
 import * as fromUsers from './users';
 import * as fromProfile from './profile';
 
 export interface State {
-  users: fromUsers.State;
-  profile: fromProfile.State;
+  users: Map<string, fromUsers.MapState>;
+  profile: Map<string, fromProfile.MapState>;
 }
 
-export const reducers: ActionReducerMap<State> = {
+export const reducers = {
   users: fromUsers.reducer,
   profile: fromProfile.reducer
 };

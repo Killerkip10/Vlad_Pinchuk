@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ChangeDetectionStrategy, NO_ERRORS_SCHEMA} from '@angular/core';
 
 import { PathComponent } from './path.component';
 
@@ -8,9 +9,15 @@ describe('PathComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PathComponent ]
+      declarations: [
+        PathComponent
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     })
-    .compileComponents();
+      .overrideComponent(PathComponent, {set: {changeDetection: ChangeDetectionStrategy.Default}})
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +28,16 @@ describe('PathComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('snapshot', () => {
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('snapshot', () => {
+    component.path = 'item1 // item 2 // item 3';
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
   });
 });

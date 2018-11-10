@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserListComponent snapshot 1`] = `
+<app-user-list
+  dropDownListFlag="false"
+  store={[Function Store]}
+  users$={[Function Store]}
+>
+  <section>
+    <app-user-chosen />
+    
+  </section>
+</app-user-list>
+`;
+
+exports[`UserListComponent snapshot 2`] = `
+<app-user-list
+  dropDownListFlag={[Function Boolean]}
+  store={[Function Store]}
+  users$={[Function Store]}
+>
+  <section>
+    <app-user-chosen />
+    
+    <app-user-dropdown-list
+      class="drop-down-list"
+    >
+      
+      <mat-spinner />
+    </app-user-dropdown-list>
+  </section>
+</app-user-list>
+`;
+
+exports[`UserListComponent snapshot 3`] = `
+<app-user-list
+  dropDownListFlag={[Function Boolean]}
+  store={[Function Store]}
+  users$={[Function Observable]}
+>
+  <section>
+    <app-user-chosen />
+    
+    <app-user-dropdown-list
+      class="drop-down-list"
+    >
+      
+    </app-user-dropdown-list>
+  </section>
+</app-user-list>
+`;
+
+exports[`UserListComponent snapshot 4`] = `
+<app-user-list
+  dropDownListFlag="false"
+  store={[Function Store]}
+  users$={[Function Observable]}
+>
+  <section>
+    <app-user-chosen />
+    
+  </section>
+</app-user-list>
+`;
+
+exports[`UserListComponent snapshot 5`] = `
+<app-user-list
+  dropDownListFlag="false"
+  store={[Function Store]}
+  users$={[Function Observable]}
+>
+  <section>
+    <app-user-chosen />
+    
+  </section>
+</app-user-list>
+`;

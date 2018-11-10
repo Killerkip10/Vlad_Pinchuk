@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
+import {first} from 'rxjs/operators';
 
 import {select, Store} from '@ngrx/store';
-import {getUserState, State} from '../store/reducers/users';
+import {getUsersJsState} from '../store/reducers/users';
+import {State} from '../store/reducers/users';
 import {GetUsers} from '../store/actions/users';
-
-import {User} from '../models';
 
 @Component({
   selector: 'app-user-list',
@@ -13,23 +13,24 @@ import {User} from '../models';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  public selectedUser: User;
   public dropDownListFlag = false;
   public users$: Observable<State>;
 
-  constructor(private store: Store<State>) {
-    this.users$ = this.store.pipe(select(getUserState));
-  }
+  constructor(private store: Store<State>) {}
 
   ngOnInit(): void {
-    this.store.dispatch(new GetUsers());
+    this.users$ = this.store.pipe(select(getUsersJsState));
   }
 
   public dropDownList(): void {
     this.dropDownListFlag = !this.dropDownListFlag;
-  }
-  public selectUser(user: User): void {
-    this.dropDownList();
-    this.selectedUser = user;
+
+    this.users$
+      .pipe(first())
+      .subscribe(state => {
+        if (!state.loaded) {
+          this.store.dispatch(new GetUsers());
+        }
+      });
   }
 }

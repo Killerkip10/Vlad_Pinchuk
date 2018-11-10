@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemListComponent snapshot 1`] = `
+<app-item-list
+  itemService={[Function ItemServiceTest]}
+  nodes={[Function Array]}
+>
+  <div>
+    <app-search />
+    <app-path />
+    <div
+      class="list"
+    >
+      
+      <app-item />
+      <app-item />
+    </div>
+  </div>
+</app-item-list>
+`;

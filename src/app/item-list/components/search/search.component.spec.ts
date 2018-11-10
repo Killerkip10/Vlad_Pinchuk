@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ChangeDetectionStrategy, NO_ERRORS_SCHEMA} from '@angular/core';
 
-import { SearchComponent } from './search.component';
+import {SearchComponent} from './search.component';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -8,9 +9,15 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
+      declarations: [
+        SearchComponent
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     })
-    .compileComponents();
+      .overrideComponent(SearchComponent, {set: {changeDetection: ChangeDetectionStrategy.Default}})
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +28,9 @@ describe('SearchComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('snapshot', () => {
+    expect(fixture).toMatchSnapshot();
   });
 });

@@ -19,5 +19,5 @@ import {urlConfig} from './config';
 export class AppTranslate {}
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, urlConfig.url + 'i18n/', '.json');
+  return new TranslateHttpLoader(http, `${urlConfig.url}i18n/`, '.json');
 }

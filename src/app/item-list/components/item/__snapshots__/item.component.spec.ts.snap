@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemComponent snapshot 1`] = `
+<app-item
+  select={[Function EventEmitter]}
+>
+  
+</app-item>
+`;
+
+exports[`ItemComponent snapshot 2`] = `
+<app-item
+  node={[Function Object]}
+  select={[Function EventEmitter]}
+>
+  
+</app-item>
+`;
+
+exports[`ItemComponent snapshot 3`] = `
+<app-item
+  node={[Function Object]}
+  select={[Function EventEmitter]}
+>
+  <div
+    class="item"
+  >
+    <span>
+      item 1
+    </span>
+    
+  </div>
+</app-item>
+`;
+
+exports[`ItemComponent snapshot 4`] = `
+<app-item
+  node={[Function Object]}
+  select={[Function EventEmitter]}
+>
+  
+</app-item>
+`;
+
+exports[`ItemComponent snapshot 5`] = `
+<app-item
+  node={[Function Object]}
+  select={[Function EventEmitter]}
+>
+  <div
+    class="item"
+  >
+    <span>
+      item 1
+    </span>
+    
+    <div>
+      
+      <app-item
+        ng-reflect-node="[object Object]"
+      >
+        
+        <div
+          class="item"
+        >
+          <span>
+            item 1
+          </span>
+          
+        </div>
+      </app-item>
+      <app-item
+        ng-reflect-node="[object Object]"
+      >
+        
+        <div
+          class="item"
+        >
+          <span>
+            item 2
+          </span>
+          
+        </div>
+      </app-item>
+    </div>
+  </div>
+</app-item>
+`;

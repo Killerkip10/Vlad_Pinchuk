@@ -2,12 +2,23 @@ section{
   box-sizing: border-box;
   border: 2px solid black;
   position: relative;
-  app-user-dropdown-list{
+  .drop-down-list{
+    background-color: white;
+    border: 2px solid black;
+    padding: 2px;
     position: absolute;
     max-height: calc(100vh - 240px);
     overflow: auto;
+    z-index: 1;
     top: 100%;
     left: -2px;
     right: -2px;
+    mat-spinner{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
   }
 }

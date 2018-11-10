@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent snapshot 1`] = `
+<app-root
+  store={[Function Store]}
+  tokenService={[Function Function]}
+>
+  <app-header /><mat-drawer-container
+    class="container"
+  >
+    
+    <mat-drawer-content>
+      <router-outlet />
+    </mat-drawer-content>
+  </mat-drawer-container><app-footer />
+</app-root>
+`;
+
+exports[`AppComponent snapshot 2`] = `
+<app-root
+  store={[Function Store]}
+  tokenService={[Function Function]}
+>
+  <app-header /><mat-drawer-container
+    class="container"
+  >
+    
+    <mat-drawer
+      mode="side"
+      opened=""
+    >
+      <mat-list>
+        <a
+          href="/user-profile"
+          mat-list-item=""
+          ng-reflect-router-link="user-profile"
+          ng-reflect-router-link-active="active"
+          routerlinkactive="active"
+        >
+          
+        </a>
+        <a
+          href="/search-users"
+          mat-list-item=""
+          ng-reflect-router-link="search-users"
+          ng-reflect-router-link-active="active"
+          routerlinkactive="active"
+        >
+          
+        </a>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet />
+    </mat-drawer-content>
+  </mat-drawer-container><app-footer />
+</app-root>
+`;
+
+exports[`AppComponent snapshot 3`] = `
+<app-root
+  store={[Function Store]}
+  tokenService={[Function Function]}
+>
+  <app-header /><mat-drawer-container
+    class="container"
+  >
+    
+    <mat-drawer-content>
+      <router-outlet />
+    </mat-drawer-content>
+  </mat-drawer-container><app-footer />
+</app-root>
+`;

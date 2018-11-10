@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {Router} from '@angular/router';
+
+import {Store} from '@ngrx/store';
+import {DeleteProfile} from '../../../store/actions/profile';
 
 import {AuthService} from '../../services';
 
@@ -11,7 +15,9 @@ import {AuthService} from '../../services';
 export class HeaderComponent {
   constructor(
     public translateService: TranslateService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
+    private store: Store<null>
   ) {}
 
   public selectLanguage(event): void {
@@ -19,5 +25,7 @@ export class HeaderComponent {
   }
   public logout(): void {
     this.authService.logout();
+    this.store.dispatch(new DeleteProfile());
+    this.router.navigate(['/login']);
   }
 }

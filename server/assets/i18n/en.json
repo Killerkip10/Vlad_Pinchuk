@@ -5,16 +5,23 @@
   "USER-PROFILE": {
     "TABS": {
       "PROFILE": "Profile",
-      "EDIT": "Edit"
+      "EDIT": "Edit",
+      "USERS": "Users",
+      "CREATE-USER": "Create user"
     },
-    "EDIT": {
-      "HEADER": "Main",
+    "FORM": {
+      "EDIT-PROFILE": "Edit profile",
+      "EDIT-USER": "Edit user",
+      "CREATE-USER": "Create user",
+      "LOGIN": "Login",
+      "PASSWORD": "Password",
       "NAME": "Name",
       "AGE": "Age",
       "DATE-OF-BIRTH": "Birthday",
       "DATE-OF-FIRST-LOGIN": "Date of first login",
       "DATE-OF-NEXT-NOT": "Date of next notification",
-      "DATE-FORMATS": "Date formats"
+      "DATE-FORMATS": "Date formats",
+      "INFORMATION": "Information"
     }
   },
   "SEARCH-USER": {
@@ -23,23 +30,28 @@
       "ITEMS": "Items"
     }
   },
+  "SIDENAV": {
+    "PROFILE": "Profile",
+    "SEARCH-USERS": "Search users"
+  },
   "ERROR": {
     "BASE": "Something bad happened; Please try again later",
     "LOGIN": "Invalid login or password",
     "FORGOT": "Invalid login",
-    "LATIN": "Must server only latin letters",
+    "LATIN": "Must server only latin",
+    "LATIN-FIGURE": "Must server only latin and figure",
     "WORDS-COUNT": "Must server one or two words",
     "CAMEL": "Must server camel case sensitive",
-    "EXIST": "This name already exists",
+    "EXIST-NAME": "This name already exists",
+    "EXIST-LOGIN": "This login already exists",
     "NOT-NUMBER": "It's not a number",
     "INTEGER": "Must server integer",
     "RANGE": "Age range from {{from}} till {{to}}",
     "DATE": "Date is invalid"
   },
-  "SIDENAV": {
-    "PROFILE": "Profile",
-    "SEARCH-USERS": "Search users"
-  },
+  "EDIT": "Edit",
+  "CREATE": "Create",
+  "SEARCH": "Search",
   "LOGIN": "Login",
   "PASSWORD": "Password",
   "FORGOT-PASSWORD": "Forgot password",

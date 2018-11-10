@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginFormComponent snapshot 1`] = `
+<app-login-form
+  authService={[Function AuthService]}
+  errorMessage=""
+  router={[Function Router]}
+  store={[Function Store]}
+>
+  <section>
+    <mat-card>
+      <mat-card-title>
+        <mat-toolbar
+          color="primary"
+        >
+          SIGN-IN
+        </mat-toolbar>
+      </mat-card-title>
+      <mat-card-content>
+        <form
+          class="ng-untouched ng-pristine ng-valid"
+          novalidate=""
+        >
+          <div>
+            <mat-form-field>
+              <input
+                class="ng-untouched ng-pristine ng-valid"
+                matinput=""
+                name="login"
+                ng-reflect-model=""
+                ng-reflect-name="login"
+                ng-reflect-required=""
+                ngmodel=""
+                placeholder="LOGIN"
+                required=""
+                type="text"
+              />
+              <mat-icon
+                matsuffix=""
+              >
+                account_circle
+              </mat-icon>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input
+                class="ng-untouched ng-pristine ng-valid"
+                matinput=""
+                name="password"
+                ng-reflect-model=""
+                ng-reflect-name="password"
+                ng-reflect-required=""
+                ngmodel=""
+                placeholder="PASSWORD"
+                required=""
+                type="password"
+              />
+              <mat-icon
+                matsuffix=""
+              >
+                lock
+              </mat-icon>
+            </mat-form-field>
+          </div>
+          
+          <div
+            class="actions"
+          >
+            <button
+              color="primary"
+              mat-flat-button=""
+              type="submit"
+            >
+               SIGN-IN 
+            </button>
+            <a
+              href="/forgot-password"
+              mat-button=""
+              ng-reflect-router-link="/forgot-password"
+            >
+              FORGOT-PASSWORD
+            </a>
+          </div>
+          <mat-divider />
+          <button
+            class="sign-up"
+            mat-button=""
+            type="button"
+          >
+             SIGN-UP 
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</app-login-form>
+`;
+
+exports[`LoginFormComponent snapshot 2`] = `
+<app-login-form
+  authService={[Function AuthService]}
+  errorMessage={[Function String]}
+  router={[Function Router]}
+  store={[Function Store]}
+>
+  <section>
+    <mat-card>
+      <mat-card-title>
+        <mat-toolbar
+          color="primary"
+        >
+          SIGN-IN
+        </mat-toolbar>
+      </mat-card-title>
+      <mat-card-content>
+        <form
+          class="ng-untouched ng-pristine ng-invalid"
+          novalidate=""
+        >
+          <div>
+            <mat-form-field>
+              <input
+                class="ng-untouched ng-pristine ng-invalid"
+                matinput=""
+                name="login"
+                ng-reflect-model=""
+                ng-reflect-name="login"
+                ng-reflect-required=""
+                ngmodel=""
+                placeholder="LOGIN"
+                required=""
+                type="text"
+              />
+              <mat-icon
+                matsuffix=""
+              >
+                account_circle
+              </mat-icon>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input
+                class="ng-untouched ng-pristine ng-invalid"
+                matinput=""
+                name="password"
+                ng-reflect-model=""
+                ng-reflect-name="password"
+                ng-reflect-required=""
+                ngmodel=""
+                placeholder="PASSWORD"
+                required=""
+                type="password"
+              />
+              <mat-icon
+                matsuffix=""
+              >
+                lock
+              </mat-icon>
+            </mat-form-field>
+          </div>
+          
+          <p
+            class="err-message"
+          >
+            ERROR-TEST
+          </p>
+          <div
+            class="actions"
+          >
+            <button
+              color="primary"
+              mat-flat-button=""
+              type="submit"
+            >
+               SIGN-IN 
+            </button>
+            <a
+              href="/forgot-password"
+              mat-button=""
+              ng-reflect-router-link="/forgot-password"
+            >
+              FORGOT-PASSWORD
+            </a>
+          </div>
+          <mat-divider />
+          <button
+            class="sign-up"
+            mat-button=""
+            type="button"
+          >
+             SIGN-UP 
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</app-login-form>
+`;

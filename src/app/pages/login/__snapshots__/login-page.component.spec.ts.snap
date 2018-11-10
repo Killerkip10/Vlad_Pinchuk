@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPageComponent snapshot 1`] = `
+<app-login-pages>
+  <section>
+    <app-login-form />
+  </section>
+</app-login-pages>
+`;

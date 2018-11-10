@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDropDownItemComponent snapshot 1`] = `
+<app-user-dropdown-item>
+  <mat-card>
+    <mat-card-title>
+      
+    </mat-card-title>
+    <mat-card-subtitle>
+      
+    </mat-card-subtitle>
+    <mat-card-content>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+    </mat-card-content>
+  </mat-card>
+</app-user-dropdown-item>
+`;
+
+exports[`UserDropDownItemComponent snapshot 2`] = `
+<app-user-dropdown-item
+  user={[Function Object]}
+>
+  <mat-card>
+    <mat-card-title>
+      
+    </mat-card-title>
+    <mat-card-subtitle>
+      
+    </mat-card-subtitle>
+    <mat-card-content>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+    </mat-card-content>
+  </mat-card>
+</app-user-dropdown-item>
+`;
+
+exports[`UserDropDownItemComponent snapshot 3`] = `
+<app-user-dropdown-item
+  user={[Function Object]}
+>
+  <mat-card>
+    <mat-card-title>
+      Pasha
+    </mat-card-title>
+    <mat-card-subtitle>
+      pasha
+    </mat-card-subtitle>
+    <mat-card-content>
+      <div>
+        25
+      </div>
+      <div>
+        Nov 10, 2018, 9:52:23 PM
+      </div>
+      <div>
+        Nov 10, 2018, 9:52:23 PM
+      </div>
+      <div>
+        Nov 10, 2018, 9:52:23 PM
+      </div>
+      <div>
+        pahan
+      </div>
+    </mat-card-content>
+  </mat-card>
+</app-user-dropdown-item>
+`;

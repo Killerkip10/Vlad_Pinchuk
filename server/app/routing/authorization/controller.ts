@@ -2,7 +2,7 @@ import {Request, Response, NextFunction} from 'express';
 
 import * as facade from './facade';
 
-export function login(req: Request, res: Response, next: NextFunction){
+export function login(req: Request, res: Response, next: NextFunction) {
   facade.login(req.body.login, req.body.password)
     .then(result => {
       if (result) {

@@ -1,7 +1,9 @@
 import {ValidationErrors, AbstractControl} from '@angular/forms';
 
 export function ageValidator(control: AbstractControl): ValidationErrors | null {
-  if (!control.value) { return null; }
+  if (!control.value) {
+    return null;
+  }
 
   const num = control.value.trim();
 
