@@ -2,7 +2,7 @@ import {sign, verify} from 'jsonwebtoken';
 
 import {config} from '../../config';
 
-interface TokenObj{
+interface TokenObj {
   id: string;
   role: string;
 }

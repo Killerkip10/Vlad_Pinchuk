@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ChangeDetectionStrategy, NO_ERRORS_SCHEMA} from '@angular/core';
 
-import { SearchComponent } from './search.component';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {SearchComponent} from './search.component';
 
-describe('ItemComponent', () => {
+describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
 
@@ -16,6 +16,7 @@ describe('ItemComponent', () => {
         NO_ERRORS_SCHEMA
       ]
     })
+      .overrideComponent(SearchComponent, {set: {changeDetection: ChangeDetectionStrategy.Default}})
       .compileComponents();
   }));
 
@@ -27,5 +28,9 @@ describe('ItemComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('snapshot', () => {
+    expect(fixture).toMatchSnapshot();
   });
 });

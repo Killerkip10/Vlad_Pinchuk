@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchUsersPageComponent snapshot 1`] = `
+<app-search-user-page
+  tabIndex="0"
+  tabs={[Function Array]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    <div
+      class="container"
+      ng-reflect-ng-switch="0"
+    >
+      
+      <app-user-list />
+      
+    </div>
+  </section>
+</app-search-user-page>
+`;
+
+exports[`SearchUsersPageComponent snapshot 2`] = `
+<app-search-user-page
+  tabIndex="0"
+  tabs={[Function Array]}
+>
+  <section>
+    <mat-tab-group>
+      
+    </mat-tab-group>
+    <div
+      class="container"
+      ng-reflect-ng-switch="0"
+    >
+      
+      <app-user-list />
+      
+    </div>
+  </section>
+</app-search-user-page>
+`;
+
+exports[`SearchUsersPageComponent snapshot 3`] = `
+<app-search-user-page
+  tabIndex="0"
+  tabs={[Function Array]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    <div
+      class="container"
+      ng-reflect-ng-switch="0"
+    >
+      
+      <app-user-list />
+      
+    </div>
+  </section>
+</app-search-user-page>
+`;
+
+exports[`SearchUsersPageComponent snapshot 4`] = `
+<app-search-user-page
+  tabIndex="0"
+  tabs={[Function Array]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    <div
+      class="container"
+      ng-reflect-ng-switch="0"
+    >
+      
+      <app-user-list />
+      
+    </div>
+  </section>
+</app-search-user-page>
+`;
+
+exports[`SearchUsersPageComponent snapshot 5`] = `
+<app-search-user-page
+  tabIndex={[Function Number]}
+  tabs={[Function Array]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    <div
+      class="container"
+      ng-reflect-ng-switch="1"
+    >
+      
+      
+      <app-item-list />
+    </div>
+  </section>
+</app-search-user-page>
+`;

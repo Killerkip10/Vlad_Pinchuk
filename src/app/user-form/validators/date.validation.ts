@@ -2,7 +2,9 @@ import {ValidationErrors, AbstractControl} from '@angular/forms';
 import * as moment from 'moment';
 
 export function dateValidator(control: AbstractControl): ValidationErrors | null {
-  if (!control.value) { return null; }
+  if (!control.value) {
+    return null;
+  }
 
   const value = control.value.trim();
 

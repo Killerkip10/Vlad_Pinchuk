@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserChosenComponent snapshot 1`] = `
+<app-user-chosen>
+  <div
+    class="chosen"
+  >
+    <div
+      class="container"
+    >
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+    <mat-icon>
+      keyboard_arrow_down
+    </mat-icon>
+  </div>
+</app-user-chosen>
+`;
+
+exports[`UserChosenComponent snapshot 2`] = `
+<app-user-chosen
+  user={[Function Object]}
+>
+  <div
+    class="chosen"
+  >
+    <div
+      class="container"
+    >
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+    <mat-icon>
+      keyboard_arrow_down
+    </mat-icon>
+  </div>
+</app-user-chosen>
+`;
+
+exports[`UserChosenComponent snapshot 3`] = `
+<app-user-chosen
+  user={[Function Object]}
+>
+  <div
+    class="chosen"
+  >
+    <div
+      class="container"
+    >
+      <div>
+        Pasha
+      </div>
+      <div>
+        1234
+      </div>
+      <div>
+        Nov 10, 2018, 9:52:23 PM
+      </div>
+    </div>
+    <mat-icon>
+      keyboard_arrow_down
+    </mat-icon>
+  </div>
+</app-user-chosen>
+`;

@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfilePageComponent snapshot 1`] = `
+<app-user-info-page
+  profile$={[Function Store]}
+  snackBar={[Function MatSnackBar]}
+  store={[Function Store]}
+  tabIndex="0"
+  tabs={[Function Array]}
+  users$={[Function Store]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    
+    <div
+      class="spinner"
+    >
+      <mat-spinner />
+    </div>
+    
+  </section>
+</app-user-info-page>
+`;
+
+exports[`UserProfilePageComponent snapshot 2`] = `
+<app-user-info-page
+  profile$={[Function Store]}
+  snackBar={[Function MatSnackBar]}
+  store={[Function Store]}
+  tabIndex="0"
+  tabs={[Function Array]}
+  users$={[Function Store]}
+>
+  <section>
+    <mat-tab-group>
+      
+    </mat-tab-group>
+    
+    <div
+      class="spinner"
+    >
+      <mat-spinner />
+    </div>
+    
+  </section>
+</app-user-info-page>
+`;
+
+exports[`UserProfilePageComponent snapshot 3`] = `
+<app-user-info-page
+  profile$={[Function Store]}
+  snackBar={[Function MatSnackBar]}
+  store={[Function Store]}
+  tabIndex="0"
+  tabs={[Function Array]}
+  users$={[Function Store]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+      <mat-tab />
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    
+    <div
+      class="spinner"
+    >
+      <mat-spinner />
+    </div>
+    
+  </section>
+</app-user-info-page>
+`;
+
+exports[`UserProfilePageComponent snapshot 4`] = `
+<app-user-info-page
+  profile$={[Function Observable]}
+  snackBar={[Function MatSnackBar]}
+  store={[Function Store]}
+  tabIndex="0"
+  tabs={[Function Array]}
+  users$={[Function Store]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    
+    <div
+      class="container"
+      ng-reflect-ng-switch="0"
+    >
+      
+      <app-user-info />
+      
+      
+      
+    </div>
+    
+  </section>
+</app-user-info-page>
+`;
+
+exports[`UserProfilePageComponent snapshot 5`] = `
+<app-user-info-page
+  profile$={[Function Observable]}
+  snackBar={[Function MatSnackBar]}
+  store={[Function Store]}
+  tabIndex={[Function Number]}
+  tabs={[Function Array]}
+  users$={[Function Store]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    
+    <div
+      class="container"
+      ng-reflect-ng-switch="1"
+    >
+      
+      
+      <app-user-form />
+      
+      
+    </div>
+    
+  </section>
+</app-user-info-page>
+`;
+
+exports[`UserProfilePageComponent snapshot 6`] = `
+<app-user-info-page
+  profile$={[Function Observable]}
+  snackBar={[Function MatSnackBar]}
+  store={[Function Store]}
+  tabIndex={[Function Number]}
+  tabs={[Function Array]}
+  users$={[Function Store]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    
+    <div
+      class="container"
+      ng-reflect-ng-switch="2"
+    >
+      
+      
+      
+      <app-user-list />
+      
+      
+      
+    </div>
+    
+  </section>
+</app-user-info-page>
+`;
+
+exports[`UserProfilePageComponent snapshot 7`] = `
+<app-user-info-page
+  profile$={[Function Observable]}
+  snackBar={[Function MatSnackBar]}
+  store={[Function Store]}
+  tabIndex={[Function Number]}
+  tabs={[Function Array]}
+  users$={[Function Store]}
+>
+  <section>
+    <mat-tab-group>
+      
+      <mat-tab />
+      <mat-tab />
+    </mat-tab-group>
+    
+    <div
+      class="container"
+      ng-reflect-ng-switch="3"
+    >
+      
+      
+      
+      
+      <app-user-form />
+    </div>
+    
+  </section>
+</app-user-info-page>
+`;

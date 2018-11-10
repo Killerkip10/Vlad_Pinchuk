@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderComponent snapshot 1`] = `
+<app-header
+  authService={[Function AuthService]}
+  router={[Function Router]}
+  store={[Function Store]}
+  translateService={[Function TranslateService]}
+>
+  <mat-toolbar
+    color="primary"
+  >
+    <a
+      href="/"
+      ng-reflect-router-link="/"
+    >
+      HEADER.LOGO
+    </a>
+    <div>
+      <mat-select>
+        
+      </mat-select>
+      <button
+        color="primary"
+        mat-flat-button=""
+      >
+        SIGN-OUT
+      </button>
+    </div>
+  </mat-toolbar>
+</app-header>
+`;

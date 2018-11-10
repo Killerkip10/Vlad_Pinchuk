@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchComponent snapshot 1`] = `
+<app-search
+  search={[Function EventEmitter]}
+  searchItem={[Function ElementRef]}
+>
+  <mat-form-field>
+    <input
+      matinput=""
+      placeholder="Search"
+    />
+  </mat-form-field>
+</app-search>
+`;

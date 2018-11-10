@@ -3,8 +3,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {TranslateModule} from '@ngx-translate/core';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {AuthGuard} from './guards';
 import {AuthService} from './services';
 import {

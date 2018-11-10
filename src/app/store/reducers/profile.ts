@@ -14,7 +14,7 @@ export interface State {
 export type MapState = boolean | string | object;
 
 export const initialState = Map({
-  profile: Map(),
+  profile: {},
   loaded: false,
   err: ''
 });
@@ -26,12 +26,12 @@ export function reducer(state = initialState, action: profileAction.Action) {
     }
     case profileAction.DELETE: {
       return state
-        .set('profile', Map())
+        .set('profile', {})
         .set('loaded', false);
     }
     case profileAction.SUCCESS: {
       return state
-        .set('profile', Map(action.profile))
+        .set('profile', action.profile)
         .set('loaded', true)
         .set('err', '');
     }

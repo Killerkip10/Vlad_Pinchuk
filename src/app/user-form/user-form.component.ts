@@ -12,7 +12,7 @@ import {
   passwordValidator
 } from './validators';
 
-interface Options {
+export interface Options {
   nameForm: string;
   send: string;
   reset: boolean;

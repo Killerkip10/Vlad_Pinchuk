@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDropDownListComponent snapshot 1`] = `
+<app-user-dropdown-list
+  input$={[Function Subscriber]}
+  searchUser={[Function ElementRef]}
+  select={[Function EventEmitter]}
+  store={[Function Store]}
+>
+  <div
+    class="list"
+  >
+    <div>
+      <mat-form-field>
+        <input
+          matinput=""
+          placeholder="SEARCH"
+          type="text"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+</app-user-dropdown-list>
+`;
+
+exports[`UserDropDownListComponent snapshot 2`] = `
+<app-user-dropdown-list
+  input$={[Function Subscriber]}
+  searchUser={[Function ElementRef]}
+  select={[Function EventEmitter]}
+  store={[Function Store]}
+  users={[Function Array]}
+>
+  <div
+    class="list"
+  >
+    <div>
+      <mat-form-field>
+        <input
+          matinput=""
+          placeholder="SEARCH"
+          type="text"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+</app-user-dropdown-list>
+`;
+
+exports[`UserDropDownListComponent snapshot 3`] = `
+<app-user-dropdown-list
+  input$={[Function Subscriber]}
+  searchUser={[Function ElementRef]}
+  select={[Function EventEmitter]}
+  store={[Function Store]}
+  users={[Function Array]}
+>
+  <div
+    class="list"
+  >
+    <div>
+      <mat-form-field>
+        <input
+          matinput=""
+          placeholder="SEARCH"
+          type="text"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      
+      <app-user-dropdown-item />
+      <app-user-dropdown-item />
+    </div>
+  </div>
+</app-user-dropdown-list>
+`;

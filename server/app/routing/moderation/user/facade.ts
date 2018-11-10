@@ -1,7 +1,7 @@
 const uuid = require('uuid');
 
 import {User} from '../../../../models';
-let users: User[] = require('../../../../datas/users.json');
+const users: User[] = require('../../../../datas/users.json');
 
 function getById(id: string): User | undefined {
   return users.find(v => v.id === id);
