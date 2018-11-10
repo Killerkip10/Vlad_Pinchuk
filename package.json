@@ -55,8 +55,6 @@
     "@ngx-translate/http-loader": "3.0.1",
     "@types/body-parser": "1.17.0",
     "@types/express": "4.16.0",
-    "@types/jasmine": "~2.8.8",
-    "@types/jasminewd2": "~2.0.3",
     "@types/jest": "23.3.9",
     "@types/jsonwebtoken": "7.2.8",
     "@types/node": "~8.9.4",
